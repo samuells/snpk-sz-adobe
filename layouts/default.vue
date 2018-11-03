@@ -34,7 +34,8 @@ html {
   text-decoration: none;
 }
 
-.button--green:hover {
+.button--green:hover,
+.button--green:focus {
   color: #fff;
   background-color: #3b8070;
 }
@@ -49,7 +50,8 @@ html {
   text-decoration: none;
 }
 
-.button--grey:hover {
+.button--grey:hover,
+.button--grey:focus {
   color: #fff;
   background-color: #35495e;
 }

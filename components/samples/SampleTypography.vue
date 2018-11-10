@@ -6,7 +6,7 @@
         <p class="intro">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi impedit doloribus accusamus, velit animi sed. Impedit sequi velit deserunt rem culpa iste vero dolore! Harum aut voluptates, sequi expedita debitis.
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus asperiores quia voluptas, itaque, commodi excepturi alias voluptates, ad qui modi molestiae quasi maxime dignissimos voluptatem. Rerum <a href="#">impedit esse</a>, magnam delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem facere natus eos ullam hic. Officia cumque numquam quaerat at excepturi temporibus voluptatibus dicta inventore asperiores! Exercitationem ullam veniam dignissimos quibusdam.</p>
+        <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus asperiores quia voluptas, itaque, commodi excepturi alias voluptates, ad qui modi molestiae quasi maxime dignissimos voluptatem. Rerum <a href="#">impedit esse</a>, magnam delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem facere natus eos ullam hic. Officia cumque numquam quaerat at excepturi temporibus voluptatibus dicta inventore asperiores! Exercitationem ullam veniam dignissimos quibusdam.</p>
         <h2>Header Design Lvl 2</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore voluptatem, eveniet, facilis, non voluptates deserunt harum iure illum officiis sapiente culpa architecto. Iste asperiores vel consequuntur consequatur omnis officiis beatae.</p>
         <h4>Quoted Text</h4>
@@ -31,6 +31,16 @@
           <li>Item</li>
         </ul>
         <h3>Header Design LvL 3</h3>
+        <div class="parallax-wrapper">
+          <!-- <IconWLogoBlack class="logo"/> -->
+          <Parallax
+            :parallax="true"
+            :speed-factor="0.15"
+            :fixed="false"
+            :section-height="30">
+            <IconWLogoBlack class="logo"/>
+          </Parallax>
+        </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, iure. Error dicta quos, impedit doloremque neque et voluptas quasi quidem officiis, culpa obcaecati vel autem incidunt qui. Est, architecto harum?</p>
         <ol>
           <li>Item</li>
@@ -95,3 +105,33 @@
     </div>
   </div>
 </template>
+
+<script>
+import IconWLogoBlack from "~/assets/icons/wndrs-logo-black.svg"
+import Parallax from "vue-parallaxy"
+
+export default {
+  components: {
+    Parallax,
+    IconWLogoBlack
+  }
+}
+</script>
+
+<style lang="scss">
+.logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50vh;
+  width: auto;
+  transform: translateX(-50%);
+}
+
+.parallax-wrapper {
+  position: relative;
+  z-index: -1;
+  height: 0;
+  opacity: 0.5;
+}
+</style>

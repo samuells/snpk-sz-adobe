@@ -3,7 +3,7 @@ import postcssNormalize from "postcss-normalize"
 const pkg = require("./package")
 
 module.exports = {
-  mode: "universal",
+  mode: "spa",
 
   /*
   ** Headers of the page
@@ -15,7 +15,10 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: pkg.description }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "stylesheet", href: "https://use.typekit.net/qji8zia.css" }
+    ]
   },
 
   /*
@@ -50,7 +53,7 @@ module.exports = {
       config.module.rules
         .filter(r => r.test.toString().includes("svg"))
         .forEach(r => {
-          r.test = /\.(png|jpe?g|gif)$/
+          r.test = /images\/.*\.(png|jpe?g|gif|svg)$/
         })
       config.module.rules.push({
         test: /icons\/.*\.svg$/,
@@ -67,24 +70,15 @@ module.exports = {
           }
         }
       })
-      config.module.rules.push({
-        test: /images\/.*\.(png|jpe?g|gif|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {}
-          }
-        ]
-      })
       // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        })
-      }
+      // if (ctx.isDev && ctx.isClient) {
+      //   config.module.rules.push({
+      //     enforce: "pre",
+      //     test: /\.(js|vue)$/,
+      //     loader: "eslint-loader",
+      //     exclude: /(node_modules)/
+      //   })
+      // }
     }
   }
 }

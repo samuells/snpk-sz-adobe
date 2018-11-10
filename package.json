@@ -33,7 +33,11 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.1.0"
+    "intersection-observer": "^0.5.1",
+    "lottie-web": "^5.4.1",
+    "nuxt": "^2.1.0",
+    "scrollama": "^1.4.4",
+    "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

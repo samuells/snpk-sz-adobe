@@ -65,6 +65,12 @@
         },
         "declarations",
         {
+          "type": "at-rule",
+          "name": "include",
+          "parameter": "fluid",
+          "hasBlock": false
+        },
+        {
           "type": "rule",
           "selector": "/^&:/"
         },

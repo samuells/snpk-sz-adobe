@@ -60,6 +60,10 @@ $definition-list-margin-bottom: rem-calc(12) !default;
     box-sizing: inherit;
   }
 
+  body {
+    background-color: $body-bgc;
+  }
+
   blockquote,
   body,
   dd,

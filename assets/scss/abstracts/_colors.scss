@@ -19,6 +19,8 @@ $gray-scarpa: #575566;
 $black-mine: #221f1f;
 $black: #000;
 
+$pink-pot: #f6eae6;
+
 $blue-twitter: #55acee;
 $blue-facebook: #3b5998;
 $blue-linkedin: #5291dd;
@@ -32,12 +34,12 @@ $red-firebrick: #b22222;
 // =======================
 
 // Base Colors
-$primary-font-color: $gray-scarpa !default;
-$body-bgc: $white !default;
+$primary-font-color: $black !default;
+$body-bgc: $pink-pot !default;
 $error-color: $red-firebrick;
 
 // Headline Colors
-$headline-fc: $gray-scarpa;
+$headline-fc: $primary-font-color;
 
 // // Buttons Colors
 $button-fc: $white !default;

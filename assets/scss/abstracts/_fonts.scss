@@ -5,12 +5,13 @@
 // -----------
 // Fonts Variables
 //
-$font-family--sans-serif: "Canaro", Arial, Roboto, sans-serif;
-$font-family--serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family--sans-serif: futura-pt, Arial, Roboto, sans-serif;
+$font-family--serif: clarendon-urw-extra-narrow, Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family--monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 $font-family--body: $font-family--sans-serif;
-$font-family--header: $font-family--sans-serif;
+$font-family--header: $font-family--serif;
+$font-family--subheadline: clarendon-urw, $font-family--serif;
 // $font-family--button: $font-family--body;
 
 // -----------

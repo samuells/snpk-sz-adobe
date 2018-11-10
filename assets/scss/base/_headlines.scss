@@ -6,62 +6,82 @@ $generate-classes: false !default;
 
 @mixin headline {
   display: block;
-  font-family: $font-family--header;
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
   color: $headline-fc;
 }
 
 @mixin headline--lvl1($box-model: true) {
   @include headline;
+
+  font-family: $font-family--header;
+
   @include fluid(
     (
       font-size: (
-        28,
-        56
-      )
-    ),
-    (medium, xxlarge)
-  );
-  @include fluid(
-    (
-      margin-bottom: (
-        12,
-        36
+        30,
+        48
       )
     ),
     (medium, xlarge)
   );
 
   @if $box-model {
-    padding: rh(0.25) 0;
-    margin: rh(0.5) 0;
+    @include fluid(
+      (
+        margin-bottom: (
+          24,
+          36
+        )
+      ),
+      (medium, xlarge)
+    );
   }
 }
 
 @mixin headline--lvl2($box-model: true) {
   @include headline;
+
+  font-family: $font-family--subheadline;
+  line-height: (28/26);
+
   @include fluid(
     (
       font-size: (
         26,
-        40
+        30
       )
     ),
     (medium, xlarge)
   );
 
   @if $box-model {
-    padding: rh(0.25) 0;
-    margin: rh(0.25) 0;
+    @include fluid(
+      (
+        padding-bottom: (
+          6,
+          12
+        )
+      ),
+      (medium, xlarge)
+    );
+    @include fluid(
+      (
+        margin-bottom: (
+          6,
+          12
+        )
+      ),
+      (medium, xlarge)
+    );
   }
 }
 
 @mixin headline--lvl3($box-model: true) {
   @include headline;
 
-  font-size: rem(22);
-  font-weight: 100;
+  font-family: $font-family--body;
+  font-size: rem(20);
+  line-height: (24 / 20);
 
   @if $box-model {
     padding: 0 0 rh(0.125);
@@ -72,33 +92,14 @@ $generate-classes: false !default;
 @mixin headline--lvl4($box-model: true) {
   @include headline;
 
-  font-size: rem(16);
+  font-family: $font-family--subheadline;
+  font-size: rem(20);
+  line-height: (27 / 20);
 
   @if $box-model {
     padding: 0 0 rh(0.25);
     margin: 0 0 rh(0.25);
   }
-}
-
-@mixin headline--lvl5($box-model: true) {
-  @include headline;
-
-  font-size: rem(12);
-  font-weight: 400;
-  color: rgba($primary-font-color, 0.75);
-  letter-spacing: 0.8px;
-
-  @if $box-model {
-    padding: 0 0 rh(0.125);
-    margin: 0;
-  }
-}
-
-@mixin headline--page {
-  @include headline--lvl1;
-
-  font-family: $font-family--serif;
-  font-weight: 100;
 }
 
 // ---------
@@ -122,14 +123,5 @@ $generate-classes: false !default;
   .is-h4,
   h4 {
     @include headline--lvl4;
-  }
-
-  .is-h5,
-  h5 {
-    @include headline--lvl5;
-  }
-
-  .is-page-headline {
-    @include headline--page;
   }
 }

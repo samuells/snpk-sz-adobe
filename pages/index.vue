@@ -20,7 +20,7 @@
       </div>
     </div>
     <TypewriterSection/>
-    <div style="height: 20rem;"/>
+    <MemorySection/>
   </div>
 </template>
 
@@ -32,6 +32,7 @@ import TypoMatcher from "@/components/TypoMatcher.vue"
 import AnimationHead from "@/components/AnimationHead.vue"
 import PizzaSection from "@/components/PizzaSection.vue"
 import TypewriterSection from "@/components/TypewriterSection.vue"
+import MemorySection from "@/components/MemorySection.vue"
 
 export default {
   components: {
@@ -41,7 +42,8 @@ export default {
     TypoMatcher,
     AnimationHead,
     PizzaSection,
-    TypewriterSection
+    TypewriterSection,
+    MemorySection
   }
 }
 </script>

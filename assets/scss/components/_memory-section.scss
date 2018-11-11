@@ -1,0 +1,60 @@
+@import "./assets/scss/toolbelt";
+
+.section--memory {
+  .memory-grid {
+    @include reset-ul();
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(-4);
+
+    li {
+      flex-basis: 25%;
+      padding: rem(4);
+    }
+  }
+
+  .card-backface {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-frontface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+
+  .memory-card {
+    position: relative;
+    cursor: pointer;
+
+    &.flipped {
+      .card-frontface {
+        display: block;
+      }
+    }
+
+    &.found {
+      cursor: default;
+
+      .card-backface {
+        opacity: 0;
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    .memory-grid {
+      margin: 0 rem(-7);
+
+      li {
+        padding: rem(7);
+      }
+    }
+  }
+}

@@ -4,10 +4,6 @@
   position: relative;
   margin-top: rh(4);
 
-  .typewriter-headline {
-    text-align: center;
-  }
-
   .lottie--typewriter-wrapper {
     position: absolute;
     left: 0;
@@ -35,6 +31,46 @@
     height: calc(100vw * 0.4);
   }
 
+  .quote-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      flex-basis: 100%;
+    }
+
+    .quote {
+      order: 2;
+    }
+  }
+
+  .placeholder--comp-book {
+    height: calc(100vw * 0.3);
+  }
+
+  .lottie--comp-book-wrapper {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    z-index: -1;
+    width: 100%;
+    transform: translate3d(0, -28%, 0);
+  }
+
+  .lottie--comp-book {
+    @include transition(opacity, transform);
+
+    width: 150%;
+    height: auto;
+    transform: translate3d(-30%, #{rem(50)}, 0);
+    opacity: 0;
+
+    &.visible {
+      transform: translate3d(-30%, 0, 0);
+      opacity: 1;
+    }
+  }
+
   @include breakpoint(medium) {
     .lottie--typewriter-wrapper {
       transform: translate3d(0, -30%, 0);
@@ -52,6 +88,7 @@
 
   @include breakpoint(medium) {
     .quote-wrapper {
+      display: block;
       margin-right: rem(-40);
 
       .quote {
@@ -74,6 +111,23 @@
     .quote-wrapper {
       margin-right: rem(-140);
     }
+
+    .placeholder--comp-book {
+      height: 0;
+    }
+
+    .lottie--comp-book-wrapper {
+      transform: translate3d(0, -20%, 0);
+    }
+
+    .lottie--comp-book {
+      width: 110%;
+      transform: translate3d(0, #{rem(50)}, 0);
+
+      &.visible {
+        transform: translate3d(0, 0, 0);
+      }
+    }
   }
 
   @include breakpoint(w1280) {
@@ -93,43 +147,4 @@
       margin-left: -10%;
     }
   }
-
-  // @include breakpoint(large) {
-  //   .stop-sign {
-  //     transform: translateX(-20%);
-  //   }
-
-  // }
-
-  // @include breakpoint(xlarge) {
-  //   .lottie--typewriter {
-  //     width: 100%;
-  //     transform: translate3d(25%, #{rem(50)}, 0);
-
-  //     &.visible {
-  //       transform: translate3d(25%, 0, 0);
-  //       opacity: 1;
-  //     }
-  //   }
-
-  //   .placeholder--typewriter {
-  //     height: calc(100vw * 0.4);
-
-  //     &.active {
-  //       height: calc(100vw * 0.9);
-  //     }
-  //   }
-
-
-  // }
-
-  // @include breakpoint(xlarge) {
-  //   .stop-sign {
-  //     transform: translateX(-5%);
-  //   }
-
-  //   .placeholder--stop-sign {
-  //     height: rh(4);
-  //   }
-  // }
 }

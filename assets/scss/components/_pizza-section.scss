@@ -62,9 +62,9 @@
 
   .stop-sign {
     width: 100%;
-    max-width: rem(400);
+    max-width: rem(300);
     height: auto;
-    transform: translateX(10%);
+    transform: translateX(35%);
   }
 
   .placeholder--stop-sign {
@@ -135,15 +135,20 @@
         margin-left: rem(-140);
       }
     }
-  }
 
-  @include breakpoint(xlarge) {
     .stop-sign {
-      transform: translateX(-5%);
+      transform: translateX(-30%);
     }
 
     .placeholder--stop-sign {
       height: rh(4);
+    }
+  }
+
+  @include breakpoint(w1280) {
+    .stop-sign {
+      max-width: rem(400);
+      transform: translateX(-15%);
     }
   }
 }

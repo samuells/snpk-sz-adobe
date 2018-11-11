@@ -33,6 +33,15 @@ $generate-classes: false !default;
   line-height: (18 / 14);
 }
 
+@mixin paragraph--quote($box-model: true) {
+  @include paragraph($box-model);
+
+  font-size: rem(26);
+  line-height: (34 / 26);
+  font-weight: 700;
+  color: $red-pome;
+}
+
 // ---------
 // Implementation
 @if $generate-classes {
@@ -41,6 +50,10 @@ $generate-classes: false !default;
 
     &.small {
       @include paragraph--small;
+    }
+
+    &.quote {
+      @include paragraph--quote;
     }
   }
 }

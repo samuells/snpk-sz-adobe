@@ -13,6 +13,12 @@
       <p>Assoziationen beziehen sich auf zurückligende Verbindungen mit dieser Schrift, gesellschaftlich und aber auch persönlich: “So wird beispielsweise die Helvetica-Schriftart auf den Formularen des United States Tax and Internal Revenue Service verwendet, was die Wahrnehmung der Schriftart beeinflusst - abhängig von der Erfahrungen mit dem Steuersystem.”</p>
       <p>Obit, temporis eum voluptas ipsandi odignis tiasitatur Iqui dolut fuga. Nam volorib ustiasperro qui veligni intis nimodit pre iurios nonsequam re ressequi officiaerat. Tatem eati omnihil iquibea ne veniste si res acepro tem evelestrum sam, core, nonse cullenditios enietur re nusciundant am, none occulpa ipissimus eos simetusda pre, as molorerore conse perspedi dolor maio officipsanda et esti aborendis aperepratur, solecaborum.</p>
     </BaseText>
+    <PizzaSection/>
+    <div class="row--outer">
+      <div class="column--text">
+        <h1 style="color: #b22222">-- WIDGET PLACEHOLDER --</h1>
+      </div>
+    </div>
     <div style="height: 20rem;"/>
   </div>
 </template>
@@ -23,6 +29,7 @@ import HeroArea from "@/components/HeroArea.vue"
 import FontsInfo from "@/components/FontsInfo.vue"
 import TypoMatcher from "@/components/TypoMatcher.vue"
 import AnimationHead from "@/components/AnimationHead.vue"
+import PizzaSection from "@/components/PizzaSection.vue"
 
 export default {
   components: {
@@ -30,7 +37,8 @@ export default {
     HeroArea,
     FontsInfo,
     TypoMatcher,
-    AnimationHead
+    AnimationHead,
+    PizzaSection
   }
 }
 </script>

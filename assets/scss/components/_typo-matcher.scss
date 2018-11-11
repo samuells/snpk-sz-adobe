@@ -1,0 +1,68 @@
+@import "./assets/scss/toolbelt";
+
+.typo-matcher {
+  position: relative;
+
+  .illustration--oval,
+  .illustration--blue-line {
+    @include transition(opacity, transform);
+
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transform: translate3d(0, #{rem(50)}, 0);
+
+  }
+
+  .illustration--oval {
+    top: 5%;
+    width: 15%;
+    height: auto;
+    opacity: 0.5;
+  }
+
+  .illustration--blue-line {
+    top: -25%;
+    width: 100%;
+    height: auto;
+    transition-delay: 300ms;
+  }
+
+
+  &.visible {
+    .illustration--oval,
+    .illustration--blue-line {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @include breakpoint(large) {
+    .illustration--oval {
+      top: -20%;
+      width: 15%;
+    }
+
+    .illustration--blue-line {
+      top: -109%;
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    .illustration--oval {
+      top: -30%;
+      opacity: 1;
+    }
+
+    .illustration--blue-line {
+      top: -120%;
+    }
+  }
+
+
+  @include breakpoint(xxlarge) {
+    .illustration--blue-line {
+      top: -200%;
+    }
+  }
+}

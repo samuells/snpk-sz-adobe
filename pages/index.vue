@@ -2,6 +2,7 @@
   <div>
     <HeroArea/>
     <FontsInfo/>
+    <TypoMatcher/>
     <div style="height: 20rem;"/>
   </div>
 </template>
@@ -9,11 +10,13 @@
 <script>
 import HeroArea from "@/components/HeroArea.vue"
 import FontsInfo from "@/components/FontsInfo.vue"
+import TypoMatcher from "@/components/TypoMatcher.vue"
 
 export default {
   components: {
     HeroArea,
-    FontsInfo
+    FontsInfo,
+    TypoMatcher
   }
 }
 </script>

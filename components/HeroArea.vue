@@ -43,7 +43,6 @@ export default {
         loop: false,
         autoplay: false
       },
-      animationSpeed: 1,
       height: "auto",
       width: "100%",
       isImageLoaded: false
@@ -55,9 +54,10 @@ export default {
     },
     imageLoaded() {
       this.isImageLoaded = true
+      this.$nuxt.$emit("heroImageLoaded")
     },
     handleLottie(e) {
-      if (this.isImageLoaded && e.percentTop < 0.75) {
+      if (this.isImageLoaded && e.percentTop < 0.9) {
         this.anim.play()
       }
     }

@@ -2,6 +2,7 @@
   <div>
     <HeroArea/>
     <FontsInfo/>
+    <div style="height: 20rem;"/>
   </div>
 </template>
 

@@ -1,0 +1,40 @@
+@import "./assets/scss/toolbelt";
+
+.fonts-info {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: rh(1);
+
+  .lottie--wrapper {
+    @include transition(opacity, transform);
+
+    flex-basis: rem(300);
+    flex-grow: 1;
+    margin-bottom: rh(2);
+    opacity: 0;
+    transform: translate3d(0, #{rem(30)}, 0);
+
+    &.visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  @include breakpoint(large) {
+    padding-top: rh(1.5);
+
+    .lottie--info3 {
+      max-width: rem(400);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    padding-top: rh(3);
+  }
+}

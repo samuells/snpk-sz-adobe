@@ -71,6 +71,30 @@
     }
   }
 
+  .lottie--vector-wrapper {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    z-index: -1;
+    display: none;
+    width: 100%;
+    transform: translate3d(0, 10%, 0);
+  }
+
+  .lottie--vector {
+    @include transition(opacity, transform);
+
+    width: rem(500);
+    height: auto;
+    transform: translate3d(calc(-50% - #{rem(100)}), 0, 0);
+    opacity: 0;
+
+    &.visible {
+      transform: translate3d(-50%, 0, 0);
+      opacity: 1;
+    }
+  }
+
   @include breakpoint(medium) {
     .lottie--typewriter-wrapper {
       transform: translate3d(0, -30%, 0);
@@ -128,6 +152,10 @@
         transform: translate3d(0, 0, 0);
       }
     }
+
+    .lottie--vector-wrapper {
+      display: block;
+    }
   }
 
   @include breakpoint(w1280) {
@@ -139,12 +167,24 @@
     .placeholder--typewriter {
       height: 0;
     }
+
+    .lottie--vector-wrapper {
+      transform: translate3d(0, 20%, 0);
+    }
+
+    .lottie--vector {
+      width: rem(700);
+    }
   }
 
   @include breakpoint(xxlarge) {
     .lottie--typewriter {
       width: 110%;
       margin-left: -10%;
+    }
+
+    .lottie--vector-wrapper {
+      transform: translate3d(0, 70%, 0);
     }
   }
 }

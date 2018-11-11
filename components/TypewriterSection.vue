@@ -30,6 +30,16 @@
           </div>
         </div>
         <div class="placeholder--comp-book"/>
+        <div class="lottie--vector-wrapper">
+          <div
+            v-view="handleVectorView"
+            :class="vectorClasses"
+            class="lottie--vector">
+            <Lottie
+              :options="vectorOptions"
+              @animCreated="handleVector"/>
+          </div>
+        </div>
         <h3 class="is-h4">Digitalisierung alter Schriften, großes Interesse neuer Schriftgestalter</h3>
         <p>Hier dazu gehören Adobes Hidden Treasures, lorem ipsum dolor expedi alit int laccabo rporesequat. Acepta pedio eat eum ad eume consequia vendis etur. Atur, sitempo rporitatur Genderferum fugiatiusda qui ilic tem voleni non peris asimet lacid utatemo ssimagnam quae se nimagnatquam quo qui nima et quaecerum cumquati ut faccus, sunt quas dolore molupta turiam et omnis ipic tem et eos et volupid ut repe pe dolorum</p>
         <p>Ipsam venducipsam ut maxim aut fuga. Ad eaqui officid quos dolore nimus as res dest, id ut alibusam et landam ut aut ut res accum et volesti doluptatus sequam eum sam fugiae pa quidemp ercitae sit, vendanis et ommolorrum ea asit qui omnisi quunt, qui arumque posam voluption exernat. Cae dolum ut voloriam facearum sequam, que mod que vernate sequid.</p>
@@ -45,6 +55,7 @@
 import Lottie from "@/components/lottie"
 import typewriterAnimation from "@/assets/animations/typewriter.json"
 import computerBookAnimation from "@/assets/animations/computer-book.json"
+import vectorAnimation from "@/assets/animations/vector.json"
 
 export default {
   components: {
@@ -57,7 +68,8 @@ export default {
         autoplay: false
       },
       typewriterClasses: "",
-      compBookClasses: ""
+      compBookClasses: "",
+      vectorClasses: ""
     }
   },
   computed: {
@@ -72,6 +84,13 @@ export default {
         animationData: computerBookAnimation,
         ...this.defaultOptions
       }
+    },
+    vectorOptions() {
+      return {
+        animationData: vectorAnimation,
+        ...this.defaultOptions,
+        loop: false
+      }
     }
   },
   methods: {
@@ -80,6 +99,9 @@ export default {
     },
     handleCompBook: function(anim) {
       this.animCompBook = anim
+    },
+    handleVector: function(anim) {
+      this.animVector = anim
     },
     handleTypewriterView(e) {
       if (e.percentTop < 0.8) {
@@ -91,6 +113,12 @@ export default {
       if (e.percentTop < 0.8) {
         this.compBookClasses = "visible"
         this.animCompBook.play()
+      }
+    },
+    handleVectorView(e) {
+      if (e.percentTop < 0.8) {
+        this.vectorClasses = "visible"
+        this.animVector.play()
       }
     }
   }

@@ -34,8 +34,8 @@
     @include transition(height);
 
     height: calc(100vw * 0.8);
-    transition-duration: 2000ms;
-    transition-delay: 800ms;
+    transition-duration: 1000ms;
+    transition-delay: 600ms;
     transition-timing-function: cubic-bezier(0.51, 0.06, 0.51, 0.75);
 
     &.active {
@@ -132,8 +132,6 @@
 
     .quote-wrapper {
       .quote {
-        float: left;
-        width: rem(320);
         margin-left: rem(-140);
       }
     }

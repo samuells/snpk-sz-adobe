@@ -1,21 +1,25 @@
 <template>
-  <div class="section--pizza">
+  <div class="section--typewriter">
     <div class="row--outer">
       <div class="column--text">
-        <h3 class="pizza-headline">WO WÜRDEN SIE PIZZA BESTELLEN?</h3>
-        <div class="lottie--pizza-wrapper">
+        <div class="lottie--typewriter-wrapper">
           <div
-            v-view="handlePizzaView"
-            :class="pizzaClasses"
-            class="lottie--pizza">
+            v-view="handleTypewriterView"
+            :class="typewriterClasses"
+            class="lottie--typewriter">
             <Lottie
-              :options="pizzaOptions"
-              @animCreated="handlePizza"/>
+              :options="typewriterOptions"
+              @animCreated="handleTypewriter"/>
           </div>
         </div>
-        <div
-          :class="{active: isPizzaPlaceholderAcive}"
-          class="placeholder--pizza"/>
+        <h2>Es ist einfacher als je zuvor die passende Schrift zu finden und ­einzusetzen</h2>
+        <div class="placeholder--typewriter"/>
+        <p>Vom Bleisatz, über Fotosatz zu InDesign, die Verwendung von Schrift sehr verändert und vereinfacht. Lorem ipsum dolor Berunt sequisc harias re sundus at Ectorep udigendist acestiamus que idis nonsector si nus, odi ut facita volut opta ipsam, occusant quatiorporem es molorit facerferia ea voluptur rae sinvel invelli tatur, nobitecusame conseque aut pra velitat. Quident eium as as et restius. Exeris in consed molorrum nullit enecae vollabor sequodi genimin reicae et archic tem nullatest omnitibus doluptam exceptatist, omnis aut lauda cone nonsecat min era quasper chicae porepelis cuptaspidunt videliquia venderum essequam, sitatur alita pe ressitiae moditib usdandae prerum es quaecum consed maximus.</p>
+        <div class="quote-wrapper">
+          <p class="quote">„Hier steht ein schönes Zitat zum Thema, lorem esci mus Iqui blab ipita.“</p>
+          <p>Lo bernatusdam re min cupiste dolupta temquatur minus, nimusciet volut faccust ania comnihillab int volupicatem excepe velecta andit et arum que pellaut et occuptur. Duciliquae volorro voluptia pe volent ut aperibus quae volores citatur atati aut utem voles aid miniend andunt.</p>
+        </div>
+        <!--
         <h4>Zusammengenommen wirkt es so</h4>
         <p>Beide assoziativen Ebenen wirken zusammen auf die emotionale Wahrnehmung von Schriften. Erstens - Wo wurde die Schrift schon mal gesehen? Zweitens - Welche Inhalte und Themen verbindet man mit der Schrift? Als Drittes - Was für persönliche Verbindungen hat man mit den Themen - gut oder schlecht? Und als viertes und letztes - Stimmt der Kontext in dem sie steht? Nequas et ma delescimus di que nistia cus, quam quae sita verum harcim harcide liquam, temporeri sam qui cuptatent occusan ditioruptat voloreiciis rem que dis quoditint.</p>
         <p>Acientore, cusapedit, saperum quiderrovit as sinvenim velit ma que minvel et aut officienim enda quiamen dempossum eic te cus enihillo evelend unduntis recerum rehenda ma delescimus di que nistia.</p>
@@ -36,7 +40,7 @@
         <div class="quote-wrapper">
           <p class="quote">„Hier steht ein schönes Zitat zum Thema, lorem ipsum dolor poriaec esci mus Iqui blab ipita.“</p>
           <p>Rehenda quibea parum cum quodit milla quam ea cus delest id quis aut offic tem re volupie nitiur rero et es esed que sitatus, to ex et quas a dolore dero omnihitam que res ne voluptam, etum sed quodion nitati omnietur, con et que od evelignam fuga. Aruntius. Lorror aliquia vel ipsae digendent la derrovi tatest eum consendita int ommolup tiunt. Boriti omniaeptat. Xerferi tiandandis eum eos esut. Minum quias rum sunti quunt qui.</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -44,7 +48,7 @@
 
 <script>
 import Lottie from "@/components/lottie"
-import pizzaAnimation from "@/assets/animations/pizza.json"
+import typewriterAnimation from "@/assets/animations/typewriter.json"
 import StopSign from "@/assets/icons/stop-sign.svg"
 
 export default {
@@ -55,34 +59,31 @@ export default {
   data() {
     return {
       defaultOptions: {
-        loop: false,
+        loop: true,
         autoplay: false
       },
-      pizzaClasses: "",
+      typewriterClasses: "",
       stopSignClasses: "",
-      isPizzaPlaceholderAcive: false
+      isTypewriterPlaceholderAcive: false
     }
   },
   computed: {
-    pizzaOptions() {
+    typewriterOptions() {
       return {
-        animationData: pizzaAnimation,
+        animationData: typewriterAnimation,
         ...this.defaultOptions
       }
     }
   },
   methods: {
-    handlePizza: function(anim) {
-      this.animPizza = anim
+    handleTypewriter: function(anim) {
+      this.animTypewriter = anim
     },
-    handlePizzaView(e) {
+    handleTypewriterView(e) {
       if (e.percentTop < 0.8) {
-        this.isPizzaPlaceholderAcive = true
-        this.animPizza.setSpeed(2)
-        this.animPizza.play()
-      }
-      if (e.percentTop < 0.9) {
-        this.pizzaClasses = "visible"
+        this.isTypewriterPlaceholderAcive = true
+        this.typewriterClasses = "visible"
+        this.animTypewriter.play()
       }
     },
     handleStopSignView(e) {
@@ -95,5 +96,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/scss/components/pizza-section";
+@import "./assets/scss/components/typewriter-section";
 </style>

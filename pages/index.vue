@@ -19,6 +19,7 @@
         <h1 style="color: #b22222">-- WIDGET PLACEHOLDER --</h1>
       </div>
     </div>
+    <TypewriterSection/>
     <div style="height: 20rem;"/>
   </div>
 </template>
@@ -30,6 +31,7 @@ import FontsInfo from "@/components/FontsInfo.vue"
 import TypoMatcher from "@/components/TypoMatcher.vue"
 import AnimationHead from "@/components/AnimationHead.vue"
 import PizzaSection from "@/components/PizzaSection.vue"
+import TypewriterSection from "@/components/TypewriterSection.vue"
 
 export default {
   components: {
@@ -38,7 +40,8 @@ export default {
     FontsInfo,
     TypoMatcher,
     AnimationHead,
-    PizzaSection
+    PizzaSection,
+    TypewriterSection
   }
 }
 </script>

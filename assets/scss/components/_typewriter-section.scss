@@ -1,0 +1,135 @@
+@import "./assets/scss/toolbelt";
+
+.section--typewriter {
+  position: relative;
+  margin-top: rh(4);
+
+  .typewriter-headline {
+    text-align: center;
+  }
+
+  .lottie--typewriter-wrapper {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    z-index: -1;
+    width: 100%;
+    transform: translate3d(0, -30%, 0);
+  }
+
+  .lottie--typewriter {
+    @include transition(opacity, transform);
+
+    width: 300%;
+    height: auto;
+    transform: translate3d(0, #{rem(50)}, 0);
+    opacity: 0;
+
+    &.visible {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  .placeholder--typewriter {
+    height: calc(100vw * 0.4);
+  }
+
+  @include breakpoint(medium) {
+    .lottie--typewriter-wrapper {
+      transform: translate3d(0, -30%, 0);
+    }
+
+    .lottie--typewriter {
+      width: 150%;
+      margin-left: -20%;
+    }
+
+    .placeholder--typewriter {
+      height: calc(100vw * 0.25);
+    }
+  }
+
+  @include breakpoint(medium) {
+    .quote-wrapper {
+      margin-right: rem(-40);
+
+      .quote {
+        float: right;
+        width: rem(320);
+        padding-left: rem(20);
+      }
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    .lottie--typewriter {
+      margin-left: -30%;
+    }
+
+    .placeholder--typewriter {
+      height: calc(100vw * 0.05);
+    }
+
+    .quote-wrapper {
+      margin-right: rem(-140);
+    }
+  }
+
+  @include breakpoint(w1280) {
+    .lottie--typewriter {
+      width: 120%;
+      margin-left: -20%;
+    }
+
+    .placeholder--typewriter {
+      height: 0;
+    }
+  }
+
+  @include breakpoint(xxlarge) {
+    .lottie--typewriter {
+      width: 110%;
+      margin-left: -10%;
+    }
+  }
+
+  // @include breakpoint(large) {
+  //   .stop-sign {
+  //     transform: translateX(-20%);
+  //   }
+
+  // }
+
+  // @include breakpoint(xlarge) {
+  //   .lottie--typewriter {
+  //     width: 100%;
+  //     transform: translate3d(25%, #{rem(50)}, 0);
+
+  //     &.visible {
+  //       transform: translate3d(25%, 0, 0);
+  //       opacity: 1;
+  //     }
+  //   }
+
+  //   .placeholder--typewriter {
+  //     height: calc(100vw * 0.4);
+
+  //     &.active {
+  //       height: calc(100vw * 0.9);
+  //     }
+  //   }
+
+
+  // }
+
+  // @include breakpoint(xlarge) {
+  //   .stop-sign {
+  //     transform: translateX(-5%);
+  //   }
+
+  //   .placeholder--stop-sign {
+  //     height: rh(4);
+  //   }
+  // }
+}

@@ -107,7 +107,7 @@ export default {
     handleLottie03(e) {
       if (this.isHeroImageLoaded && e.percentTop < 0.8) {
         this.classes03 = "visible"
-        this.anim01.setSpeed(3)
+        this.anim03.setSpeed(3)
         this.anim03.play()
       }
     }

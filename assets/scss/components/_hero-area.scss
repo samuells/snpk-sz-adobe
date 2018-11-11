@@ -1,0 +1,40 @@
+@import "./assets/scss/toolbelt";
+
+.hero-area {
+  position: relative;
+
+  img {
+    padding-bottom: rh(1);
+  }
+
+  .starting-letter {
+    float: left;
+    font-family: $font-family--header;
+    font-size: rem(50);
+    line-height: 0.8;
+  }
+
+  .lottie--question {
+    display: none;
+  }
+
+  @include breakpoint(large) {
+    .lottie--question {
+      position: absolute;
+      top: 54%;
+      left: 0;
+      z-index: -1;
+      display: block;
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    h1 {
+      margin-left: rem(-100);
+    }
+
+    .lottie--question {
+      top: auto;
+    }
+  }
+}

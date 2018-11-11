@@ -14,20 +14,20 @@ export default {
       required: true
     },
     height: {
-      type: Number,
-      default: 400
+      type: String,
+      default: "auto"
     },
     width: {
-      type: Number,
-      default: 400
+      type: String,
+      default: "100%"
     }
   },
 
   data() {
     return {
       style: {
-        width: this.width ? `${this.width}px` : "100%",
-        height: this.height ? `${this.height}px` : "100%",
+        width: this.width,
+        height: this.height,
         overflow: "hidden",
         margin: "0 auto"
       }

@@ -1,0 +1,13 @@
+@mixin column--text {
+  max-width: rem(640);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  .column--text {
+    @include column--text;
+  }
+}

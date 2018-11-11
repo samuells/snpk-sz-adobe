@@ -12,7 +12,10 @@
     "lint:vue": "eslint **/*.vue",
     "lint:scss": "stylelint **/**/*.vue **/**/*.scss",
     "lint": "yarn lint:scss & yarn lint:vue",
-    "precommit": "yarn lint"
+    "precommit": "yarn lint",
+    "build:ghp": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:ghp": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "husky": {
     "hooks": {

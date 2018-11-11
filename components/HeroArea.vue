@@ -1,12 +1,14 @@
 <template>
   <div class="hero-area">
-    <img
-      v-images-loaded="imageLoaded"
-      class="full-width"
-      src="https://placehold.it/1280x720"
-      height="720"
-      width="1280"
-      alt="">
+    <no-ssr>
+      <img
+        v-images-loaded="imageLoaded"
+        class="full-width"
+        src="https://placehold.it/1280x720"
+        height="720"
+        width="1280"
+        alt="">
+    </no-ssr>
     <div class="row--outer">
       <div class="column--text">
         <h1>Schriften verwandeln Wörter in Erzählungen</h1>

@@ -1,0 +1,58 @@
+@import "./assets/scss/toolbelt";
+
+.footer {
+  padding-top: rh(1);
+  padding-bottom: rh(2);
+  border-top: 1px solid $black-mine;
+
+  p,
+  .column--text {
+    text-align: center;
+  }
+
+  a {
+    @include transition(border-color);
+
+    display: inline-block;
+    padding: 0 rem(2);
+    border-width: rem(1);
+    border-style: solid;
+    border-color: $transparent;
+    border-bottom-color: currentColor;
+    font-family: $font-family--body;
+    font-size: rem(18);
+    color: $primary-font-color;
+    font-weight: 400;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: currentColor;
+    }
+  }
+
+  @include breakpoint(large) {
+    padding-top: rh(2);
+    padding-bottom: rh(3);
+  }
+
+  @include breakpoint(xlarge) {
+    padding-top: rh(2.5);
+    padding-bottom: rh(5);
+
+    p {
+      margin-left: rem(-50);
+      margin-right: rem(-50);
+    }
+  }
+
+  @include breakpoint(xxlarge) {
+    padding-top: rh(3.5);
+    padding-bottom: rh(7);
+
+    p {
+      margin-left: rem(-80);
+      margin-right: rem(-80);
+    }
+  }
+}

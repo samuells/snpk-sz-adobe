@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <TopBar/>
     <HeroArea/>
     <FontsInfo/>
@@ -22,7 +22,8 @@
     </div>
     <TypewriterSection/>
     <MemorySection/>
-  </div>
+    <Footer/>
+  </main>
 </template>
 
 <script>
@@ -35,6 +36,7 @@ import AnimationHead from "@/components/AnimationHead.vue"
 import PizzaSection from "@/components/PizzaSection.vue"
 import TypewriterSection from "@/components/TypewriterSection.vue"
 import MemorySection from "@/components/MemorySection.vue"
+import Footer from "@/components/Footer.vue"
 
 export default {
   components: {
@@ -46,7 +48,8 @@ export default {
     AnimationHead,
     PizzaSection,
     TypewriterSection,
-    MemorySection
+    MemorySection,
+    Footer
   }
 }
 </script>

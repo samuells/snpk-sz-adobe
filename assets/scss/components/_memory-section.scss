@@ -1,6 +1,8 @@
 @import "./assets/scss/toolbelt";
 
 .section--memory {
+  margin-bottom: rh(2);
+
   .memory-grid {
     @include reset-ul();
 
@@ -49,6 +51,8 @@
   }
 
   @include breakpoint(large) {
+    margin-bottom: rh(4);
+
     .memory-grid {
       margin: 0 rem(-7);
 
@@ -56,5 +60,13 @@
         padding: rem(7);
       }
     }
+  }
+
+  @include breakpoint(xlarge) {
+    margin-bottom: rh(5);
+  }
+
+  @include breakpoint(xxlarge) {
+    margin-bottom: rh(6);
   }
 }

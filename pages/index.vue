@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TopBar/>
     <HeroArea/>
     <FontsInfo/>
     <TypoMatcher/>
@@ -26,6 +27,7 @@
 
 <script>
 import BaseText from "@/components/BaseText.vue"
+import TopBar from "@/components/TopBar.vue"
 import HeroArea from "@/components/HeroArea.vue"
 import FontsInfo from "@/components/FontsInfo.vue"
 import TypoMatcher from "@/components/TypoMatcher.vue"
@@ -37,6 +39,7 @@ import MemorySection from "@/components/MemorySection.vue"
 export default {
   components: {
     BaseText,
+    TopBar,
     HeroArea,
     FontsInfo,
     TypoMatcher,

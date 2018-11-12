@@ -2,32 +2,32 @@
   <div class="row--outer">
     <div class="column--text fonts-info">
       <div
-        v-view="handleLottie01"
-        :class="classes01"
+        v-view="handleFontTypeView"
+        :class="fontTypeClasses"
         class="lottie--wrapper">
         <h3>SCHRIFTTYPEN</h3>
         <Lottie
-          :options="info01Options"
-          @animCreated="handleAnimation01"/>
+          :options="fontTypeOptions"
+          @animCreated="handleFontType"/>
       </div>
       <div
-        v-view="handleLottie02"
-        :class="classes02"
+        v-view="handleFontSliceView"
+        :class="fontSliceClasses"
         class="lottie--wrapper">
         <h3>SCHRIFTSCHNITTE</h3>
         <Lottie
-          :options="info02Options"
-          @animCreated="handleAnimation02"/>
+          :options="fontSliceOptions"
+          @animCreated="handleFontSlice"/>
       </div>
       <div
-        v-view="handleLottie03"
-        :class="classes03"
+        v-view="handleFontAnatomyView"
+        :class="fontAnatomyClasses"
         class="lottie--wrapper">
         <h3>SCHRIFTANATOMIE</h3>
         <Lottie
-          :options="info03Options"
+          :options="fontAnatomyOptions"
           class="lottie--info3"
-          @animCreated="handleAnimation03"/>
+          @animCreated="handleFontAnatomy"/>
       </div>
     </div>
   </div>
@@ -43,6 +43,20 @@ export default {
   components: {
     Lottie
   },
+  props: {
+    windowHeight: {
+      type: Number,
+      required: true
+    },
+    bodyHeight: {
+      type: Number,
+      required: true
+    },
+    windowScrolled: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
     return {
       defaultOptions: {
@@ -50,28 +64,59 @@ export default {
         autoplay: false
       },
       isHeroImageLoaded: false,
-      classes01: "",
-      classes02: "",
-      classes03: ""
+      fontTypeClasses: "",
+      fontType: {
+        duration: 0,
+        startHeight: 0,
+        endHeight: 0,
+        isAnimating: false
+      },
+      fontSlice: {
+        duration: 0,
+        startHeight: 0,
+        endHeight: 0,
+        isAnimating: false,
+        isFontTypeDone: false
+      },
+      fontAnatomy: {
+        duration: 0,
+        startHeight: 0,
+        endHeight: 0,
+        isAnimating: false,
+        isFontTypeDone: false
+      },
+      fontSliceClasses: "",
+      fontAnatomyClasses: ""
     }
   },
   computed: {
-    info01Options() {
+    fontTypeOptions() {
       return {
         animationData: info01Animation,
         ...this.defaultOptions
       }
     },
-    info02Options() {
+    fontSliceOptions() {
       return {
         animationData: info02Animation,
         ...this.defaultOptions
       }
     },
-    info03Options() {
+    fontAnatomyOptions() {
       return {
         animationData: info03Animation,
         ...this.defaultOptions
+      }
+    }
+  },
+  watch: {
+    windowScrolled: {
+      immediate: true,
+      deep: true,
+      handler(newValue, oldValue) {
+        this.animateFontTypeOnScroll(newValue)
+        this.animateFontSliceOnScroll(newValue)
+        this.animateFontAnatomyOnScroll(newValue)
       }
     }
   },
@@ -82,33 +127,103 @@ export default {
     loadedHeroImage() {
       this.isHeroImageLoaded = true
     },
-    handleAnimation01: function(anim) {
-      this.anim01 = anim
+    handleFontType: function(anim) {
+      this.animFontType = anim
     },
-    handleAnimation02: function(anim) {
-      this.anim02 = anim
+    handleFontSlice: function(anim) {
+      this.animFontSlice = anim
     },
-    handleAnimation03: function(anim) {
-      this.anim03 = anim
+    handleFontAnatomy: function(anim) {
+      this.animFontAnatomy = anim
     },
-    handleLottie01(e) {
-      if (this.isHeroImageLoaded && e.percentTop < 0.8) {
-        this.classes01 = "visible"
-        this.anim01.setSpeed(2)
-        this.anim01.play()
+    handleFontTypeView(e) {
+      if (
+        !this.fontType.isAnimating &&
+        this.isHeroImageLoaded &&
+        e.type === "enter"
+      ) {
+        this.fontTypeClasses = "visible"
+        this.fontType.startHeight = this.windowScrolled
+        this.fontType.endHeight =
+          this.fontType.startHeight + this.windowHeight * 0.5
+        this.fontType.duration = this.animFontType.getDuration() * 1000 - 1
+        this.fontType.isAnimating = true
       }
     },
-    handleLottie02(e) {
-      if (this.isHeroImageLoaded && e.percentTop < 0.75) {
-        this.classes02 = "visible"
-        this.anim02.play()
+    animateFontTypeOnScroll(scrolled) {
+      if (this.fontType.isAnimating) {
+        const timePercentage =
+          (scrolled - this.fontType.startHeight) /
+          (this.fontType.endHeight - this.fontType.startHeight)
+        const time = this.fontType.duration * timePercentage
+        if (time < this.fontType.duration) {
+          this.animFontType.goToAndStop(time)
+          this.fontSlice.isFontTypeDone = false
+        } else {
+          this.animFontType.goToAndStop(this.fontType.duration)
+          this.fontSlice.isFontTypeDone = true
+        }
       }
     },
-    handleLottie03(e) {
-      if (this.isHeroImageLoaded && e.percentTop < 0.8) {
-        this.classes03 = "visible"
-        this.anim03.setSpeed(3)
-        this.anim03.play()
+    handleFontSliceView(e) {
+      if (
+        !this.fontSlice.isAnimating &&
+        this.isHeroImageLoaded &&
+        e.type === "enter"
+      ) {
+        this.fontSlice.startHeight =
+          this.windowScrolled + this.windowHeight * 0.5
+        this.fontSlice.endHeight =
+          this.fontSlice.startHeight + this.windowHeight * 0.5
+        this.fontSlice.duration = this.animFontSlice.getDuration() * 1000 - 1
+        this.fontSlice.isAnimating = true
+      }
+    },
+    animateFontSliceOnScroll(scrolled) {
+      if (this.fontSlice.isFontTypeDone) {
+        this.fontSliceClasses = "visible"
+      }
+
+      if (this.fontSlice.isFontTypeDone && this.fontSlice.isAnimating) {
+        const timePercentage =
+          (scrolled - this.fontSlice.startHeight) /
+          (this.fontSlice.endHeight - this.fontSlice.startHeight)
+        const time = this.fontSlice.duration * timePercentage
+        if (time < this.fontSlice.duration) {
+          this.animFontSlice.goToAndStop(time)
+        } else {
+          this.animFontSlice.goToAndStop(this.fontSlice.duration)
+        }
+      }
+    },
+    handleFontAnatomyView(e) {
+      if (
+        !this.fontAnatomy.isAnimating &&
+        this.isHeroImageLoaded &&
+        e.type === "enter"
+      ) {
+        this.fontAnatomyClasses = "visible"
+        this.fontAnatomy.startHeight = this.windowScrolled
+        this.fontAnatomy.endHeight =
+          this.fontAnatomy.startHeight + this.windowHeight * 0.8
+        this.fontAnatomy.duration =
+          this.animFontAnatomy.getDuration() * 1000 - 1
+        this.fontAnatomy.isAnimating = true
+      }
+    },
+    animateFontAnatomyOnScroll(scrolled) {
+      if (this.fontAnatomy.isAnimating) {
+        const timePercentage =
+          (scrolled - this.fontAnatomy.startHeight) /
+          (this.fontAnatomy.endHeight - this.fontAnatomy.startHeight)
+        const time = this.fontAnatomy.duration * timePercentage
+        if (time < this.fontAnatomy.duration) {
+          this.animFontAnatomy.goToAndStop(time)
+          this.fontSlice.isFontTypeDone = false
+        } else {
+          this.animFontAnatomy.goToAndStop(this.fontAnatomy.duration)
+          this.fontSlice.isFontTypeDone = true
+        }
       }
     }
   }

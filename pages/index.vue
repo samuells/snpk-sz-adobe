@@ -1,8 +1,11 @@
 <template>
-  <main>
+  <main :id="containerId">
     <TopBar/>
     <HeroArea/>
-    <FontsInfo/>
+    <FontsInfo
+      :window-height="windowHeight"
+      :window-scrolled="windowScrolled"
+      :body-height="bodyHeight"/>
     <TypoMatcher/>
     <BaseText>
       <h4>Visuelle Assoziationen</h4>
@@ -50,6 +53,33 @@ export default {
     TypewriterSection,
     MemorySection,
     Footer
+  },
+  data() {
+    return {
+      containerId: "main-body",
+      windowHeight: 0,
+      windowScrolled: 0,
+      bodyHeight: 0
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll)
+    console.log("scrolling Injected")
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll)
+    console.log("scrolling Destroyed")
+  },
+  methods: {
+    handleScroll() {
+      this.windowHeight = window.innerHeight
+      this.windowScrolled = window.scrollY
+      this.bodyHeight = document.getElementById(this.containerId).offsetHeight
+
+      // console.log(`window height : ${this.windowHeight}`)
+      // console.log(`scrolled px: ${this.windowScrolled}`)
+      // console.log(`body height : ${this.bodyHeight}`)
+    }
   }
 }
 </script>

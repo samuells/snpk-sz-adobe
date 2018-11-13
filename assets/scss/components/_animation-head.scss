@@ -1,8 +1,20 @@
 @import "./assets/scss/toolbelt";
 
-.animation--head {
+.wrapper--affix-head {
+  height: 255vh;
+}
+
+.content--affix-head {
   position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.animation--head {
+  position: absolute;
   overflow-x: hidden;
+  width: 100%;
+
 
   .lottie--head {
     @include transition(opacity, transform);
@@ -23,12 +35,25 @@
     transform-origin: left;
     transition-delay: 500ms;
     transition-duration: 500ms;
+
+    &.visible {
+      transform: scale(1);
+    }
   }
 
   .lottie--brain-text,
   .lottie--view-text {
+    @include transition(opacity, transform);
+
     position: absolute;
     height: auto;
+    opacity: 0;
+    transform: translate3d(0, #{rem(50)}, 0);
+
+    &.visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .lottie--brain-text {
@@ -47,10 +72,6 @@
     .lottie--head {
       transform: translate3d(-30%, 0, 0);
       opacity: 1;
-    }
-
-    .white-triangle {
-      transform: scale(1);
     }
   }
 

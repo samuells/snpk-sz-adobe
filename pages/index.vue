@@ -4,14 +4,15 @@
     <HeroArea/>
     <FontsInfo
       :window-height="windowHeight"
-      :window-scrolled="windowScrolled"
-      :body-height="bodyHeight"/>
+      :window-scrolled="windowScrolled"/>
     <TypoMatcher/>
     <BaseText>
       <h4>Visuelle Assoziationen</h4>
       <p>Sind so etwas wie eine leichte und schlanke Schrift wirkt elegant, oder eine fette und schwere wirkt stark. Weiter wirkt eine geneigte Schrift dynamisch, und einee handschriftliche zum Beispiel menschlich und verbunden. Die Usability News Studie 2006 hat da einige Untersuchungen zu gemacht.</p>
     </BaseText>
-    <AnimationHead/>
+    <AnimationHead
+      :window-height="windowHeight"
+      :window-scrolled="windowScrolled"/>
     <BaseText class="under-head-text">
       <h4>Direkte Assoziationen</h4>
       <p>Assoziationen beziehen sich auf zurückligende Verbindungen mit dieser Schrift, gesellschaftlich und aber auch persönlich: “So wird beispielsweise die Helvetica-Schriftart auf den Formularen des United States Tax and Internal Revenue Service verwendet, was die Wahrnehmung der Schriftart beeinflusst - abhängig von der Erfahrungen mit dem Steuersystem.”</p>
@@ -90,18 +91,18 @@ export default {
 .under-head-text {
   position: relative;
   z-index: 1;
-  margin-top: rh(-4);
+  margin-top: rh(-1);
 
   @include breakpoint(medium) {
-    margin-top: rh(-8);
+    margin-top: rh(-2);
   }
 
   @include breakpoint(xlarge) {
-    margin-top: rh(-10);
+    margin-top: rh(-3.5);
   }
 
   @include breakpoint(xxlarge) {
-    margin-top: rh(-8);
+    margin-top: rh(-5);
   }
 }
 </style>

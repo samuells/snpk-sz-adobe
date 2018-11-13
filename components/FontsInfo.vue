@@ -48,10 +48,6 @@ export default {
       type: Number,
       required: true
     },
-    bodyHeight: {
-      type: Number,
-      required: true
-    },
     windowScrolled: {
       type: Number,
       required: true
@@ -82,8 +78,7 @@ export default {
         duration: 0,
         startHeight: 0,
         endHeight: 0,
-        isAnimating: false,
-        isFontTypeDone: false
+        isAnimating: false
       },
       fontSliceClasses: "",
       fontAnatomyClasses: ""
@@ -219,10 +214,8 @@ export default {
         const time = this.fontAnatomy.duration * timePercentage
         if (time < this.fontAnatomy.duration) {
           this.animFontAnatomy.goToAndStop(time)
-          this.fontSlice.isFontTypeDone = false
         } else {
           this.animFontAnatomy.goToAndStop(this.fontAnatomy.duration)
-          this.fontSlice.isFontTypeDone = true
         }
       }
     }

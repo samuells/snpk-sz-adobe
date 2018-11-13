@@ -44,7 +44,10 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ["plugins/vue-check-view.js"],
+  plugins: [
+    { src: "~/plugins/vue-check-view", ssr: false },
+    { src: "~/plugins/vue-affix", ssr: false }
+  ],
 
   /*
   ** Nuxt.js modules

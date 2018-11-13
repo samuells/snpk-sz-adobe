@@ -40,6 +40,7 @@
     "lottie-web": "^5.4.1",
     "nuxt": "^2.1.0",
     "scrollama": "^1.4.4",
+    "vue-affix": "^0.4.0",
     "vue-check-view": "^0.2.3",
     "vue-images-loaded": "^1.1.2",
     "vue-parallaxy": "^1.1.1"

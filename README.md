@@ -1,13 +1,4 @@
-# WONDROUS NUXT TEMPLATE
-
-> This is template for Nuxt.js project in WONDROUS LTD.
-
-## First Steps
-
-1. clone Repo
-2. edit `name, description, author` in `package.json`
-3. run `$ yarn` in root folder
-
+# SZ BrandStudio
 
 ## Development
 
@@ -49,3 +40,7 @@ $ yarn lint
 For normalizing of CSS is used `postcss-normalize` pluging, which takes in consideration the *browserlist* from `package.json`.
 
 The normalize css will be imported using the `@import-normalize` statement in `global.scss` file.
+
+----
+
+> Based on Nuxt.js template from WONDROUS LTD.

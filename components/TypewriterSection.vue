@@ -12,16 +12,21 @@
               @animCreated="handleTypewriter"/>
           </div>
         </div>
-        <h2>Es ist einfacher als je zuvor die passende Schrift zu finden und ­einzusetzen</h2>
+        <h2>Mehr Freund als Feind: Technologie macht Kreativität leichter</h2>
         <div class="placeholder--typewriter"/>
-        <p>Vom Bleisatz, über Fotosatz zu InDesign, die Verwendung von Schrift sehr verändert und vereinfacht. Lorem ipsum dolor Berunt sequisc harias re sundus at Ectorep udigendist acestiamus que idis nonsector si nus, odi ut facita volut opta ipsam, occusant quatiorporem es molorit facerferia ea voluptur rae sinvel invelli tatur, nobitecusame conseque aut pra velitat. Quident eium as as et restius. Exeris in consed molorrum nullit enecae vollabor sequodi genimin reicae et archic tem nullatest omnitibus doluptam exceptatist, omnis aut lauda cone nonsecat min era quasper chicae porepelis cuptaspidunt videliquia venderum essequam, sitatur alita pe ressitiae moditib usdandae prerum es quaecum consed maximus.</p>
-        <div class="quote-wrapper">
-          <p
-            v-view="handleQuoteView"
-            :class="quoteClasses"
-            class="quote">„Hier steht ein schönes Zitat zum Thema, lorem esci mus Iqui blab ipita.“</p>
-          <p>Lo bernatusdam re min cupiste dolupta temquatur minus, nimusciet volut faccust ania comnihillab int volupicatem excepe velecta andit et arum que pellaut et occuptur. Duciliquae volorro voluptia pe volent ut aperibus quae volores citatur atati aut utem voles aid miniend andunt.</p>
+        <p>Wir konsumieren also passiv ununterbrochen Typografie. Aber auch einer aktiven Verwendung von Schriftarten steht nichts im Wege. Im Gegenteil: Heute müssen wir keine Grafik-Ausbildung oder ein Design-Studium besitzen, um Wörter und Sätze zu gestalten und zu emotionalisieren. Uns stehen intelligente digitale Tools zur Verfügung, die uns die Kreativität erleichtern. Eine von Adobe und Pfeiffer Consulting durchgeführte Studie zeigt, dass Technologie ein sinnvolles Hilfsmittel ist, um den Kreativprozess zu befeuern: Neue digitale Möglichkeiten, neue Ideen, neue kreative Ergebnisse. Und das für Jeden.</p>
+        <h2>Die alten Meister in unserer digitalen Welt</h2>
+        <div class="lottie--vector-wrapper">
+          <div
+            v-view="handleVectorView"
+            :class="vectorClasses"
+            class="lottie--vector">
+            <Lottie
+              :options="vectorOptions"
+              @animCreated="handleVector"/>
+          </div>
         </div>
+        <p>Als Vorreiter und Impulsgeber für kreative Software sucht Adobe kontinuierlich nach neuen Wegen, um Experten und Laien das kreative Arbeiten so einfach und fortschrittlich wie möglich zu machen. So auch in diesem Jahr: 2018 erweckte Adobe die alten Schriften der Bauhaus-Meister zu neuem, digitalem Leben und erschließt damit eine unschätzbare Quelle der Inspiration für das kreative Arbeiten. Unter der Leitung von Erik Spiekermann, einem der renommiertesten Typografen, wurden die sogenannten „Adobe Hidden Treasures – Bauhaus Dessau“ in Zusammenarbeit mit ihren internationalen Hochschulen digital vervollständigt und überarbeitet. Die funktionalen, markanten Typografien des Bauhaus-Stil spiegeln den avantgardistischen Stil der Kunstschule wider und vereinen eindrucksvoll Kunst und Handwerk.</p>
         <div class="lottie--comp-book-wrapper">
           <div
             v-view="handleCompBookView"
@@ -33,22 +38,7 @@
           </div>
         </div>
         <div class="placeholder--comp-book"/>
-        <div class="lottie--vector-wrapper">
-          <div
-            v-view="handleVectorView"
-            :class="vectorClasses"
-            class="lottie--vector">
-            <Lottie
-              :options="vectorOptions"
-              @animCreated="handleVector"/>
-          </div>
-        </div>
-        <h3 class="is-h4">Digitalisierung alter Schriften, großes Interesse neuer Schriftgestalter</h3>
-        <p>Hier dazu gehören Adobes Hidden Treasures, lorem ipsum dolor expedi alit int laccabo rporesequat. Acepta pedio eat eum ad eume consequia vendis etur. Atur, sitempo rporitatur Genderferum fugiatiusda qui ilic tem voleni non peris asimet lacid utatemo ssimagnam quae se nimagnatquam quo qui nima et quaecerum cumquati ut faccus, sunt quas dolore molupta turiam et omnis ipic tem et eos et volupid ut repe pe dolorum</p>
-        <p>Ipsam venducipsam ut maxim aut fuga. Ad eaqui officid quos dolore nimus as res dest, id ut alibusam et landam ut aut ut res accum et volesti doluptatus sequam eum sam fugiae pa quidemp ercitae sit, vendanis et ommolorrum ea asit qui omnisi quunt, qui arumque posam voluption exernat. Cae dolum ut voloriam facearum sequam, que mod que vernate sequid.</p>
-        <h3 class="is-h4">Jeder kann heute mit Schrift arbeiten</h3>
-        <p>Heutige Werkzeuge erlauben es eigentlich jedem Schriften zu verwenden und typografisch damit zu spielen. Mit der Adobe Creative Cloud und Typekit gibt es da die perfekten Werkzeuge. Lorem ipsum dolor alitionseque quatur simusapiciam vereium sum ipienessum in renimagnis etur am sintureped qui accat fuga. Ita non pore pro expliquo et aliqui conet asit pore vendigeni ut veriat.</p>
-        <p>Nat fugiaes sume expero occate cusandaecus enda voluptae voluptate labor sam lition rem quaspe volesen isinveles et faceaquat et alibusa vent officit assusda nullaboratur seque odit vollect ustiantotae offici alibus essi cone natur magniae voluptat eaquatur reptatis natur, consequas cusam.</p>
+        <p>Die Bauhaus-Schriften sind frei zugänglich – und eine Einladung, mit Typografie zu experimentieren und vielleicht sogar selbst ein kleines kreatives Werk zu schaffen. Es muss ja nicht immer die Weihnachtskarte aus dem Schreibwarenladen sein oder die vorgedruckten Neujahrsgrüße in Serifen-Schrift. Probieren Sie doch einfach mal aus, wie Typografie Geschichten erzählen kann und eine Botschaft emotional verpackt! Wir wünschen Ihnen viel Spaß!</p>
       </div>
     </div>
   </div>

@@ -107,6 +107,8 @@ export default {
 @import "./assets/scss/toolbelt";
 
 .under-head-text {
+  @include clearfix;
+
   position: relative;
   z-index: 1;
   margin-top: rh(-1);
@@ -165,7 +167,7 @@ export default {
 
       .quote {
         float: left;
-        width: rem(320);
+        width: rem(280);
         padding-right: rem(20);
         margin-left: rem(-40);
       }
@@ -177,7 +179,8 @@ export default {
 
     .quote-wrapper {
       .quote {
-        margin-left: re†m(-140);
+        width: rem(320);
+        margin-left: rem(-160);
       }
     }
   }

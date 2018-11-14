@@ -1,5 +1,19 @@
 @import "./assets/scss/toolbelt";
 
+.fade-success-msg-enter-active,
+.fade-success-msg-leave-active {
+  @include transition(opacity, transform);
+
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-success-msg-enter,
+.fade-success-msg-leave-to {
+  opacity: 0;
+  transform: scale(0.2);
+}
+
 .section--memory {
   margin-bottom: rh(2);
 
@@ -11,8 +25,55 @@
     margin: 0 rem(-4);
 
     li {
+      @include transition(opacity, transform);
+
       flex-basis: 25%;
       padding: rem(4);
+      transform: translate3d(0, #{rem(30), 0});
+      opacity: 0;
+    }
+
+    &.visible {
+      li {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+
+        @for $index from 1 to 17 {
+          &:nth-child(#{$index}) {
+            transition-delay: 100ms + (100ms * $index);
+          }
+        }
+      }
+
+      + .memory-counter {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        transition-delay: 18 * 100ms;
+      }
+    }
+
+    &.repeat {
+      + .memory-counter {
+        transition-delay: 0ms;
+      }
+    }
+
+    &.done {
+      li {
+        transform: translate3d(0, #{rem(30), 0});
+        opacity: 0;
+      }
+
+      + .memory-counter {
+        top: 30%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.4) !important;
+        transition-delay: 0ms !important;
+
+        p {
+          text-align: center;
+        }
+      }
     }
   }
 
@@ -22,30 +83,95 @@
   }
 
   .card-frontface {
+    @include transition(opacity);
+
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
     width: 100%;
     height: auto;
+    opacity: 0;
   }
-
 
   .memory-card {
     position: relative;
     cursor: pointer;
+    transform: translate3d(0, 0, 0);
 
     &.flipped {
       .card-frontface {
-        display: block;
+        opacity: 1;
       }
     }
 
     &.found {
-      cursor: default;
+      @include transition(transform, opacity);
 
-      .card-backface {
-        opacity: 0;
+      cursor: default;
+      opacity: 0;
+      transform: translate3d(0, #{rem(200)}, 0);
+      transition-duration: 400ms;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  }
+
+  .memory-wrapper {
+    position: relative;
+  }
+
+  .memory-counter {
+    @include transition(opacity, transform, top, left);
+
+    padding-top: rh(1);
+    transform: translate3d(0, #{rem(30), 0});
+    opacity: 0;
+
+    .label {
+      padding: 0;
+      margin: 0 0 rh(0.5);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .counter {
+      font-size: rem(32);
+      line-height: 1;
+      text-align: center;
+    }
+  }
+
+  .success-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    text-align: center;
+    transform: translate3d(-50%, -50%, 0);
+
+    p {
+      font-size: rem(22);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    a {
+      @include transition(border-color);
+
+      display: inline-block;
+      padding: 0 rem(2);
+      border-width: rem(1);
+      border-style: solid;
+      border-color: $transparent;
+      border-bottom-color: currentColor;
+      font-family: $font-family--body;
+      font-size: rem(18);
+      color: $primary-font-color;
+      font-weight: 400;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: currentColor;
       }
     }
   }
@@ -64,6 +190,33 @@
 
   @include breakpoint(xlarge) {
     margin-bottom: rh(5);
+
+    .memory-counter {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      padding: rem(7) rem(20);
+
+      &.done {
+        top: 30%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.4) !important;
+        transition-delay: 0ms !important;
+
+        p {
+          text-align: center;
+        }
+      }
+
+      .label,
+      .counter {
+        text-align: left;
+      }
+
+      .counter {
+        font-size: rem(38);
+      }
+    }
   }
 
   @include breakpoint(xxlarge) {

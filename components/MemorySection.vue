@@ -3,22 +3,41 @@
     <div class="column--text">
       <h3>ERKENNEN SIE JETZT DIE UNTERSCHIEDE?</h3>
       <p class="small">So gehts: Olorepellorae seque dolore nat es rerate recae ipsum quam quo illaut derit fugit volorit atusda Temodit moluptio eat doluptiumqui.</p>
-      <ul class="memory-grid">
-        <li
-          v-for="(card, index) of cardsOnBoard"
-          :key="index">
+      <div class="memory-wrapper">
+        <ul
+          v-view="handelMemoryView"
+          :class="[memoryClasses, {done: showSuccesMessage}]"
+          class="memory-grid">
+          <li
+            v-for="(card, index) of cardsOnBoard"
+            :key="index">
+            <div
+              :class="card.classes"
+              class="memory-card"
+              @click="clickOnCard(index)">
+              <MemoryBackground class="card-backface"/>
+              <component
+                :is="`MemoryCard0${card.value}`"
+                class="card-frontface"/>
+            </div>
+          </li>
+        </ul>
+        <div
+          class="memory-counter">
+          <p class="label">Spielzüge:</p>
+          <p class="counter">{{ stringifySteps }}</p>
+        </div>
+        <transition name="fade-success-msg">
           <div
-            :class="card.classes"
-            :disabled="card.isDisabled"
-            class="memory-card"
-            @click="flipCard(index)">
-            <MemoryBackground class="card-backface"/>
-            <component
-              :is="`MemoryCard0${card.value}`"
-              class="card-frontface"/>
+            v-if="showSuccesMessage"
+            class="success-msg">
+            <p>{{ successMessage }}</p>
+            <a
+              href="#"
+              @click.prevent="resetMemory">Noch eine Runde?</a>
           </div>
-        </li>
-      </ul>
+        </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -160,6 +179,30 @@ export default {
       },
       secondFlippedCard: {
         index: -1
+      },
+      memoryClasses: "",
+      numberOfPairsRemains: 8
+    }
+  },
+  computed: {
+    stringifySteps() {
+      if (this.numberOfStep < 10) {
+        return "00" + this.numberOfStep
+      } else if (this.numberOfStep < 100) {
+        return "0" + this.numberOfStep
+      }
+      return this.numberOfStep
+    },
+    showSuccesMessage() {
+      return this.numberOfPairsRemains === 0
+    },
+    successMessage() {
+      if (this.numberOfStep > 28) {
+        return "Nicht schlecht! Aber das geht noch schneller!"
+      } else if (this.numberOfStep > 14) {
+        return "Klasse! Sie haben gutes Gespür für Typografie!"
+      } else {
+        return "Super! An Ihnen ist ein Typograf verloren gegangen!"
       }
     }
   },
@@ -168,37 +211,76 @@ export default {
     this.cardsOnBoard = [...shuffle(randomArray)]
   },
   methods: {
-    flipCard(index) {
-      if (
-        this.cardsOnBoard[index].classes === "found" ||
-        this.cardsOnBoard[index].classes === "flipped"
-      ) {
+    clickOnCard(index) {
+      if (this.cardsOnBoard[index].classes === "flipped found") {
+        // click on found card
         return
+      } else if (this.cardsOnBoard[index].classes === "flipped") {
+        // click on flipped card
+        console.log("hide flipped")
+        this.hideCards()
+      } else {
+        // click on unflipped card
+        console.log("flip card")
+        this.flipCard(index)
       }
-
+    },
+    flipCard(index) {
       this.cardsOnBoard[index].classes = "flipped"
 
       if (this.secondFlippedCard.index >= 0) {
-        this.cardsOnBoard[this.firstFlippedCard.index].classes = ""
-        this.cardsOnBoard[this.secondFlippedCard.index].classes = ""
-        this.firstFlippedCard.index = index
-        this.firstFlippedCard.value = this.cardsOnBoard[index].value
-        this.secondFlippedCard.index = -1
+        // already 2 cards flipped
+        this.hideCards()
+        this.flipFirstCard(index)
       } else if (this.firstFlippedCard.index >= 0) {
+        // only the first card is flipped
         this.secondFlippedCard.index = index
         if (this.firstFlippedCard.value === this.cardsOnBoard[index].value) {
-          console.log("found")
-          this.cardsOnBoard[index].classes = "found"
-          this.cardsOnBoard[this.firstFlippedCard.index].classes = "found"
-          this.cardsOnBoard[index].isDisabled = true
-          this.cardsOnBoard[this.firstFlippedCard.index].isDisabled = true
-          this.firstFlippedCard.index = -1
-          this.firstFlippedCard.value = -1
-          this.secondFlippedCard.index = -1
+          // pair found
+          this.foundPair(index)
         }
       } else {
-        this.firstFlippedCard.index = index
-        this.firstFlippedCard.value = this.cardsOnBoard[index].value
+        // flip first card
+        this.flipFirstCard(index)
+      }
+    },
+    hideCards() {
+      this.cardsOnBoard[this.firstFlippedCard.index].classes = ""
+      this.firstFlippedCard.index = -1
+      if (this.secondFlippedCard.index >= 0) {
+        // is also second card flipped
+        this.cardsOnBoard[this.secondFlippedCard.index].classes = ""
+        this.secondFlippedCard.index = -1
+        this.numberOfStep += 1
+      }
+    },
+    flipFirstCard(index) {
+      this.firstFlippedCard.index = index
+      this.firstFlippedCard.value = this.cardsOnBoard[index].value
+    },
+    foundPair(index) {
+      this.cardsOnBoard[index].classes = "flipped found"
+      this.cardsOnBoard[this.firstFlippedCard.index].classes = "flipped found"
+      this.firstFlippedCard.index = -1
+      this.firstFlippedCard.value = -1
+      this.secondFlippedCard.index = -1
+      this.secondFlippedCard.value = -1
+      this.numberOfStep += 1
+      this.numberOfPairsRemains -= 1
+    },
+    resetMemory() {
+      this.numberOfStep = 0
+      this.numberOfPairsRemains = 8
+      const randomArray = getRandomSubArray(this.optionalCards, 16)
+      this.cardsOnBoard = [...shuffle(randomArray)]
+      this.cardsOnBoard.forEach(card => {
+        card.classes = ""
+      })
+      this.memoryClasses += " repeat"
+    },
+    handelMemoryView(e) {
+      if (e.percentTop < 0.8) {
+        this.memoryClasses = "visible"
       }
     }
   }

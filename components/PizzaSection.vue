@@ -20,9 +20,6 @@
         <div
           :style="placeholderStyle"
           class="placeholder--pizza"/>
-        <h4>Zusammengenommen wirkt es so</h4>
-        <p>Beide assoziativen Ebenen wirken zusammen auf die emotionale Wahrnehmung von Schriften. Erstens - Wo wurde die Schrift schon mal gesehen? Zweitens - Welche Inhalte und Themen verbindet man mit der Schrift? Als Drittes - Was für persönliche Verbindungen hat man mit den Themen - gut oder schlecht? Und als viertes und letztes - Stimmt der Kontext in dem sie steht? Nequas et ma delescimus di que nistia cus, quam quae sita verum harcim harcide liquam, temporeri sam qui cuptatent occusan ditioruptat voloreiciis rem que dis quoditint.</p>
-        <p>Acientore, cusapedit, saperum quiderrovit as sinvenim velit ma que minvel et aut officienim enda quiamen dempossum eic te cus enihillo evelend unduntis recerum rehenda ma delescimus di que nistia.</p>
         <div
           v-view="handleStopSignView"
           :class="stopSignClasses"
@@ -30,19 +27,14 @@
           <StopSign class="stop-sign"/>
         </div>
         <div class="placeholder--stop-sign"/>
-        <h2>So wird die Wirkung von Schriften genutzt</h2>
-        <p>Lorem ipsum dolor ctibea voloriatum quiasit eossent mi, que consed quis dunt, simetur sandigent occum renistotae nosae repeliatem quuntorum eos as iunt cim qui officiunt quia sitate nonsectur sequo dolupiendam dolorita dolupta spelendebis esseque pellaturem re, ellabore laboresequi di omnim et mod quas di re re nonseque odisitem volorae net omnim elliquiae volupitiusam et.</p>
-        <h3 class="is-h4">Funktionalität von Schrift</h3>
-        <p>„Aufgaben scheinen einfacher zu sein, wenn sie leichter zu lesen sind“ anders rum kann man es auch ausnutzen „Wenn eine Speisekarte schwieriger zu lesen ist, entsteht der Eindruck, dass die Speisen schwieriger herzustellen sind.“ Em eum et porrum remquoditin cus. Tem eturia coriberume etur antiam ra nos endiam, consequam into toreceat dolupic iendiate dolupiet ra dolupta tusdandaeped ullant as quo consequi amusapis mintis ex ea sunt omnim et mod quas di re re nonseque pa volor sedi omnia dolupta temporem. Nequam harum volut quasi omnis sendisit que quid qui untis dem accum dolorpor reped.</p>
-        <p>Quo tem quas magnatae ad ut omnihil iquaerum consecaborem quam autendit, que non et occus, sit auta eatis nobistr untur? Qui acia sequis ut et entecto ex essimil esed mint audam simus vellaut atibus dolupta temporro tem conse pellorro molo te ommolendis debitis ulloreius eum eos et adic tecepta quideriaerum reserch illabora cupis dolectur.</p>
-        <h3 class="is-h4">Selbst mit unserer Zunge lässt sich Schrift spüren</h3>
-        <p>Sarah Hyndman hat in Studien festgestellt das gleiche Speisen oder Getränke anders schmecken, je nachdem wie die Schrift darauf war. Lorem ipsum dolor Nequas et ma delescimus di que nistia cus, quam quae sita verum harcim harcide liquam, temporeri sam qui cuptatent occusan ditioruptat voloreiciis rem que dis quoditint, acientore, cusapedit, saperum quiderrovit as sinvenim velit ma que minvel et aut officienim enda quiamen dempossum eic te cus enihillo evelend unduntis recerum.</p>
+        <h4>Marken in ihrem Gewand</h4>
+        <p>Natürlich unterliegen auch Schriftarten Trends und kulturellen Veränderungen. Die ersten, die darauf reagieren, sind Marken. Man will ja am Puls Zeit bleiben. So verpassten sich in letzter Zeit eine Reihe an großen Marken ein neues Schriftbild, um auf uns modern und fortschrittlich zu wirken. Ein Beispiel dafür ist das Fashion-Label Burberry, das ihr altes Logo mit hohem Wiedererkennungsfaktor gegen einen schlichten Schriftzug tauschte.</p>
         <div class="quote-wrapper">
           <p
             v-view="handleQuoteView"
             :class="quoteClasses"
-            class="quote">„Hier steht ein schönes Zitat zum Thema, lorem ipsum dolor poriaec esci mus Iqui blab ipita.“</p>
-          <p>Rehenda quibea parum cum quodit milla quam ea cus delest id quis aut offic tem re volupie nitiur rero et es esed que sitatus, to ex et quas a dolore dero omnihitam que res ne voluptam, etum sed quodion nitati omnietur, con et que od evelignam fuga. Aruntius. Lorror aliquia vel ipsae digendent la derrovi tatest eum consendita int ommolup tiunt. Boriti omniaeptat. Xerferi tiandandis eum eos esut. Minum quias rum sunti quunt qui.</p>
+            class="quote">„Helvetica ist wie Toastbrot. Schmeck nach nix, aber man kann alles drauflegen.“<strong>Erik Spiekermann<br><span>Typograf und Designer</span></strong></p>
+          <p>Oder nehmen wir die Schrift-Evolution bei Google: Der Suchmaschinen-Riese setzt heute auf eine moderne, serifenlose und sehr klare Schrift. Dem gleich zog auch die deutsche Parfümeriekette Douglas. Im Vorbeigehen fällt der neue Schriftzug vielleicht gar nicht so auf, weil wir nicht darauf achten. Aber ein kurzes Innehalten lohnt sich – denn Schrift bewegt uns.</p>
         </div>
       </div>
     </div>

@@ -69,6 +69,8 @@
   }
 
   .quote-wrapper {
+    @include clearfix;
+
     display: flex;
     flex-wrap: wrap;
 
@@ -86,6 +88,28 @@
       &.visible {
         opacity: 1;
         transform: translate3d(0, 0, 0);
+      }
+    }
+
+    strong {
+      position: relative;
+      display: block;
+      padding-top: rh(0.5);
+      padding-left: rem(15);
+      font-family: $font-family--header;
+      font-size: rem(15);
+      font-weight: 700;
+
+      &::before {
+        content: "–";
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: rh(0.5);
+      }
+
+      span {
+        font-weight: 100;
       }
     }
   }
@@ -108,11 +132,12 @@
 
     .quote-wrapper {
       display: block;
+      margin-right: rem(-40);
 
       .quote {
-        float: left;
-        width: rem(320);
-        margin-left: rem(-40);
+        float: right;
+        width: rem(280);
+        padding-left: rem(20);
       }
     }
   }
@@ -129,8 +154,10 @@
     }
 
     .quote-wrapper {
+      margin-right: rem(-140);
+
       .quote {
-        margin-left: rem(-140);
+        width: rem(320);
       }
     }
 

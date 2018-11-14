@@ -7,16 +7,26 @@
       :window-scrolled="windowScrolled"/>
     <TypoMatcher/>
     <BaseText>
-      <h4>Visuelle Assoziationen</h4>
-      <p>Sind so etwas wie eine leichte und schlanke Schrift wirkt elegant, oder eine fette und schwere wirkt stark. Weiter wirkt eine geneigte Schrift dynamisch, und einee handschriftliche zum Beispiel menschlich und verbunden. Die Usability News Studie 2006 hat da einige Untersuchungen zu gemacht.</p>
+      <h4>Im Chaos herrscht Ordnung</h4>
+      <p>Um in der unglaublichen Menge den Überblick zu behalten, werden Schriftarten in verschiedene Typen gegliedert. Da gibt es beispielsweise den Typ „Serif“. Schriftarten mit Serifen zeichnen sich durch die feinen, mehr oder weniger dünnen Linien aus, die den Buchstaben verzieren. Wenn der Lesefluss besonders im Vordergrund steht wie in Büchern oder Zeitungen werden Schriftarten mit Serifen eingesetzt. Leser assoziieren mit Serifen-Schriftarten Eleganz, Zuverlässigkeit oder auch Intellektualität. Ein bekannter Vertreter ist die „Times New Roman“.</p>
+      <p>Den Gegensatz zum Typ „Serif“ bilden Schriften ohne Serifen, auch „Sans Serif“ oder „Grotesk“ genannt. Sie sind schlicht und modern und werden gerne für digitale Medien oder zur Navigation verwendet. Eine bekannte serifenlose Schrift ist beispielsweise die „Helvetica“. Neben „Serif“ und „Sans Serif“ kennt die Typografie noch viele andere Schrifttypen, die ein Wort ausschmücken.</p>
     </BaseText>
     <AnimationHead
       :window-height="windowHeight"
       :window-scrolled="windowScrolled"/>
     <BaseText class="under-head-text">
-      <h4>Direkte Assoziationen</h4>
-      <p>Assoziationen beziehen sich auf zurückligende Verbindungen mit dieser Schrift, gesellschaftlich und aber auch persönlich: “So wird beispielsweise die Helvetica-Schriftart auf den Formularen des United States Tax and Internal Revenue Service verwendet, was die Wahrnehmung der Schriftart beeinflusst - abhängig von der Erfahrungen mit dem Steuersystem.”</p>
-      <p>Obit, temporis eum voluptas ipsandi odignis tiasitatur Iqui dolut fuga. Nam volorib ustiasperro qui veligni intis nimodit pre iurios nonsequam re ressequi officiaerat. Tatem eati omnihil iquibea ne veniste si res acepro tem evelestrum sam, core, nonse cullenditios enietur re nusciundant am, none occulpa ipissimus eos simetusda pre, as molorerore conse perspedi dolor maio officipsanda et esti aborendis aperepratur, solecaborum.</p>
+      <h4>Der erste Eindruck zählt</h4>
+      <p>Was passiert aber, wenn ein Wort im falschen Kleid steckt? Es irritiert und verwirrt uns. Wenn wir beispielsweise das Wort „Liebe“ lesen, fühlen wir uns mit einer eleganten, freundlichen Schrift wohl. So kennen wir das. Schreiben wir „Liebe“ in der Schriftart „Fraktur“, die an NS- Propaganda erinnert, löst dies völlig andere Emotionen in uns aus.</p>
+      <div class="quote-wrapper">
+        <p
+          v-view="handleQuoteView"
+          :class="quoteClasses"
+          class="quote">
+          „Wir alle konsumieren Typografie. Schriften spielen eine große Rolle in unserem Alltag. Sie helfen uns zu navigieren, Entscheidungen zu treffen und einzukaufen. Sie geben uns Sicherheit und tricksen uns manchmal aus.“
+          <strong>Sarah Hyndman<br><span>Grafikdesignerin</span></strong>
+        </p>
+        <p>Mit dieser Emotionalität wissen auch Marken umzugehen und überlegen sich ganz genau, in welchem Kleid sie sich präsentieren – denn schließlich soll uns auch über die Schrift vermittelt werden, für was die Marke steht. Eine Anwaltskanzlei wählt wohl eher eine schlichte, schnörkellose Schrift als eine verspielte. Und eine Kosmetikmarke würde sich mit einer technischen Schrift keinen Gefallen tun.</p>
+      </div>
     </BaseText>
     <PizzaSection
       :window-height="windowHeight"
@@ -62,7 +72,8 @@ export default {
       containerId: "main-body",
       windowHeight: 0,
       windowScrolled: 0,
-      bodyHeight: 0
+      bodyHeight: 0,
+      quoteClasses: ""
     }
   },
   mounted() {
@@ -82,6 +93,11 @@ export default {
       // console.log(`window height : ${this.windowHeight}`)
       // console.log(`scrolled px: ${this.windowScrolled}`)
       // console.log(`body height : ${this.bodyHeight}`)
+    },
+    handleQuoteView(e) {
+      if (e.percentTop < 0.8) {
+        this.quoteClasses = "visible"
+      }
     }
   }
 }
@@ -95,12 +111,75 @@ export default {
   z-index: 1;
   margin-top: rh(-1);
 
+  .quote-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      flex-basis: 100%;
+    }
+
+    .quote {
+      @include transition(opacity, transform);
+
+      order: 2;
+      opacity: 0;
+      transform: translate3d(0, 2rem, 0);
+
+      &.visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      strong {
+        position: relative;
+        display: block;
+        padding-top: rh(0.5);
+        padding-left: rem(15);
+        font-family: $font-family--header;
+        font-size: rem(15);
+        font-weight: 700;
+
+        &::before {
+          content: "–";
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding-top: rh(0.5);
+        }
+
+        span {
+          font-weight: 100;
+        }
+      }
+    }
+  }
+
   @include breakpoint(medium) {
     margin-top: rh(-2);
   }
 
+  @include breakpoint(large) {
+    .quote-wrapper {
+      display: block;
+
+      .quote {
+        float: left;
+        width: rem(320);
+        padding-right: rem(20);
+        margin-left: rem(-40);
+      }
+    }
+  }
+
   @include breakpoint(xlarge) {
     margin-top: rh(-3.5);
+
+    .quote-wrapper {
+      .quote {
+        margin-left: re†m(-140);
+      }
+    }
   }
 
   @include breakpoint(xxlarge) {

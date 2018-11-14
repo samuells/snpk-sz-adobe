@@ -8,10 +8,10 @@
       v-view="handleAnimations"
       class="row--outer">
       <div class="column--text">
-        <h2>Wie Schriftdesign auf uns wirkt</h2>
-        <p>Einführung in die Wahrnehmungspsychologie von Schrift. Lorem ipsum dolor Luptio que ditatior magnatem ipictur. Ictemol oreptati digent andellabore voluptaepe excepudam rae sequidi ssusci corem seque et aditatur sequas quibus, nobisqui ilignit es aturibus aut aut oreptati digent andellabore voluptaepe.</p>
+        <h2>Sag mir was du trägst und ich sag dir wer du bist</h2>
+        <p>Die emotionale Wirkung einer Schrift muss immer im Kontext betrachtet werden: Welchen Inhalt transportiert das Wort und welchen Hintergrund hat der Leser? Je nach Kultur, Erfahrungswert und Intuition löst eine Schrift unterschiedliche Emotionen in uns aus. Sie ist wie ein Kleid, das ein Wort verpackt und so auf uns wirkt. Dieses Kleid kann opulent oder schlicht sein, es kann den Inhalt unterstreichen – oder das Gegenteil bewirken. Aber dazu später mehr.</p>
         <h3>WELCHE SCHRIFT PASST?</h3>
-        <p class="small">So gehts: Olorepellorae seque dolore nat es rerate recae ipsum quam quo illaut derit fugit volorit atusda Temodit moluptio eat doluptiumqui.</p>
+        <p class="small">Entscheiden Sie aus Ihrem Bauchgefühl heraus welche Schrift zu dem jeweiligen Unternehmen/Produkt passt. Nutzen dafür die drei Regler.</p>
       </div>
       <div class="column--text">
         <h1 style="color: #b22222">-- WIDGET PLACEHOLDER --</h1>

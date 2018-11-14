@@ -1,8 +1,8 @@
 <template>
   <div class="section--memory row--outer">
     <div class="column--text">
-      <h3>ERKENNEN SIE JETZT DIE UNTERSCHIEDE?</h3>
-      <p class="small">So gehts: Olorepellorae seque dolore nat es rerate recae ipsum quam quo illaut derit fugit volorit atusda Temodit moluptio eat doluptiumqui.</p>
+      <h3>WAS GEHÖRT ZUSAMMEN?</h3>
+      <p class="small">Wie gut schlagen Sie sich in unserem Typografie-Memory?</p>
       <div class="memory-wrapper">
         <ul
           v-view="handelMemoryView"

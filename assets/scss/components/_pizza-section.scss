@@ -2,10 +2,20 @@
 
 .section--pizza {
   position: relative;
+  z-index: 1;
   margin-top: rh(2);
 
   .pizza-headline {
+    @include transition(opacity, transform);
+
     text-align: center;
+    transform: translate3d(0, #{rem(50)}, 0);
+    opacity: 0;
+
+    &.visible {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
   }
 
   .lottie--pizza-wrapper {
@@ -27,19 +37,6 @@
     &.visible {
       transform: translate3d(0, 0, 0);
       opacity: 1;
-    }
-  }
-
-  .placeholder--pizza {
-    @include transition(height);
-
-    height: calc(100vw * 0.8);
-    transition-duration: 1000ms;
-    transition-delay: 600ms;
-    transition-timing-function: cubic-bezier(0.51, 0.06, 0.51, 0.75);
-
-    &.active {
-      height: calc(100vw * 1.8);
     }
   }
 
@@ -119,14 +116,6 @@
       &.visible {
         transform: translate3d(25%, 0, 0);
         opacity: 1;
-      }
-    }
-
-    .placeholder--pizza {
-      height: calc(100vw * 0.4);
-
-      &.active {
-        height: calc(100vw * 0.9);
       }
     }
 

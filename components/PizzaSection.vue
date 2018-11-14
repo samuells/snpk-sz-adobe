@@ -2,8 +2,12 @@
   <div class="section--pizza">
     <div class="row--outer">
       <div class="column--text">
-        <h3 class="pizza-headline">WO WÜRDEN SIE PIZZA BESTELLEN?</h3>
-        <div class="lottie--pizza-wrapper">
+        <h3
+          :class="pizzaClasses"
+          class="pizza-headline">WO WÜRDEN SIE PIZZA BESTELLEN?</h3>
+        <div
+          ref="pizzaWrapper"
+          class="lottie--pizza-wrapper">
           <div
             v-view="handlePizzaView"
             :class="pizzaClasses"
@@ -14,7 +18,7 @@
           </div>
         </div>
         <div
-          :class="{active: isPizzaPlaceholderAcive}"
+          :style="placeholderStyle"
           class="placeholder--pizza"/>
         <h4>Zusammengenommen wirkt es so</h4>
         <p>Beide assoziativen Ebenen wirken zusammen auf die emotionale Wahrnehmung von Schriften. Erstens - Wo wurde die Schrift schon mal gesehen? Zweitens - Welche Inhalte und Themen verbindet man mit der Schrift? Als Drittes - Was für persönliche Verbindungen hat man mit den Themen - gut oder schlecht? Und als viertes und letztes - Stimmt der Kontext in dem sie steht? Nequas et ma delescimus di que nistia cus, quam quae sita verum harcim harcide liquam, temporeri sam qui cuptatent occusan ditioruptat voloreiciis rem que dis quoditint.</p>
@@ -52,6 +56,16 @@ export default {
     Lottie,
     StopSign
   },
+  props: {
+    windowHeight: {
+      type: Number,
+      required: true
+    },
+    windowScrolled: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
     return {
       defaultOptions: {
@@ -59,8 +73,17 @@ export default {
         autoplay: false
       },
       pizzaClasses: "",
+      pizza: {
+        duration: 0,
+        startHeight: 0,
+        endHeight: 0,
+        isAnimating: false
+      },
       stopSignClasses: "",
-      isPizzaPlaceholderAcive: false
+      pizzaWrapperHeight: 0,
+      startHeightFactor: 0.235,
+      endHeightFactor: 0.51,
+      placeholderHeightFactor: 0.235
     }
   },
   computed: {
@@ -69,20 +92,54 @@ export default {
         animationData: pizzaAnimation,
         ...this.defaultOptions
       }
+    },
+    placeholderStyle() {
+      return {
+        height: this.pizzaWrapperHeight * this.placeholderHeightFactor + "px"
+      }
     }
+  },
+  watch: {
+    windowScrolled: {
+      immediate: true,
+      deep: true,
+      handler(newValue, oldValue) {
+        this.animatePizzaOnScroll(newValue)
+      }
+    }
+  },
+  mounted() {
+    this.pizzaWrapperHeight = this.$refs.pizzaWrapper.offsetHeight
   },
   methods: {
     handlePizza: function(anim) {
       this.animPizza = anim
     },
     handlePizzaView(e) {
-      if (e.percentTop < 0.8) {
-        this.isPizzaPlaceholderAcive = true
-        this.animPizza.setSpeed(2)
-        this.animPizza.play()
-      }
-      if (e.percentTop < 0.9) {
+      if (!this.pizza.isAnimating && e.type === "enter") {
         this.pizzaClasses = "visible"
+        this.pizza.startHeight = this.windowScrolled + this.windowHeight * 0.2
+        this.pizza.endHeight = this.pizza.startHeight + this.windowHeight * 0.9
+        this.pizza.duration = this.animPizza.getDuration() * 1000 - 1
+        this.pizza.isAnimating = true
+      }
+    },
+    animatePizzaOnScroll(scrolled) {
+      if (this.pizza.isAnimating) {
+        const timePercentage =
+          (scrolled - this.pizza.startHeight) /
+          (this.pizza.endHeight - this.pizza.startHeight)
+        const time = this.pizza.duration * timePercentage
+        if (time < 0) {
+          this.placeholderHeightFactor = this.startHeightFactor
+        } else if (time < this.pizza.duration) {
+          this.animPizza.goToAndStop(time)
+          this.placeholderHeightFactor =
+            this.startHeightFactor +
+            (this.endHeightFactor - this.startHeightFactor) * timePercentage
+        } else {
+          this.animPizza.goToAndStop(this.pizza.duration)
+        }
       }
     },
     handleStopSignView(e) {

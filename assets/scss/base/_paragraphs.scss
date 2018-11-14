@@ -11,6 +11,16 @@ $generate-classes: false !default;
   line-height: (21 / 16);
   color: $primary-font-color;
 
+  @include fluid(
+    (
+      font-size: (
+        16,
+        20
+      )
+    ),
+    (medium, xlarge)
+  );
+
   @if $box-model {
     padding-bottom: rh(0.25);
     margin-bottom: rh(0.25);

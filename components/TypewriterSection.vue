@@ -16,7 +16,10 @@
         <div class="placeholder--typewriter"/>
         <p>Vom Bleisatz, über Fotosatz zu InDesign, die Verwendung von Schrift sehr verändert und vereinfacht. Lorem ipsum dolor Berunt sequisc harias re sundus at Ectorep udigendist acestiamus que idis nonsector si nus, odi ut facita volut opta ipsam, occusant quatiorporem es molorit facerferia ea voluptur rae sinvel invelli tatur, nobitecusame conseque aut pra velitat. Quident eium as as et restius. Exeris in consed molorrum nullit enecae vollabor sequodi genimin reicae et archic tem nullatest omnitibus doluptam exceptatist, omnis aut lauda cone nonsecat min era quasper chicae porepelis cuptaspidunt videliquia venderum essequam, sitatur alita pe ressitiae moditib usdandae prerum es quaecum consed maximus.</p>
         <div class="quote-wrapper">
-          <p class="quote">„Hier steht ein schönes Zitat zum Thema, lorem esci mus Iqui blab ipita.“</p>
+          <p
+            v-view="handleQuoteView"
+            :class="quoteClasses"
+            class="quote">„Hier steht ein schönes Zitat zum Thema, lorem esci mus Iqui blab ipita.“</p>
           <p>Lo bernatusdam re min cupiste dolupta temquatur minus, nimusciet volut faccust ania comnihillab int volupicatem excepe velecta andit et arum que pellaut et occuptur. Duciliquae volorro voluptia pe volent ut aperibus quae volores citatur atati aut utem voles aid miniend andunt.</p>
         </div>
         <div class="lottie--comp-book-wrapper">
@@ -69,7 +72,8 @@ export default {
       },
       typewriterClasses: "",
       compBookClasses: "",
-      vectorClasses: ""
+      vectorClasses: "",
+      quoteClasses: ""
     }
   },
   computed: {
@@ -119,6 +123,11 @@ export default {
       if (e.percentTop < 0.8) {
         this.vectorClasses = "visible"
         this.animVector.play()
+      }
+    },
+    handleQuoteView(e) {
+      if (e.percentTop < 0.8) {
+        this.quoteClasses = "visible"
       }
     }
   }

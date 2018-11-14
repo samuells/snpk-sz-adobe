@@ -38,7 +38,10 @@
         <h3 class="is-h4">Selbst mit unserer Zunge lässt sich Schrift spüren</h3>
         <p>Sarah Hyndman hat in Studien festgestellt das gleiche Speisen oder Getränke anders schmecken, je nachdem wie die Schrift darauf war. Lorem ipsum dolor Nequas et ma delescimus di que nistia cus, quam quae sita verum harcim harcide liquam, temporeri sam qui cuptatent occusan ditioruptat voloreiciis rem que dis quoditint, acientore, cusapedit, saperum quiderrovit as sinvenim velit ma que minvel et aut officienim enda quiamen dempossum eic te cus enihillo evelend unduntis recerum.</p>
         <div class="quote-wrapper">
-          <p class="quote">„Hier steht ein schönes Zitat zum Thema, lorem ipsum dolor poriaec esci mus Iqui blab ipita.“</p>
+          <p
+            v-view="handleQuoteView"
+            :class="quoteClasses"
+            class="quote">„Hier steht ein schönes Zitat zum Thema, lorem ipsum dolor poriaec esci mus Iqui blab ipita.“</p>
           <p>Rehenda quibea parum cum quodit milla quam ea cus delest id quis aut offic tem re volupie nitiur rero et es esed que sitatus, to ex et quas a dolore dero omnihitam que res ne voluptam, etum sed quodion nitati omnietur, con et que od evelignam fuga. Aruntius. Lorror aliquia vel ipsae digendent la derrovi tatest eum consendita int ommolup tiunt. Boriti omniaeptat. Xerferi tiandandis eum eos esut. Minum quias rum sunti quunt qui.</p>
         </div>
       </div>
@@ -83,7 +86,8 @@ export default {
       pizzaWrapperHeight: 0,
       startHeightFactor: 0.235,
       endHeightFactor: 0.51,
-      placeholderHeightFactor: 0.235
+      placeholderHeightFactor: 0.235,
+      quoteClasses: ""
     }
   },
   computed: {
@@ -122,6 +126,11 @@ export default {
         this.pizza.endHeight = this.pizza.startHeight + this.windowHeight * 0.9
         this.pizza.duration = this.animPizza.getDuration() * 1000 - 1
         this.pizza.isAnimating = true
+      }
+    },
+    handleQuoteView(e) {
+      if (e.percentTop < 0.8) {
+        this.quoteClasses = "visible"
       }
     },
     animatePizzaOnScroll(scrolled) {

@@ -40,7 +40,16 @@
     }
 
     .quote {
+      @include transition(opacity, transform);
+
       order: 2;
+      transform: translate3d(0, #{rem(50)}, 0);
+      opacity: 0;
+
+      &.visible {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
     }
   }
 

@@ -167,7 +167,7 @@ export default {
         e.type === "enter"
       ) {
         this.fontSlice.startHeight =
-          this.windowScrolled + this.windowHeight * 0.5
+          this.windowScrolled + this.windowHeight * 0.35
         this.fontSlice.endHeight =
           this.fontSlice.startHeight + this.windowHeight * 0.5
         this.fontSlice.duration = this.animFontSlice.getDuration() * 1000 - 1

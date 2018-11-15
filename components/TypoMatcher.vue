@@ -14,7 +14,7 @@
         <p class="small">Entscheiden Sie aus Ihrem Bauchgefühl heraus welche Schrift zu dem jeweiligen Unternehmen/Produkt passt. Nutzen dafür die drei Regler.</p>
       </div>
       <div class="column--text">
-        <h1 style="color: #b22222">-- WIDGET PLACEHOLDER --</h1>
+        <TypoMarcherWidget/>
       </div>
     </div>
   </div>
@@ -23,12 +23,13 @@
 <script>
 import IconBlueLine from "~/assets/icons/adobe-background-01.svg"
 import IconOval from "~/assets/icons/adobe-background-02.svg"
-// import IconDashedLine from "~/assets/icons/adobe-background-03.svg"
+import TypoMarcherWidget from "./TypoMatcherWidget"
 
 export default {
   components: {
     IconOval,
-    IconBlueLine
+    IconBlueLine,
+    TypoMarcherWidget
   },
   data() {
     return {

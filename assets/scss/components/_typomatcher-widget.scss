@@ -1,0 +1,93 @@
+@import "./assets/scss/toolbelt";
+
+.typomatcher-widget {
+  .typomatcher-header {
+    padding-bottom: rh(0.5);
+    padding-left: 35%;
+  }
+
+  .typomatcher-row {
+    position: relative;
+    z-index: -1;
+    height: rem(50);
+    border-left: rem(5) solid $black;
+    margin-bottom: rh(0.5);
+    background-color: $white;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: rem(10);
+      width: auto;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    &.bs {
+      svg {
+        height: rem(30);
+      }
+    }
+
+    &.mp {
+      svg {
+        height: rem(40);
+      }
+    }
+
+    &.bau {
+      svg {
+        height: rem(25);
+      }
+    }
+  }
+
+  .slider-wrapper {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    border: rem(5) solid $black;
+    margin-right: rem(20);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: rem(5);
+      height: rem(5);
+      background-color: $body-bgc;
+    }
+
+    .slider-line {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: -1;
+      display: block;
+      width: rem(5);
+      height: rem(192);
+      border: rem(1) solid $black;
+      background-color: $black;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    label {
+      display: block;
+      padding: rem(4) rem(10);
+      font-family: $font-family--body;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
+  .slider-button {
+    position: absolute;
+    top: calc(100% + #{rem(20)});
+    left: 50%;
+    z-index: -1;
+    width: rem(50);
+    height: auto;
+    transform: translate3d(-50%, 0, 0);
+  }
+}

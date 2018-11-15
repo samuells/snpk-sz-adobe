@@ -19,11 +19,6 @@
   margin-bottom: rh(2);
   text-align: center;
 
-  .typomatcher-header {
-    padding-bottom: rh(0.5);
-    padding-left: 35%;
-  }
-
   .typomatcher-row {
     position: relative;
     z-index: -1;
@@ -42,29 +37,54 @@
 
     &.bs {
       svg {
-        height: rem(30);
+        height: rem(20);
       }
     }
 
     &.mp {
       svg {
-        height: rem(40);
+        height: rem(30);
       }
     }
 
     &.bau {
       svg {
-        height: rem(25);
+        height: rem(16);
       }
     }
   }
 
+  .typomatcher-header {
+    min-height: rem(80);
+    padding-bottom: rh(0.5);
+    padding-left: 10%;
+  }
+
   .slider-wrapper {
-    position: relative;
+    position: absolute;
     z-index: 1;
     display: inline-block;
     border: rem(5) solid $black;
-    margin-right: rem(20);
+    margin-right: rem(5);
+
+    &.bs {
+      top: rem(34);
+      right: 0;
+    }
+
+    &.mp {
+      top: rem(-4);
+      right: 19.5%;
+
+      .slider-line {
+        height: rem(230);
+      }
+    }
+
+    &.bau {
+      top: rem(34);
+      right: 37%;
+    }
 
     &::after {
       content: "";
@@ -134,6 +154,55 @@
   }
 
   @include breakpoint(xlarge) {
+    .typomatcher-header {
+      min-height: 0;
+      padding-left: 30%;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      margin-right: rem(20);
+
+      &.bs {
+        top: auto;
+        right: auto;
+      }
+
+      &.mp {
+        top: auto;
+        right: auto;
+
+        .slider-line {
+          height: rem(192);
+        }
+      }
+
+      &.bau {
+        top: auto;
+        right: auto;
+      }
+    }
+
+    .typomatcher-row {
+      &.bs {
+        svg {
+          height: rem(30);
+        }
+      }
+
+      &.mp {
+        svg {
+          height: rem(40);
+        }
+      }
+
+      &.bau {
+        svg {
+          height: rem(25);
+        }
+      }
+    }
+
     .result-wrapper {
       position: absolute;
       top: 40%;

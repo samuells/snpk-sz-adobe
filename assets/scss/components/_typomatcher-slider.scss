@@ -18,7 +18,7 @@ $width-range: rem(35);
   z-index: 3;
   width: rem(50);
   height: rem(40);
-  // outline: rem(2) dashed $red-firebrick;
+  outline: rem(2) dashed $red-firebrick;
   cursor: pointer;
 }
 
@@ -27,10 +27,14 @@ $width-range: rem(35);
   top: rem(30);
   left: 50%;
   display: inline-block;
-  // outline: rem(2) dashed #00f;
+  outline: rem(2) dashed #00f;
   transform: translate3d(0%, 0, 0) rotate(90deg);
   transform-origin: left;
   user-select: none;
+
+  .slider-wrapper.mp & {
+    top: rem(68);
+  }
 
   input {
     display: inline-block;
@@ -78,5 +82,11 @@ $width-range: rem(35);
       transform: translateY(0%);
     }
     /* stylelint-enable */
+  }
+
+  @include breakpoint(xlarge) {
+    .slider-wrapper.mp & {
+      top: rem(30);
+    }
   }
 }

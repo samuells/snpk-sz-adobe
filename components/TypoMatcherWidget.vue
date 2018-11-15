@@ -1,7 +1,7 @@
 <template>
   <div class="typomatcher-widget">
     <div class="typomatcher-header">
-      <div class="slider-wrapper">
+      <div class="slider-wrapper bau">
         <label>BAUFIRMA</label>
         <TypoMatcherSlider
           v-model="bauRange"
@@ -14,7 +14,7 @@
           :style="bauStyleObject"
           class="slider-button"/>
       </div>
-      <div class="slider-wrapper">
+      <div class="slider-wrapper mp">
         <label>MAKE UP</label>
         <TypoMatcherSlider
           v-model="mpRange"
@@ -27,7 +27,7 @@
           :style="mpStyleObject"
           class="slider-button"/>
       </div>
-      <div class="slider-wrapper">
+      <div class="slider-wrapper bs">
         <label>BRETTSPIEL</label>
         <TypoMatcherSlider
           v-model="bsRange"
@@ -108,9 +108,11 @@ export default {
       }
     },
     mpStyleObject() {
+      const startTop = this.mpLineHeight > 200 ? "58px" : "20px"
+
       return {
-        top: `calc(100% + 20px + ${Math.round(
-          (this.mpLineHeight / 3) * this.mpRange
+        top: `calc(100% + ${startTop} + ${Math.round(
+          (this.bauLineHeight / 3) * this.mpRange
         )}px`
       }
     },

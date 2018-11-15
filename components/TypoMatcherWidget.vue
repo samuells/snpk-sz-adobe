@@ -48,6 +48,18 @@
     <div class="typomatcher-row bau">
       <FontBau/>
     </div>
+    <button
+      @click="showResult">
+      AUSWAHL BESTÄTIGEN
+    </button>
+    <transition name="fade-font-result">
+      <div
+        v-if="isResultShowed"
+        class="result-wrapper">
+        <p class="result">{{ result }}<span>%</span></p>
+        <p>sahen das auch so</p>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -72,11 +84,12 @@ export default {
   },
   data() {
     return {
-      mpRange: 0,
-      bsRange: 0,
-      bauRange: 0,
+      mpRange: "0",
+      bsRange: "0",
+      bauRange: "0",
       bauLineHeight: 0,
-      mpLineHeight: 0
+      mpLineHeight: 0,
+      isResultShowed: false
     }
   },
   computed: {
@@ -100,11 +113,62 @@ export default {
           (this.mpLineHeight / 3) * this.mpRange
         )}px`
       }
+    },
+    result() {
+      if (this.bauRange === "2") {
+        if (this.mpRange === "1") {
+          if (this.bsRange === "0") {
+            return 87
+          } else {
+            return 0.75 // 11.5
+          }
+        } else {
+          if (this.bsRange === "0") {
+            return 1 // 10.5
+          } else {
+            return 0.25 // 10
+          }
+        }
+      } else if (this.bauRange === "1") {
+        if (this.mpRange === "1") {
+          if (this.bsRange === "0") {
+            return 2 // 8
+          } else {
+            return 0.5 // 7
+          }
+        } else {
+          if (this.bsRange === "0") {
+            return 1 // 6
+          } else {
+            return 0.1 // 5.8
+          }
+        }
+      } else {
+        if (this.mpRange === "1") {
+          if (this.bsRange === "0") {
+            return 2.1 // 3.7
+          } else {
+            return 0.45 // 2.8
+          }
+        } else {
+          if (this.bsRange === "0") {
+            return 1.4 // 1.4
+          } else {
+            return 0.7 // 0
+          }
+        }
+      }
+      return 0
     }
   },
   mounted() {
     this.bauLineHeight = this.$refs.bauLine.offsetHeight
     this.mpLineHeight = this.$refs.mpLine.offsetHeight
+  },
+  methods: {
+    showResult() {
+      this.isResultShowed = true
+    }
   }
 }
 </script>

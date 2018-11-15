@@ -1,6 +1,24 @@
 @import "./assets/scss/toolbelt";
 
+.fade-font-result-enter-active,
+.fade-font-result-leave-active {
+  @include transition(opacity, transform);
+
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.fade-font-result-enter,
+.fade-font-result-leave-to {
+  opacity: 0;
+  transform:  translate3d(0, #{rem(-30)}, 0) scale(0.2);
+}
+
 .typomatcher-widget {
+  position: relative;
+  margin-bottom: rh(2);
+  text-align: center;
+
   .typomatcher-header {
     padding-bottom: rh(0.5);
     padding-left: 35%;
@@ -89,5 +107,48 @@
     width: rem(50);
     height: auto;
     transform: translate3d(-50%, 0, 0);
+  }
+
+  button {
+    margin-top: rh(1);
+  }
+
+  .result-wrapper {
+    p {
+      padding: 0;
+      margin: 0;
+      color: $red-pome;
+      font-weight: 700;
+      font-size: rem(23);
+      line-height: 1;
+
+      span {
+        margin-left: rem(5);
+        font-size: 0.5em;
+      }
+    }
+
+    .result {
+      font-size: rem(100);
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    .result-wrapper {
+      position: absolute;
+      top: 40%;
+      left: 100%;
+      min-width: rem(240);
+      padding-left: rem(40);
+      transform: translate3d(0, -50%, 0);
+
+      p {
+        text-align: left;
+      }
+
+      .result + p {
+        padding-left: rem(5);
+      }
+    }
   }
 }

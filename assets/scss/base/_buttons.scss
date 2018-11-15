@@ -6,32 +6,56 @@ $generate-classes: false !default;
 
 @mixin button--base {
   @include paragraph(false);
-  @include transition(background-color, color, border-color);
+  @include transition(background-color, color, border-color, transform);
 
+  position: relative;
   display: inline-block;
   padding: calc-rem(6 12);
-  border: calc-rem(2) solid $button-bc;
-  border-radius: rem(6);
+  border-width: 0;
   margin-bottom: calc-rem(16);
   color: $button-fc;
-  font-weight: 400;
-  font-family: $font-family--header;
+  font-weight: 700;
+  font-family: $font-family--body;
   background-color: $button-bgc;
   background-clip: padding-box;
   outline: none;
   cursor: pointer;
+  transition-duration: 200ms;
   appearance: none;
   text-rendering: optimizeLegibility;
 
-  &:active,
-  &:focus,
-  &:hover {
-    color: $button-fc--hover;
-    background-color: $button-bgc--hover;
+  &::after {
+    @include transition(border-top);
+
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-top: rem(8) solid $black;
+    border-right: rem(8) solid $transparent;
+    border-left: rem(8) solid $transparent;
   }
 
+  // stylelint-disable
+  &:active,
+  &:hover {
+    background-color: $button-bgc--hover;
+    transform: translate3d(0, #{rem(2)}, 0);
+
+    &::after {
+      border-top: rem(6) solid $black;
+    }
+  }
+  // stylelint-enable
+
   &:active {
-    border-color: $button-bc--active;
+    background-color: $button-bgc--active;
+    transform: translate3d(0, #{rem(8)}, 0);
+
+    &::after {
+      border-top: rem(0) solid $black;
+    }
   }
 
   &:disabled {

@@ -43,12 +43,12 @@ $error-color: $red-firebrick;
 $headline-fc: $primary-font-color;
 
 // // Buttons Colors
-$button-fc: $white !default;
-$button-bc: $gray-scarpa !default;
-$button-bgc: $gray-scarpa !default;
+$button-fc: $black !default;
+$button-bc: $black !default;
+$button-bgc: $red-pome !default;
 $button-fc--hover: $gray-scarpa !default;
-$button-bgc--hover: $transparent !default;
-$button-bc--active: darken($gray-scarpa, 20%) !default;
+$button-bgc--hover: darkenn($red-pome, 5%) !default;
+$button-bgc--active: darken($red-pome, 15%) !default;
 $button-gray-fc: $gray-scarpa !default;
 $button-gray-bgc: $transparent !default;
 $button-gray-bc: rgba($gray-scarpa, 0.25) !default;

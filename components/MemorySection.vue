@@ -32,9 +32,7 @@
             v-if="showSuccesMessage"
             class="success-msg">
             <p>{{ successMessage }}</p>
-            <a
-              href="#"
-              @click.prevent="resetMemory">Noch eine Runde?</a>
+            <button @click.prevent="resetMemory">Noch eine Runde?</button>
           </div>
         </transition>
       </div>

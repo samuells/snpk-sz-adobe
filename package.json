@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.0",
     "intersection-observer": "^0.5.1",
     "lottie-web": "^5.4.1",
     "nuxt": "^2.1.0",

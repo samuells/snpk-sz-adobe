@@ -31,11 +31,7 @@
     <PizzaSection
       :window-height="windowHeight"
       :window-scrolled="windowScrolled"/>
-    <div class="row--outer">
-      <div class="column--text">
-        <h1 style="color: #b22222">-- WIDGET PLACEHOLDER --</h1>
-      </div>
-    </div>
+    <ImgGenSection/>
     <TypewriterSection/>
     <MemorySection/>
     <Footer/>
@@ -43,16 +39,17 @@
 </template>
 
 <script>
-import BaseText from "@/components/BaseText.vue"
-import TopBar from "@/components/TopBar.vue"
-import HeroArea from "@/components/HeroArea.vue"
-import FontsInfo from "@/components/FontsInfo.vue"
-import TypoMatcher from "@/components/TypoMatcher.vue"
-import AnimationHead from "@/components/AnimationHead.vue"
-import PizzaSection from "@/components/PizzaSection.vue"
-import TypewriterSection from "@/components/TypewriterSection.vue"
-import MemorySection from "@/components/MemorySection.vue"
-import Footer from "@/components/Footer.vue"
+import BaseText from "@/components/BaseText"
+import TopBar from "@/components/TopBar"
+import HeroArea from "@/components/HeroArea"
+import FontsInfo from "@/components/FontsInfo"
+import TypoMatcher from "@/components/TypoMatcher"
+import AnimationHead from "@/components/AnimationHead"
+import PizzaSection from "@/components/PizzaSection"
+import ImgGenSection from "@/components/ImgGenSection"
+import TypewriterSection from "@/components/TypewriterSection"
+import MemorySection from "@/components/MemorySection"
+import Footer from "@/components/Footer"
 
 export default {
   components: {
@@ -63,6 +60,7 @@ export default {
     TypoMatcher,
     AnimationHead,
     PizzaSection,
+    ImgGenSection,
     TypewriterSection,
     MemorySection,
     Footer

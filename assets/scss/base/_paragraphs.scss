@@ -39,8 +39,17 @@ $generate-classes: false !default;
 @mixin paragraph--small($box-model: true) {
   @include paragraph($box-model);
 
-  font-size: rem(14);
   line-height: (18 / 14);
+
+  @include fluid(
+    (
+      font-size: (
+        14,
+        18
+      )
+    ),
+    (medium, xlarge)
+  );
 }
 
 @mixin paragraph--quote($box-model: true) {

@@ -1,0 +1,12 @@
+@import "./assets/scss/toolbelt";
+
+.img-gen-section {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  @include breakpoint(xlarge) {
+    padding-bottom: rh(4);
+  }
+}
+

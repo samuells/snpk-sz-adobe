@@ -1,0 +1,189 @@
+@import "./assets/scss/toolbelt";
+
+.img-gen-widget {
+  display: flex;
+  flex-wrap: wrap;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-gen-board {
+    position: relative;
+    flex-basis: 100%;
+  }
+
+  .board-bgc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .img-gen-controls {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+  }
+
+  .controls-button,
+  .download-button {
+    position: relative;
+    display: inline-block;
+    width: rem(48);
+    height: rem(47);
+    padding: 0 !important;
+    margin-bottom: rh(0.5) !important;
+    background-color: $transparent !important;
+  }
+
+  .controls--download {
+    flex-basis: 100%;
+    text-align: center;
+
+    p {
+      padding: 0 !important;
+      margin: rh(0.5) !important;
+      font-weight: 700;
+    }
+
+    .download-button {
+      &::after {
+        border-top-color: $braun-straw;
+      }
+    }
+  }
+
+  .controls--bgc,
+  .controls--font,
+  .controls--text {
+    flex-basis: rem(100);
+    flex-grow: 1;
+    margin-bottom: rh(1);
+    text-align: center;
+
+    p {
+      padding: 0 !important;
+      margin: 0 !important;
+      font-weight: 700;
+    }
+
+    .controls-button {
+      &:nth-child(2) {
+        &::after {
+          border-top-color: $black;
+        }
+      }
+    }
+  }
+
+  .controls--text {
+    .controls-button {
+      &:first-child {
+        &::after {
+          border-top-color: $red-pome;
+        }
+      }
+    }
+  }
+
+  .controls--font {
+    .controls-button {
+      &:first-child {
+        &::after {
+          border-top-color: $blue-dodger;
+        }
+      }
+
+      &:nth-child(2) {
+        svg {
+          path:first-child {
+            fill: $blue-dodger;
+          }
+        }
+      }
+    }
+  }
+
+  .controls--bgc {
+    .controls-button {
+      &:first-child {
+        &::after {
+          border-top-color: $orange-apricot;
+        }
+      }
+
+      &:nth-child(2) {
+        svg {
+          path:first-child {
+            fill: $orange-apricot;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    .img-gen-board {
+      position: relative;
+      flex-basis: rem(480);
+      flex-grow: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: rem(-124);
+        width: rem(120);
+        height: calc(100% - #{rem(4)});
+        background-color: $braun-straw;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: rem(-60);
+        width: calc(100% + #{rem(60)});
+        height: rem(50);
+        background-color: $black;
+      }
+
+      .board-graphic-element {
+        position: absolute;
+        bottom: 0;
+        right: calc(100% + #{rem(60)});
+        width: 50%;
+        height: 90%;
+        background-color: $braun-straw;
+        box-shadow: inset rem(0 -50 0 0) $black;
+      }
+    }
+
+    .img-gen-controls {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      flex-basis: rem(160);
+      max-width: rem(160);
+      padding: 0 rem(10);
+      box-shadow: rem(5 0 0 0) $black;
+    }
+
+    .controls--bgc,
+    .controls--font,
+    .controls--text {
+      flex-basis: auto;
+      flex-grow: 0;
+      width: 100%;
+    }
+
+    .controls--download {
+      flex-basis: auto;
+      flex-grow: 0;
+      margin-top: auto;
+    }
+  }
+
+}

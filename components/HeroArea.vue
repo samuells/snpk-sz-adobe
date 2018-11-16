@@ -29,7 +29,7 @@
 <script>
 import imagesLoaded from "vue-images-loaded"
 import Lottie from "@/components/lottie"
-import questionMarkAnimation from "@/assets/animations/question-mark.json"
+import fontSelectAnimation from "@/assets/animations/font-select.json"
 
 export default {
   directives: {
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       defaultOptions: {
-        animationData: questionMarkAnimation,
+        animationData: fontSelectAnimation,
         loop: false,
         autoplay: false
       },

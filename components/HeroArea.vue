@@ -11,7 +11,7 @@
     </no-ssr>
     <div class="row--outer">
       <div class="column--text">
-        <h1>Schriften verwandeln Wörter in Erzählungen</h1>
+        <h1>Hier steht eine passende Headline zum Visual</h1>
         <Lottie
           v-view="handleLottie"
           :options="defaultOptions"

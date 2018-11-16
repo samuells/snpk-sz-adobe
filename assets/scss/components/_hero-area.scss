@@ -30,7 +30,9 @@
 
   @include breakpoint(xlarge) {
     h1 {
-      margin-left: rem(-100);
+      margin-top: rh(1.5);
+      margin-left: rem(-120);
+      margin-right: rem(-120);
     }
 
     .lottie--question {

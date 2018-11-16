@@ -1,5 +1,8 @@
 <template>
-  <div class="typomatcher-widget">
+  <div
+    v-view="handleTypoMatcherView"
+    :class="typoMatcherClasses"
+    class="typomatcher-widget">
     <div class="typomatcher-header">
       <div class="slider-wrapper bau">
         <label>BAUFIRMA</label>
@@ -39,19 +42,23 @@
           class="slider-button"/>
       </div>
     </div>
-    <div class="typomatcher-row bs">
-      <FontBs/>
+    <div>
+      <div class="typomatcher-row bs">
+        <FontBs/>
+      </div>
+      <div class="typomatcher-row mp">
+        <FontMakeup/>
+      </div>
+      <div class="typomatcher-row bau">
+        <FontBau/>
+      </div>
     </div>
-    <div class="typomatcher-row mp">
-      <FontMakeup/>
+    <div class="button-wrapper">
+      <button
+        @click="showResult">
+        AUSWAHL BESTÄTIGEN
+      </button>
     </div>
-    <div class="typomatcher-row bau">
-      <FontBau/>
-    </div>
-    <button
-      @click="showResult">
-      AUSWAHL BESTÄTIGEN
-    </button>
     <transition name="fade-font-result">
       <div
         v-if="isResultShowed"
@@ -89,7 +96,8 @@ export default {
       bauRange: "0",
       bauLineHeight: 0,
       mpLineHeight: 0,
-      isResultShowed: false
+      isResultShowed: false,
+      typoMatcherClasses: ""
     }
   },
   computed: {
@@ -170,6 +178,11 @@ export default {
   methods: {
     showResult() {
       this.isResultShowed = true
+    },
+    handleTypoMatcherView(e) {
+      if (e.percentTop < 0.85) {
+        this.typoMatcherClasses = "visible"
+      }
     }
   }
 }

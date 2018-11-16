@@ -19,13 +19,47 @@
   margin-bottom: rh(2);
   text-align: center;
 
+  &.visible {
+    .typomatcher-row {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+
+      @for $rowIndex from 1 to 4 {
+        &:nth-child(#{$rowIndex}) {
+          transition-delay: 50ms + (100ms * $rowIndex);
+        }
+      }
+    }
+
+    .slider-wrapper {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+
+      @for $rowIndex from 1 to 4 {
+        &:nth-child(#{$rowIndex}) {
+          transition-delay: 300ms + (100ms * $rowIndex);
+        }
+      }
+    }
+
+    .button-wrapper {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 600ms;
+    }
+  }
+
   .typomatcher-row {
+    @include transition(transform, opacity);
+
     position: relative;
     z-index: -1;
     height: rem(50);
     border-left: rem(5) solid $black;
     margin-bottom: rh(0.5);
     background-color: $white;
+    opacity: 0;
+    transform: translate3d(#{rem(-50), 0, 0});
 
     svg {
       position: absolute;
@@ -61,11 +95,15 @@
   }
 
   .slider-wrapper {
+    @include transition(transform, opacity);
+
     position: absolute;
     z-index: 1;
     display: inline-block;
     border: rem(5) solid $black;
     margin-right: rem(5);
+    opacity: 0;
+    transform: translate3d(0, #{rem(-50), 0});
 
     &.bs {
       top: rem(34);
@@ -129,8 +167,13 @@
     transform: translate3d(-50%, 0, 0);
   }
 
-  button {
+  .button-wrapper {
+    @include transition(transform, opacity);
+
     margin-top: rh(1);
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0, #{rem(50), 0});
   }
 
   .result-wrapper {

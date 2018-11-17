@@ -1,18 +1,5 @@
 @import "./assets/scss/toolbelt";
 
-// .font-fade-enter-active,
-// .font-fade-leave-active {
-//   @include transition(opacity, transform);
-
-//   opacity: 0;
-//   transform:  translate3d(0, #{rem(-30)}, 0);
-
-//   opacity: 1;
-//   transform: translate3d(0, 0, 0) scale(1);
-
-//   ;
-// }
-
 .img-gen-widget {
   display: flex;
   flex-wrap: wrap;
@@ -71,6 +58,7 @@
 
     position: relative;
     flex-basis: 100%;
+    margin-bottom: rh(0.5);
     opacity: 0;
     transform: translate3d(0, #{rem(50)}, 0);
   }
@@ -200,6 +188,7 @@
       position: relative;
       flex-basis: rem(480);
       flex-grow: 1;
+      margin-bottom: 0;
 
       &::before {
         @include transition(opacity, transform);

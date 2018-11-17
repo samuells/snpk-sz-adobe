@@ -65,6 +65,8 @@
     }
 
     .lottie--font-select-wrapper {
+      top: rh(7);
+
       .lottie--font-select {
         transform: translate3d(-48%, 0, 0);
       }
@@ -73,6 +75,7 @@
 
   @include breakpoint(xxlarge) {
     .lottie--font-select-wrapper {
+      top: rh(9);
       padding-bottom: rh(30);
 
       .lottie--font-select {

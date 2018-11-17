@@ -17,6 +17,8 @@
 
 
   .quote-wrapper {
+    @include clearfix;
+
     display: flex;
     flex-wrap: wrap;
 

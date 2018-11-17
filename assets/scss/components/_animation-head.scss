@@ -10,6 +10,80 @@
   width: 100%;
 }
 
+.content--affix-text {
+  position: relative;
+  z-index: 1;
+  margin-top: rh(-12);
+
+
+  .quote-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      flex-basis: 100%;
+    }
+
+    .quote {
+      @include transition(opacity, transform);
+
+      order: 2;
+      opacity: 0;
+      transform: translate3d(0, 2rem, 0);
+
+      &.visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      strong {
+        position: relative;
+        display: block;
+        padding-top: rh(0.5);
+        padding-left: rem(15);
+        font-family: $font-family--header;
+        font-size: rem(15);
+        font-weight: 700;
+
+        &::before {
+          content: "–";
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding-top: rh(0.5);
+        }
+
+        span {
+          font-weight: 100;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    .quote-wrapper {
+      display: block;
+
+      .quote {
+        float: left;
+        width: rem(280);
+        padding-right: rem(20);
+        margin-left: rem(-40);
+      }
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    .quote-wrapper {
+      .quote {
+        width: rem(320);
+        margin-left: rem(-160);
+      }
+    }
+  }
+
+}
+
 .animation--head {
   position: absolute;
   overflow-x: hidden;

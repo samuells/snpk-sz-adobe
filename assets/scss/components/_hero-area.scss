@@ -35,6 +35,14 @@
     }
   }
 
+  .logo-adobe {
+    display: none;
+  }
+
+  .social-sharing {
+    display: none;
+  }
+
   @include breakpoint(large) {
     .first-paragraph {
       width: 70%;
@@ -71,6 +79,56 @@
         transform: translate3d(-48%, 0, 0);
       }
     }
+
+    .wrapper--social-sharing {
+      position: relative;
+    }
+
+    .logo-adobe {
+      position: absolute;
+      top: rem(210);
+      left: rem(-120);
+      display: block;
+
+      svg {
+        width: rem(70);
+        height: auto;
+      }
+    }
+
+    .social-sharing {
+      position: absolute;
+      top: rem(360);
+      left: rem(-109);
+      display: block;
+
+      span {
+        display: block;
+      }
+
+      button {
+        width: rem(48);
+        height: rem(48);
+        padding: 0 !important;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 65%;
+          height: auto;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+
+      .fb {
+        background-color: $blue-facebook;
+      }
+
+      .tw {
+        background-color: $blue-twitter;
+      }
+    }
   }
 
   @include breakpoint(xxlarge) {
@@ -88,6 +146,14 @@
           width: 100% !important;
         }
       }
+    }
+
+    .logo-adobe {
+      top: rem(260);
+    }
+
+    .social-sharing {
+      top: rem(418);
     }
   }
 }

@@ -46,7 +46,8 @@ module.exports = {
   */
   plugins: [
     { src: "~/plugins/vue-check-view", ssr: false },
-    { src: "~/plugins/vue-affix", ssr: false }
+    { src: "~/plugins/vue-affix", ssr: false },
+    { src: "~/plugins/vue-social-sharing", ssr: true }
   ],
 
   /*

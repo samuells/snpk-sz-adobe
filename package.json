@@ -45,7 +45,8 @@
     "vue-affix": "^0.4.0",
     "vue-check-view": "^0.2.3",
     "vue-images-loaded": "^1.1.2",
-    "vue-parallaxy": "^1.1.1"
+    "vue-parallaxy": "^1.1.1",
+    "vue-social-sharing": "^2.3.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

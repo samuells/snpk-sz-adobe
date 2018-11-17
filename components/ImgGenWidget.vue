@@ -4,7 +4,9 @@
     :class="imgGenClasses"
     class="img-gen-widget">
     <div class="img-gen-board">
-      <div ref="screenshot">
+      <div
+        ref="screenshot"
+        class="screenshot">
         <component
           :is="bgcComponent"
           class="board-bgc"/>
@@ -118,9 +120,23 @@ export default {
   methods: {
     takePic() {
       const node = this.$refs.screenshot
-      DomToImage.toBlob(node).then(function(blob) {
-        FileSaver.saveAs(blob, "my-node.png")
+      // DomToImage.toBlob(node).then(function(blob) {
+      //   FileSaver.saveAs(blob, ".png")
+      // })
+      DomToImage.toJpeg(node, {
+        quality: 0.95
+      }).then(function(dataUrl) {
+        var link = document.createElement("a")
+        link.download = "adobe-font-botshaft.jpeg"
+        link.href = dataUrl
+        link.click()
       })
+      // DomToImage.toSvg(node).then(function(dataUrl) {
+      //   var link = document.createElement("a")
+      //   link.download = "adobe-font-botshaft.svg"
+      //   link.href = dataUrl
+      //   link.click()
+      // })
     },
     nextBgc() {
       if (this.bgcIndex === 5) {

@@ -1,5 +1,12 @@
 @import "./assets/scss/toolbelt";
 
+.screenshot {
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .img-gen-widget {
   display: flex;
   flex-wrap: wrap;

@@ -67,13 +67,18 @@
       }
 
       + .memory-counter {
-        top: 30%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0) scale(1.4) !important;
+        transform: translate3d(0, #{rh(-1)}, 0) scale(1.4) !important;
         transition-delay: 0ms !important;
 
-        p {
-          text-align: center;
+        @include breakpoint(xlarge) {
+          top: 30%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0) scale(1.4) !important;
+          transition-delay: 0ms !important;
+
+          p {
+            text-align: center;
+          }
         }
       }
     }
@@ -92,7 +97,7 @@
     left: 0;
     width: 100%;
     height: auto;
-    opacity: 0;
+    opacity: 1;
   }
 
   .memory-card {
@@ -124,6 +129,7 @@
   .memory-counter {
     @include transition(opacity, transform, top, left);
 
+    position: relative;
     padding-top: rh(1);
     transform: translate3d(0, #{rem(30), 0});
     opacity: 0;

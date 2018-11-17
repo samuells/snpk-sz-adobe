@@ -12,8 +12,8 @@
               @animCreated="handleTypewriter"/>
           </div>
         </div>
-        <h2>Mehr Freund als Feind: Technologie macht Kreativität leichter</h2>
         <div class="placeholder--typewriter"/>
+        <h2>Mehr Freund als Feind: Technologie macht Kreativität leichter</h2>
         <p>Wir konsumieren also passiv ununterbrochen Typografie. Aber auch einer aktiven Verwendung von Schriftarten steht nichts im Wege. Im Gegenteil: Heute müssen wir keine Grafik-Ausbildung oder ein Design-Studium besitzen, um Wörter und Sätze zu gestalten und zu emotionalisieren. Uns stehen intelligente digitale Tools zur Verfügung, die uns die Kreativität erleichtern. Eine von Adobe und Pfeiffer Consulting durchgeführte Studie zeigt, dass Technologie ein sinnvolles Hilfsmittel ist, um den Kreativprozess zu befeuern: Neue digitale Möglichkeiten, neue Ideen, neue kreative Ergebnisse. Und das für Jeden.</p>
         <h2>Die alten Meister in unserer digitalen Welt</h2>
         <div class="lottie--vector-wrapper">

@@ -7,10 +7,9 @@
   .lottie--typewriter-wrapper {
     position: absolute;
     left: 0;
-    overflow-x: hidden;
     z-index: -1;
     width: 100%;
-    transform: translate3d(0, -30%, 0);
+    transform: translate3d(-37%, -44%, 0);
   }
 
   .lottie--typewriter {
@@ -106,12 +105,11 @@
 
   @include breakpoint(medium) {
     .lottie--typewriter-wrapper {
-      transform: translate3d(0, -30%, 0);
+      transform: translate3d(-10%, -42%, 0);
     }
 
     .lottie--typewriter {
-      width: 150%;
-      margin-left: -20%;
+      width: 180%;
     }
 
     .placeholder--typewriter {
@@ -133,8 +131,12 @@
   }
 
   @include breakpoint(xlarge) {
+    .lottie--typewriter-wrapper {
+      transform: translate3d(-30%, -32%, 0);
+    }
+
     .lottie--typewriter {
-      margin-left: -30%;
+      width: 150%;
     }
 
     .placeholder--typewriter {
@@ -168,9 +170,12 @@
   }
 
   @include breakpoint(w1280) {
+    .lottie--typewriter-wrapper {
+      transform: translate3d(-15%, -32%, 0);
+    }
+
     .lottie--typewriter {
       width: 120%;
-      margin-left: -20%;
     }
 
     .placeholder--typewriter {
@@ -187,9 +192,12 @@
   }
 
   @include breakpoint(xxlarge) {
+    .lottie--typewriter-wrapper {
+      transform: translate3d(-10%, -32%, 0);
+    }
+
     .lottie--typewriter {
       width: 110%;
-      margin-left: -10%;
     }
 
     .lottie--vector-wrapper {

@@ -120,17 +120,17 @@ export default {
   methods: {
     takePic() {
       const node = this.$refs.screenshot
-      // DomToImage.toBlob(node).then(function(blob) {
-      //   FileSaver.saveAs(blob, ".png")
-      // })
-      DomToImage.toJpeg(node, {
-        quality: 0.95
-      }).then(function(dataUrl) {
-        var link = document.createElement("a")
-        link.download = "adobe-font-botshaft.jpeg"
-        link.href = dataUrl
-        link.click()
+      DomToImage.toBlob(node).then(function(blob) {
+        FileSaver.saveAs(blob, ".png")
       })
+      // DomToImage.toJpeg(node, {
+      //   quality: 0.95
+      // }).then(function(dataUrl) {
+      //   var link = document.createElement("a")
+      //   link.download = "adobe-font-botshaft.jpeg"
+      //   link.href = dataUrl
+      //   link.click()
+      // })
       // DomToImage.toSvg(node).then(function(dataUrl) {
       //   var link = document.createElement("a")
       //   link.download = "adobe-font-botshaft.svg"

@@ -213,7 +213,7 @@ export default {
           (scrolled - this.head.startHeight) /
           (this.head.endHeight - this.head.startHeight)
         const time = this.head.duration * timePercentage
-        if (time > this.head.duration * 0.5) {
+        if (time > this.head.duration * 0.15) {
           this.triangleClasses = "visible"
         } else {
           this.triangleClasses = ""

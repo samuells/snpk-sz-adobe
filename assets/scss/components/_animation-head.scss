@@ -76,6 +76,8 @@
   }
 
   @include breakpoint(xlarge) {
+    margin-top: rh(-3);
+
     .quote-wrapper {
       .quote {
         width: rem(320);
@@ -84,6 +86,13 @@
     }
   }
 
+  @include breakpoint(w1280) {
+    margin-top: rh(1);
+  }
+
+  @include breakpoint(xxlarge) {
+    margin-top: rh(-6);
+  }
 }
 
 .animation--head {

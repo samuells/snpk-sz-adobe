@@ -20,15 +20,14 @@
         <div
           :style="placeholderStyle"
           class="placeholder--pizza"/>
+        <h4>Marken in ihrem Gewand</h4>
+        <p>Natürlich unterliegen auch Schriftarten Trends und kulturellen Veränderungen. Die ersten, die darauf reagieren, sind Marken. Man will ja am Puls Zeit bleiben. So verpassten sich in letzter Zeit eine Reihe an großen Marken ein neues Schriftbild, um auf uns modern und fortschrittlich zu wirken. Ein Beispiel dafür ist das Fashion-Label Burberry, das ihr altes Logo mit hohem Wiedererkennungsfaktor gegen einen schlichten Schriftzug tauschte.</p>
         <div
           v-view="handleStopSignView"
           :class="stopSignClasses"
           class="stop-sign--wrapper">
           <StopSign class="stop-sign"/>
         </div>
-        <div class="placeholder--stop-sign"/>
-        <h4>Marken in ihrem Gewand</h4>
-        <p>Natürlich unterliegen auch Schriftarten Trends und kulturellen Veränderungen. Die ersten, die darauf reagieren, sind Marken. Man will ja am Puls Zeit bleiben. So verpassten sich in letzter Zeit eine Reihe an großen Marken ein neues Schriftbild, um auf uns modern und fortschrittlich zu wirken. Ein Beispiel dafür ist das Fashion-Label Burberry, das ihr altes Logo mit hohem Wiedererkennungsfaktor gegen einen schlichten Schriftzug tauschte.</p>
         <div class="quote-wrapper">
           <p
             v-view="handleQuoteView"

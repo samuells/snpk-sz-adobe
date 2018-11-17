@@ -23,7 +23,7 @@ $generate-classes: false !default;
 
   @if $box-model {
     padding-bottom: rh(0.25);
-    margin-bottom: rh(0.25);
+    margin-bottom: rh(0.5);
 
     @include breakpoint(medium) {
       padding-bottom: rh(0.5);

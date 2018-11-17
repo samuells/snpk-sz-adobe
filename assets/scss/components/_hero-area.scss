@@ -7,6 +7,10 @@
     padding-bottom: rh(1);
   }
 
+  .hero-content {
+    position: relative;
+  }
+
   .starting-letter {
     float: left;
     font-family: $font-family--header;
@@ -14,17 +18,38 @@
     line-height: 0.8;
   }
 
-  .lottie--question {
-    display: none;
+  .lottie--font-select-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: rh(12);
+
+    .lottie--font-select {
+      position: absolute;
+      width: auto !important;
+      height: rh(12) !important;
+      transform: translate3d(-58%, 0, 0);
+
+      > svg {
+        width: auto !important;
+      }
+    }
   }
 
   @include breakpoint(large) {
-    .lottie--question {
+    .first-paragraph {
+      width: 70%;
+    }
+
+    .lottie--font-select-wrapper {
       position: absolute;
-      top: 54%;
-      left: 0;
+      top: rh(6);
       z-index: -1;
-      display: block;
+      width: 100%;
+
+      .lottie--font-select {
+        left: 50%;
+        height: rh(14) !important;
+      }
     }
   }
 
@@ -35,8 +60,31 @@
       margin-right: rem(-120);
     }
 
-    .lottie--question {
-      top: auto;
+    .first-paragraph {
+      width: 100%;
+    }
+
+    .lottie--font-select-wrapper {
+      .lottie--font-select {
+        transform: translate3d(-48%, 0, 0);
+      }
+    }
+  }
+
+  @include breakpoint(xxlarge) {
+    .lottie--font-select-wrapper {
+      padding-bottom: rh(30);
+
+      .lottie--font-select {
+        left: 0;
+        width: 100% !important;
+        height: auto !important;
+        transform: translate3d(0, 0, 0);
+
+        > svg {
+          width: 100% !important;
+        }
+      }
     }
   }
 }

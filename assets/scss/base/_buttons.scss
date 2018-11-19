@@ -38,9 +38,7 @@ $generate-classes: false !default;
   }
 
   // stylelint-disable
-  &:active,
-  &:hover, &:active,
-  &:focus {
+  &:hover {
     background-color: $button-bgc--hover;
     transform: translate3d(0, #{rem(2)}, 0);
 

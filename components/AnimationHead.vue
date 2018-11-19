@@ -42,7 +42,7 @@
           <div class="content--affix-text row--outer">
             <div class="column--text">
               <h4>Der erste Eindruck zählt</h4>
-              <p>Was passiert aber, wenn ein Wort im falschen Kleid steckt? Es irritiert und verwirrt uns. Wenn wir beispielsweise das Wort „Liebe“ lesen, fühlen wir uns mit einer eleganten, freundlichen Schrift wohl. So kennen wir das. Schreiben wir „Liebe“ in der Schriftart „Fraktur“, die an NS- Propaganda erinnert, löst dies völlig andere Emotionen in uns aus.</p>
+              <p>Was passiert aber, wenn ein Wort im falschen Kleid steckt? Es irritiert und verwirrt uns. Wenn wir beispielsweise das Wort „Liebe“ lesen, fühlen wir uns mit einer eleganten, freundlichen Schrift wohl. So kennen wir das. Schreiben wir „Liebe“ in der Schriftart „Fraktur“, die an die NS- Propaganda erinnert, löst dies völlig andere Emotionen in uns aus.</p>
               <div class="quote-wrapper">
                 <p
                   v-view="handleQuoteView"

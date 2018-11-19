@@ -18,7 +18,7 @@
           class="slider-button"/>
       </div>
       <div class="slider-wrapper mp">
-        <label>MAKE UP</label>
+        <label>MAKE-UP</label>
         <TypoMatcherSlider
           v-model="mpRange"
           :step="1"

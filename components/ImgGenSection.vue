@@ -3,7 +3,7 @@
     <div class="row--outer">
       <div class="column--text">
         <h3>IHRE BOTSCHAFT</h3>
-        <p class="small">Schauen Sie selbst, wie Schriften wirken: Wählen Sie Text, Schriftart und Hintergrund und erstellen so Sie Ihre persönliche Botschaft. Diese können Sie als XXX herunterladen.</p>
+        <p class="small">Sehen Sie selbst, wie Schriften wirken: Wählen Sie Text, Schriftart und Hintergrund und erstellen Sie so Ihre persönliche Botschaft. Diese können Sie als JPG herunterladen.</p>
         <ImgGenWidget/>
       </div>
     </div>

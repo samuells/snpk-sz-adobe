@@ -32,7 +32,7 @@
           <p
             v-view="handleQuoteView"
             :class="quoteClasses"
-            class="quote">„Helvetica ist wie Toastbrot. Schmeck nach nix, aber man kann alles drauflegen.“<strong>Erik Spiekermann<br><span>Typograf und Designer</span></strong></p>
+            class="quote">„Helvetica ist wie Toastbrot. Schmeckt nach nix, aber man kann alles drauflegen.“<strong>Erik Spiekermann<br><span>Typograf und Designer</span></strong></p>
           <p>Oder nehmen wir die Schrift-Evolution bei Google: Der Suchmaschinen-Riese setzt heute auf eine moderne, serifenlose und sehr klare Schrift. Dem gleich zog auch die deutsche Parfümeriekette Douglas. Im Vorbeigehen fällt der neue Schriftzug vielleicht gar nicht so auf, weil wir nicht darauf achten. Aber ein kurzes Innehalten lohnt sich – denn Schrift bewegt uns.</p>
         </div>
       </div>

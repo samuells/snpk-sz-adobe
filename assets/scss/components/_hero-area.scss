@@ -7,6 +7,10 @@
     padding-bottom: rh(1);
   }
 
+  .first-paragraph {
+    padding-top: rh(1.5);
+  }
+
   .hero-content {
     position: relative;
   }
@@ -46,6 +50,7 @@
   @include breakpoint(large) {
     .first-paragraph {
       width: 70%;
+      padding-top: rh(2);
     }
 
     .lottie--font-select-wrapper {
@@ -70,6 +75,7 @@
 
     .first-paragraph {
       width: 100%;
+      padding-top: rh(3.5);
     }
 
     .lottie--font-select-wrapper {

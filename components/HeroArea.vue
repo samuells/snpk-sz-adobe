@@ -1,6 +1,10 @@
 <template>
   <div class="hero-area">
-    <no-ssr>
+    <Lottie
+      :options="heroOptions"
+      class="lottie--hero"
+      @animCreated="handleHeroDesktop"/>
+    <!-- <no-ssr>
       <img
         v-images-loaded="imageLoaded"
         class="full-width"
@@ -8,7 +12,7 @@
         height="720"
         width="1280"
         alt="">
-    </no-ssr>
+    </no-ssr> -->
     <div class="hero-content">
       <div class="row--outer">
         <div class="column--text">
@@ -59,16 +63,16 @@
       </div>
       <div class="row--outer">
         <div class="column--text">
-          <h1>Hier steht eine passende Headline zum Visual</h1>
+          <h1 class="visually-hidden">Shrift bewegt</h1>
           <p class="first-paragraph"><span class="starting-letter">D</span>er Brief an den Steuerberater, ein Kündigungsschreiben für das Abo oder schnell ein paar Notizen festhalten: Datei öffnen und los geht’s mit Tippen. Natürlich achten wir auf den Inhalt unserer Texte, vielleicht noch auf Rechtschreibung und Satzzeichen – aber wie sieht es mit der Schriftart aus? „Calibri“, voreingestellte in Word, ist den meisten regelmäßigen Nutzern ein Begriff, aber hinter „Bodoni“, „Garamond“ oder „Frutiger“ könnten ja auch ein trendiges Fashion-Label oder ein neuer Smoothie stecken. Tatsächlich gibt es hunderttausende verschiedene Schriften für unser römisches Zwei-Buchstaben-Alphabet, die teilweise vor hunderten von Jahren in akribischer Feinstarbeit entwickelt wurden. Aber warum zerbrechen sich Typografen den Kopf über Serifen, Punzen, und Ligaturen? Braucht es diese Tüftelei wirklich?</p>
         </div>
       </div>
       <div class="lottie--font-select-wrapper">
         <Lottie
           v-view="handleLottie"
-          :options="defaultOptions"
+          :options="fontSelectOptions"
           class="lottie--font-select"
-          @animCreated="handleAnimation"/>
+          @animCreated="handleFontSelect"/>
       </div>
       <div class="row--outer">
         <div class="column--text">
@@ -82,6 +86,7 @@
 <script>
 import imagesLoaded from "vue-images-loaded"
 import Lottie from "@/components/lottie"
+import heroDesktopAnimation from "@/assets/animations/hero-desktop.json"
 import fontSelectAnimation from "@/assets/animations/font-select.json"
 import LogoAdobe from "@/assets/icons/logo-adobe.svg"
 
@@ -95,19 +100,28 @@ export default {
   },
   data() {
     return {
-      defaultOptions: {
+      fontSelectOptions: {
         animationData: fontSelectAnimation,
         loop: false,
         autoplay: false
       },
+      heroOptions: {
+        animationData: heroDesktopAnimation,
+        loop: false,
+        autoplay: true
+      },
       height: "auto",
       width: "100%",
-      isImageLoaded: false
+      isImageLoaded: true
     }
   },
   methods: {
-    handleAnimation: function(anim) {
+    handleFontSelect: function(anim) {
       this.anim = anim
+    },
+    handleHeroDesktop: function(anim) {
+      this.heroDesktopAnim = anim
+      this.heroDesktopAnim.setSpeed(1.2)
     },
     imageLoaded() {
       this.isImageLoaded = true

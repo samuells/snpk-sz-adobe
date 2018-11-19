@@ -59,7 +59,7 @@ export default {
         loop: false,
         autoplay: false
       },
-      isHeroImageLoaded: false,
+      isHeroImageLoaded: true,
       fontTypeClasses: "",
       fontType: {
         duration: 0,

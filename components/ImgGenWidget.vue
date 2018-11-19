@@ -121,7 +121,7 @@ export default {
     takePic() {
       const node = this.$refs.screenshot
       DomToImage.toBlob(node).then(function(blob) {
-        FileSaver.saveAs(blob, ".png")
+        FileSaver.saveAs(blob, "adobe-font-botshaft.png")
       })
       // DomToImage.toJpeg(node, {
       //   quality: 0.95

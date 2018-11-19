@@ -16,6 +16,7 @@
 
   .illustration--oval {
     top: rh(15);
+    display: none;
     width: auto;
     height: rh(8);
     transform: translate3d(0, #{rem(50)}, 0);
@@ -62,6 +63,7 @@
 
     .illustration--oval {
       top: 0;
+      display: block;
       height: auto;
       width: 12%;
 

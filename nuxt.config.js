@@ -32,11 +32,11 @@ module.exports = {
         property: "og:description",
         content: "Ein interaktives Erlebnis über Schriftarten und ihre Wirkung."
       },
-      { property: "og:url", content: "tbd" },
-      { property: "og:image", content: "/favicon.ico" }
+      // { property: "og:url", content: "https://sz.de" },
+      { property: "og:image", content: "/adobe-sz-og.jpg" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/adobe-sz-og.jpg" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "stylesheet", href: "https://use.typekit.net/qji8zia.css" }
     ]
   },

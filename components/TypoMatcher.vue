@@ -14,10 +14,10 @@
     </div>
     <IconOval
       :class="ovalClasses"
-      class="illustration--oval"/>
+      class="illustration--oval visible"/>
     <IconBlueLine
       :class="blueLineClasses"
-      class="illustration--blue-line"/>
+      class="illustration--blue-line visible"/>
     <div class="row--outer">
       <div class="column--text">
         <TypoMarcherWidget/>

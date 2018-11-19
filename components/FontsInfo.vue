@@ -140,7 +140,7 @@ export default {
         this.fontTypeClasses = "visible"
         this.fontType.startHeight = this.windowScrolled
         this.fontType.endHeight =
-          this.fontType.startHeight + this.windowHeight * 0.5
+          this.fontType.startHeight + this.windowHeight * 0.6
         this.fontType.duration = this.animFontType.getDuration() * 1000 - 1
         this.fontType.isAnimating = true
       }
@@ -153,10 +153,10 @@ export default {
         const time = this.fontType.duration * timePercentage
         if (time < this.fontType.duration) {
           this.animFontType.goToAndStop(time)
-          this.fontSlice.isFontTypeDone = false
+          // this.fontSlice.isFontTypeDone = false
         } else {
           this.animFontType.goToAndStop(this.fontType.duration)
-          this.fontSlice.isFontTypeDone = true
+          // this.fontSlice.isFontTypeDone = true
         }
       }
     },
@@ -167,23 +167,27 @@ export default {
         e.type === "enter"
       ) {
         this.fontSlice.startHeight =
-          this.windowScrolled + this.windowHeight * 0.35
+          this.windowScrolled + this.windowHeight * 0.2
         this.fontSlice.endHeight =
-          this.fontSlice.startHeight + this.windowHeight * 0.5
+          this.fontSlice.startHeight + this.windowHeight * 0.6
         this.fontSlice.duration = this.animFontSlice.getDuration() * 1000 - 1
         this.fontSlice.isAnimating = true
       }
     },
     animateFontSliceOnScroll(scrolled) {
-      if (this.fontSlice.isFontTypeDone) {
-        this.fontSliceClasses = "visible"
-      }
+      // if (this.fontSlice.isFontTypeDone) {
+      // this.fontSliceClasses = "visible"
+      // }
 
-      if (this.fontSlice.isFontTypeDone && this.fontSlice.isAnimating) {
+      // if (this.fontSlice.isFontTypeDone && this.fontSlice.isAnimating) {
+      if (this.fontSlice.isAnimating) {
         const timePercentage =
           (scrolled - this.fontSlice.startHeight) /
           (this.fontSlice.endHeight - this.fontSlice.startHeight)
         const time = this.fontSlice.duration * timePercentage
+        if (time > 0) {
+          this.fontSliceClasses = "visible"
+        }
         if (time < this.fontSlice.duration) {
           this.animFontSlice.goToAndStop(time)
         } else {

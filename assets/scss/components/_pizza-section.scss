@@ -169,7 +169,14 @@
     .stop-sign {
       left: auto;
       right: 100%;
+      max-width: rem(500);
       transform: translate3d(-10%, -30%, 0);
+    }
+  }
+
+  @include breakpoint(w1280) {
+    .stop-sign {
+      width: 50%;
     }
   }
 }

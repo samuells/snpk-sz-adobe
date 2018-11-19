@@ -4,8 +4,9 @@
       <div class="column--text">
         <div class="lottie--typewriter-wrapper">
           <div
+            v-view="handleTypewriterView"
             :class="typewriterClasses"
-            class="lottie--typewriter visible">
+            class="lottie--typewriter">
             <Lottie
               :options="typewriterOptions"
               @animCreated="handleTypewriter"/>
@@ -17,8 +18,9 @@
         <h2>Die alten Meister in unserer digitalen Welt</h2>
         <div class="lottie--vector-wrapper">
           <div
+            v-view="handleVectorView"
             :class="vectorClasses"
-            class="lottie--vector visible">
+            class="lottie--vector">
             <Lottie
               :options="vectorOptions"
               @animCreated="handleVector"/>
@@ -27,8 +29,9 @@
         <p>Als Vorreiter und Impulsgeber für kreative Software sucht Adobe kontinuierlich nach neuen Wegen, um Experten und Laien das kreative Arbeiten so einfach und fortschrittlich wie möglich zu machen. So auch in diesem Jahr: 2018 erweckte Adobe die alten Schriften der Bauhaus-Meister zu neuem, digitalem Leben und erschließt damit eine unschätzbare Quelle der Inspiration für das kreative Arbeiten. Unter der Leitung von Erik Spiekermann, einem der renommiertesten Typografen, wurden die sogenannten „Adobe Hidden Treasures – Bauhaus Dessau“ in Zusammenarbeit mit ihren internationalen Hochschulen digital vervollständigt und überarbeitet. Die funktionalen, markanten Typografien des Bauhaus-Stils spiegeln das avantgardistische Denken der Kunstschule wider und vereinen eindrucksvoll Kunst und Handwerk.</p>
         <div class="lottie--comp-book-wrapper">
           <div
+            v-view="handleCompBookView"
             :class="compBookClasses"
-            class="lottie--comp-book visible">
+            class="lottie--comp-book">
             <Lottie
               :options="compBookOptions"
               @animCreated="handleCompBook"/>
@@ -57,9 +60,9 @@ export default {
         loop: true,
         autoplay: false
       },
-      typewriterClasses: "",
-      compBookClasses: "",
-      vectorClasses: "",
+      typewriterClasses: "visible",
+      compBookClasses: "visible",
+      vectorClasses: "visible",
       quoteClasses: ""
     }
   },
@@ -96,19 +99,19 @@ export default {
     },
     handleTypewriterView(e) {
       if (e.percentTop < 0.8) {
-        this.typewriterClasses = "visible"
+        // this.typewriterClasses = "visible"
         this.animTypewriter.play()
       }
     },
     handleCompBookView(e) {
       if (e.percentTop < 0.8) {
-        this.compBookClasses = "visible"
+        // this.compBookClasses = "visible"
         this.animCompBook.play()
       }
     },
     handleVectorView(e) {
       if (e.percentTop < 0.8) {
-        this.vectorClasses = "visible"
+        // this.vectorClasses = "visible"
         this.animVector.play()
       }
     },

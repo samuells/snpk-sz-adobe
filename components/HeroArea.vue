@@ -1,9 +1,21 @@
 <template>
   <div class="hero-area">
-    <Lottie
-      :options="heroOptions"
-      class="lottie--hero"
-      @animCreated="handleHeroDesktop"/>
+    <show-at
+      :breakpoints="{small: 620, medium: 768, large: 1024}"
+      breakpoint="mediumAndAbove">
+      <Lottie
+        :options="heroDesktopOptions"
+        class="lottie--hero"
+        @animCreated="handleHeroDesktop"/>
+    </show-at>
+    <hide-at
+      :breakpoints="{small: 620, medium: 768, large: 1024}"
+      breakpoint="mediumAndAbove">
+      <Lottie
+        :options="heroMobileOptions"
+        class="lottie--hero"
+        @animCreated="handleHeroMobile"/>
+    </hide-at>
     <!-- <no-ssr>
       <img
         v-images-loaded="imageLoaded"
@@ -87,8 +99,10 @@
 import imagesLoaded from "vue-images-loaded"
 import Lottie from "@/components/lottie"
 import heroDesktopAnimation from "@/assets/animations/hero-desktop.json"
+import heroMobileAnimation from "@/assets/animations/hero-mobile.json"
 import fontSelectAnimation from "@/assets/animations/font-select.json"
 import LogoAdobe from "@/assets/icons/logo-adobe.svg"
+import { showAt, hideAt } from "vue-breakpoints"
 
 export default {
   directives: {
@@ -96,7 +110,15 @@ export default {
   },
   components: {
     Lottie,
-    LogoAdobe
+    LogoAdobe,
+    showAt,
+    hideAt
+  },
+  props: {
+    windowWidth: {
+      type: Number,
+      required: true
+    }
   },
   data() {
     return {
@@ -105,8 +127,13 @@ export default {
         loop: false,
         autoplay: false
       },
-      heroOptions: {
+      heroDesktopOptions: {
         animationData: heroDesktopAnimation,
+        loop: false,
+        autoplay: true
+      },
+      heroMobileOptions: {
+        animationData: heroMobileAnimation,
         loop: false,
         autoplay: true
       },
@@ -122,6 +149,10 @@ export default {
     handleHeroDesktop: function(anim) {
       this.heroDesktopAnim = anim
       this.heroDesktopAnim.setSpeed(1.2)
+    },
+    handleHeroMobile: function(anim) {
+      this.mobileDesktopAnim = anim
+      this.mobileDesktopAnim.setSpeed(1.2)
     },
     imageLoaded() {
       this.isImageLoaded = true

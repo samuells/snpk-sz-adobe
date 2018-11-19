@@ -1,7 +1,7 @@
 <template>
   <main :id="containerId">
     <TopBar/>
-    <HeroArea/>
+    <HeroArea :window-width="windowWidth"/>
     <FontsInfo
       :window-height="windowHeight"
       :window-scrolled="windowScrolled"/>

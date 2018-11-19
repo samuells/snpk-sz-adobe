@@ -33,7 +33,10 @@ module.exports = {
         content: "Ein interaktives Erlebnis über Schriftarten und ihre Wirkung."
       },
       // { property: "og:url", content: "https://sz.de" },
-      { property: "og:image", content: "/adobe-sz-og.jpg" }
+      {
+        property: "og:image",
+        content: "https://snpk-sz-adobe.now.sh/adobe-sz-og.jpg"
+      }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },

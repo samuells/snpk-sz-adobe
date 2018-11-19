@@ -23,10 +23,20 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: pkg.description }
+      { hid: "description", name: "description", content: pkg.description },
+      {
+        property: "og:title",
+        content: "Schrift bewegt: Wie uns Typografie emotional beeinflusst."
+      },
+      {
+        property: "og:description",
+        content: "Ein interaktives Erlebnis über Schriftarten und ihre Wirkung."
+      },
+      { property: "og:url", content: "tbd" },
+      { property: "og:image", content: "/favicon.ico" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/adobe-sz-og.jpg" },
       { rel: "stylesheet", href: "https://use.typekit.net/qji8zia.css" }
     ]
   },

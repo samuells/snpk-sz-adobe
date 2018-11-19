@@ -22,9 +22,9 @@
             </div>
             <social-sharing
               url="https://sz.de/"
-              title="SNPK ADOBE BS"
-              description="Description: Hier steht eine passende Headline zum Visual"
-              quote="No Quote"
+              title="Schrift bewegt: Wie uns Typografie emotional beeinflusst."
+              description="Typografie und ihre emotionale Wirkung: Wie uns Schriftarten unterbewusst beeinflussen."
+              quote="Typografie und ihre emotionale Wirkung: Wie uns Schriftarten unterbewusst beeinflussen."
               hashtags="typography,fonts,web"
               twitter-user=""
               inline-template

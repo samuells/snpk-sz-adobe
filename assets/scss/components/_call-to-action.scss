@@ -1,0 +1,48 @@
+@import "./assets/scss/toolbelt";
+
+.call-to-action {
+  @include clearfix;
+  @include transition(background-color);
+
+  display: block;
+  padding: 0 rem(20);
+  margin-bottom: rh(1);
+  background-color: $blue-dodger;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: lighten($blue-dodger, 10%);
+  }
+
+  svg {
+    float: right;
+  }
+
+  h3 {
+    padding-top: rh(0.5);
+    padding-bottom: rh(1);
+  }
+
+  p {
+    padding-bottom: rh(0.5);
+    margin: 0 !important;
+    font-weight: 700;
+    color: $white;
+  }
+
+
+
+
+  @include breakpoint(large) {
+    margin-bottom: rh(1.5);
+  }
+
+  @include breakpoint(xlarge) {
+    margin-bottom: rh(2);
+  }
+
+  @include breakpoint(xxlarge) {
+    margin-bottom: rh(3);
+  }
+}

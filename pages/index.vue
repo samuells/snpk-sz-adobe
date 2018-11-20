@@ -21,6 +21,7 @@
     <ImgGenSection/>
     <TypewriterSection/>
     <MemorySection/>
+    <CallToAction/>
     <Footer/>
   </main>
 </template>
@@ -36,6 +37,7 @@ import PizzaSection from "@/components/PizzaSection"
 import ImgGenSection from "@/components/ImgGenSection"
 import TypewriterSection from "@/components/TypewriterSection"
 import MemorySection from "@/components/MemorySection"
+import CallToAction from "@/components/CallToAction"
 import Footer from "@/components/Footer"
 
 export default {
@@ -50,6 +52,7 @@ export default {
     ImgGenSection,
     TypewriterSection,
     MemorySection,
+    CallToAction,
     Footer
   },
   data() {

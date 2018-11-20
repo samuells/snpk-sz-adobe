@@ -32,7 +32,10 @@ module.exports = {
         property: "og:description",
         content: "Ein interaktives Erlebnis über Schriftarten und ihre Wirkung."
       },
-      // { property: "og:url", content: "https://sz.de" },
+      {
+        property: "og:url",
+        content: "https://advertorial.sueddeutsche.de/adobe"
+      },
       {
         property: "og:image",
         content: "https://snpk-sz-adobe.now.sh/adobe-sz-og.jpg"

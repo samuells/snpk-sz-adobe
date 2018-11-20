@@ -31,16 +31,19 @@ $generate-classes: false !default;
   display: inline-block;
   font-family: inherit;
   text-decoration: none;
-  color: $link-fc;
+  color: inherit;
   box-shadow: inset 0 calc-rem(-1) 0 0;
+  transition-duration: 200ms;
 
   &:focus,
   &:hover {
     color: $link-paragraph-fc--hover;
+    box-shadow: inset 0 0 0 0;
   }
 
   &:active {
     color: $link-paragraph-fc--active;
+    box-shadow: inset 0 0 0 0;
   }
 }
 // ---------

@@ -61,12 +61,12 @@ $button-gray-bc--active: rgba($gray-scarpa, 0.5) !default;
 
 // Anchor Links Colors
 $link-fc: rgba($gray-scarpa, 0.5) !default;
-$link-fc--hover: $gray-scarpa !default;
-$link-fc--active: darken($gray-scarpa, 10%) !default;
+$link-fc--hover: $red-pome !default;
+$link-fc--active: darken($red-pome, 10%) !default;
 $link-underline: $link-fc !default;
 $link-paragraph-fc: $link-fc !default;
 $link-paragraph-fc--hover: $link-fc--hover !default;
-$link-paragraph-fc--active: $white !default;
+$link-paragraph-fc--active: $link-fc--active !default;
 $link-paragraph-underline: $link-fc--hover !default;
 
 // // Top Navigation Colors

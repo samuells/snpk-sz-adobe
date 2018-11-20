@@ -21,7 +21,7 @@
           :style="placeholderStyle"
           class="placeholder--pizza"/>
         <h4>Marken in ihrem Gewand</h4>
-        <p>Natürlich unterliegen auch Schriftarten Trends und kulturellen Veränderungen. Die ersten, die darauf reagieren, sind Marken. Man will ja am Puls Zeit bleiben. So verpassten sich in letzter Zeit eine Reihe an großen Marken ein neues Schriftbild, um auf uns modern und fortschrittlich zu wirken. Ein Beispiel dafür ist das Fashion-Label Burberry, das ihr altes Logo mit hohem Wiedererkennungsfaktor gegen einen schlichten Schriftzug tauschte.</p>
+        <p>Natürlich unterliegen auch Schriftarten Trends und kulturellen Veränderungen. Die ersten, die darauf reagieren, sind Marken. Man will ja am Puls Zeit bleiben. So verpassten sich in letzter Zeit eine Reihe an großen Marken ein neues Schriftbild, um auf uns modern und fortschrittlich zu wirken. Ein Beispiel dafür ist das Fashion-Label <a href="https://www.designtagebuch.de/burberry-geht-in-sachen-branding-mit-der-mode/">Burberry</a>, das ihr altes Logo mit hohem Wiedererkennungsfaktor gegen einen schlichten Schriftzug tauschte.</p>
         <div
           :class="stopSignClasses"
           class="stop-sign--wrapper visible">
@@ -32,7 +32,7 @@
             v-view="handleQuoteView"
             :class="quoteClasses"
             class="quote">„Helvetica ist wie Toastbrot. Schmeckt nach nix, aber man kann alles drauflegen.“<strong>Erik Spiekermann<br><span>Typograf und Designer</span></strong></p>
-          <p>Oder nehmen wir die Schrift-Evolution bei Google: Der Suchmaschinen-Riese setzt heute auf eine moderne, serifenlose und sehr klare Schrift. Dem gleich zog auch die deutsche Parfümeriekette Douglas. Im Vorbeigehen fällt der neue Schriftzug vielleicht gar nicht so auf, weil wir nicht darauf achten. Aber ein kurzes Innehalten lohnt sich – denn Schrift bewegt uns.</p>
+          <p>Oder nehmen wir die <a href="https://www.googlewatchblog.de/2018/09/20-jahre-google-logo/">Schrift-Evolution bei Google</a>: Der Suchmaschinen-Riese setzt heute auf eine moderne, serifenlose und sehr klare Schrift. Dem gleich zog auch die deutsche Parfümeriekette <a href="https://www.designtagebuch.de/neuer-markenauftritt-fuer-douglas/">Douglas</a>. Im Vorbeigehen fällt der neue Schriftzug vielleicht gar nicht so auf, weil wir nicht darauf achten. Aber ein kurzes Innehalten lohnt sich – denn Schrift bewegt uns.</p>
         </div>
       </div>
     </div>

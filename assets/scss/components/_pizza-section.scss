@@ -94,6 +94,8 @@
       font-family: $font-family--header;
       font-size: rem(15);
       font-weight: 700;
+      line-height: 1.25 !important;
+      letter-spacing: 0.02em;
 
       &::before {
         content: "–";

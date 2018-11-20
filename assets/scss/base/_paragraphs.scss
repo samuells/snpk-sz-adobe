@@ -23,16 +23,7 @@ $generate-classes: false !default;
 
   @if $box-model {
     padding-bottom: rh(0.5);
-    margin-bottom: rh(0.75);
-
-    @include breakpoint(medium) {
-      padding-bottom: rh(0.5);
-      margin-bottom: rh(1);
-    }
-
-    @include breakpoint(xlarge) {
-      margin-bottom: rh(1);
-    }
+    margin-bottom: rh(0.5);
   }
 }
 
@@ -55,8 +46,8 @@ $generate-classes: false !default;
 @mixin paragraph--quote($box-model: true) {
   @include paragraph($box-model);
 
-  font-size: rem(26);
-  line-height: (34 / 26);
+  font-size: rem(24) !important;
+  line-height: 1.12 !important;
   font-weight: 700;
   color: $red-pome;
 }

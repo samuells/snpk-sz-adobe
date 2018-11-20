@@ -97,7 +97,7 @@
     left: 0;
     width: 100%;
     height: auto;
-    opacity: 1;
+    opacity: 0;
   }
 
   .memory-card {
@@ -197,7 +197,7 @@
   }
 
   @include breakpoint(xlarge) {
-    margin-bottom: rh(5);
+    margin-bottom: rh(2);
 
     .memory-counter {
       position: absolute;
@@ -228,6 +228,6 @@
   }
 
   @include breakpoint(xxlarge) {
-    margin-bottom: rh(6);
+    margin-bottom: rh(3);
   }
 }

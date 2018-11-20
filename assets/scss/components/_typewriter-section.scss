@@ -3,6 +3,7 @@
 .section--typewriter {
   position: relative;
   margin-top: rh(4);
+  margin-bottom: rh(1);
 
   .lottie--typewriter-wrapper {
     position: absolute;
@@ -170,6 +171,8 @@
   }
 
   @include breakpoint(w1280) {
+    margin-bottom: rh(2);
+
     .lottie--typewriter-wrapper {
       transform: translate3d(-15%, -32%, 0);
     }
@@ -182,6 +185,10 @@
       height: 0;
     }
 
+    .lottie--comp-book-wrapper {
+      transform: translate3d(0, -25%, 0);
+    }
+
     .lottie--vector-wrapper {
       transform: translate3d(0, 20%, 0);
     }
@@ -192,6 +199,8 @@
   }
 
   @include breakpoint(xxlarge) {
+    margin-bottom: rh(3);
+
     .lottie--typewriter-wrapper {
       transform: translate3d(-10%, -32%, 0);
     }

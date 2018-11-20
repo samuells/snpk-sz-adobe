@@ -6,7 +6,11 @@
   z-index: 1;
 
   @include breakpoint(xlarge) {
-    padding-bottom: rh(4);
+    padding-bottom: rh(5);
+  }
+
+  @include breakpoint(xxlarge) {
+    padding-bottom: rh(6);
   }
 }
 

@@ -197,7 +197,7 @@ export default {
     successMessage() {
       if (this.numberOfStep > 28) {
         return "Nicht schlecht! Aber das geht noch schneller!"
-      } else if (this.numberOfStep > 14) {
+      } else if (this.numberOfStep > 16) {
         return "Klasse! Sie haben gutes Gespür für Typografie!"
       } else {
         return "Super! An Ihnen ist ein Typograf verloren gegangen!"

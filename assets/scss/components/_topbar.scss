@@ -1,5 +1,13 @@
 @import "./assets/scss/toolbelt";
 
+.topbar-placeholder {
+  height: rem(40);
+
+  @include breakpoint(xlarge) {
+    height: rem(42)
+  }
+}
+
 .topbar {
   position: fixed;
   top: 0;

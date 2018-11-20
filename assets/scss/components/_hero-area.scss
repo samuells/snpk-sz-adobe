@@ -7,6 +7,13 @@
     padding-bottom: rh(1);
   }
 
+  p {
+    span.special-font {
+      font-family: $font-family--subheadline;
+      font-size: 0.93em;
+    }
+  }
+
   .first-paragraph {
     padding-top: rh(1.5);
   }

@@ -27,8 +27,9 @@ $generate-classes: false !default;
 
 @mixin link--in-paragraph {
   @include transition(color, box-shadow);
+  @include word-wrap;
 
-  display: inline-block;
+  display: inline;
   font-family: inherit;
   text-decoration: none;
   color: inherit;

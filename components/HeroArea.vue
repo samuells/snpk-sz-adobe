@@ -88,7 +88,7 @@
       </div>
       <div class="row--outer">
         <div class="column--text">
-          <p>Ja. Denn jede Schrift hat ihre ganz eigene Ausstrahlung. Sie übermittelt Emotionen und unterstützt die Interpretation eines Wortes. Meistens realisieren wir das nicht einmal – doch wenn wir ganz bewusst darauf achten und aufmerksam die Schrift lesen, erkennen wir schwarz auf weiß, wie uns Typografie beeinflusst.</p>
+          <p>Ja. Denn jede Schrift hat ihre ganz eigene Ausstrahlung. Sie übermittelt Emotionen und unterstützt die Interpretation eines Wortes. Meistens realisieren wir das nicht einmal – doch wenn wir ganz bewusst darauf achten und aufmerksam <span class="special-font">die Schrift</span> lesen, erkennen wir schwarz auf weiß, wie uns Typografie beeinflusst.</p>
         </div>
       </div>
     </div>

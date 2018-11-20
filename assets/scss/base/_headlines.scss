@@ -81,16 +81,17 @@ $generate-classes: false !default;
 
   font-family: $font-family--body;
   line-height: (24 / 20);
+  font-size: rem(26);
 
-  @include fluid(
-    (
-      font-size: (
-        20,
-        26
-      )
-    ),
-    (medium, xlarge)
-  );
+  // @include fluid(
+  //   (
+  //     font-size: (
+  //       20,
+  //       26
+  //     )
+  //   ),
+  //   (medium, xlarge)
+  // );
 
   @if $box-model {
     padding: 0 0 rh(0.125);

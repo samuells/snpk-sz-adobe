@@ -204,7 +204,7 @@ export default {
         this.fontAnatomyClasses = "visible"
         this.fontAnatomy.startHeight = this.windowScrolled
         this.fontAnatomy.endHeight =
-          this.fontAnatomy.startHeight + this.windowHeight * 0.8
+          this.fontAnatomy.startHeight + this.windowHeight * 0.5
         this.fontAnatomy.duration =
           this.animFontAnatomy.getDuration() * 1000 - 1
         this.fontAnatomy.isAnimating = true

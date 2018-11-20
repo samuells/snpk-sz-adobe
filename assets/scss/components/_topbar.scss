@@ -1,6 +1,11 @@
 @import "./assets/scss/toolbelt";
 
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
   padding: 0 rem(20);
   color: $gray-silver;
   font-weight: 700;

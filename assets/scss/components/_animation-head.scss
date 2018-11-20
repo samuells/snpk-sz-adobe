@@ -168,6 +168,18 @@
     .lottie--head {
       transform: translate3d(-30%, #{rem(100)}, 0);
     }
+
+    .lottie--brain-text {
+      top: 28%;
+      left: 5.5%;
+      width: 29%;
+    }
+
+    .lottie--view-text {
+      top: 36%;
+      left: 52%;
+      width: 90%;
+    }
   }
 
   @include breakpoint(xxlarge) {
@@ -185,14 +197,14 @@
     }
 
     .lottie--brain-text {
-      top: 28%;
-      left: 3.5%;
-      width: 17%;
+      top: 28.75%;
+      left: 4%;
+      width: 16%;
     }
 
     .lottie--view-text {
-      top: 33%;
-      left: 50%;
+      top: 33.5%;
+      left: 38%;
       width: 90%;
     }
   }

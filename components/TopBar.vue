@@ -1,6 +1,8 @@
 <template>
   <div class="topbar">
-    <a href="http://sz.de"><ArrowLeft/><span>SZ.de</span></a>
+    <a
+      target="blank"
+      href="http://sz.de"><ArrowLeft/><span>SZ.de</span></a>
     <p>Anzeigen-Spezial <SzLogo/></p>
   </div>
 </template>

@@ -198,7 +198,7 @@ export default {
       if (this.numberOfStep > 28) {
         return "Nicht schlecht! Aber das geht noch schneller!"
       } else if (this.numberOfStep > 16) {
-        return "Klasse! Sie haben gutes Gespür für Typografie!"
+        return "Klasse! Sie haben ein gutes Gespür für Typografie!"
       } else {
         return "Super! An Ihnen ist ein Typograf verloren gegangen!"
       }

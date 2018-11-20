@@ -30,7 +30,7 @@
         </div>
         <p>Als Vorreiter und Impulsgeber für kreative Software sucht Adobe kontinuierlich nach neuen Wegen, um Experten und Laien das kreative Arbeiten so einfach und fortschrittlich wie möglich zu machen. So auch in diesem Jahr: 2018 erweckte Adobe die alten Schriften der Bauhaus-Meister zu neuem, digitalem Leben und erschließt damit eine unschätzbare Quelle der Inspiration für das kreative Arbeiten. Unter der Leitung von Erik Spiekermann, einem der renommiertesten Typografen, wurden die sogenannten „<a
           target="blank"
-          href="https://adobehiddentreasures.com/de/">Adobe Hidden Treasures – Bauhaus Dessau</a>“ in Zusammenarbeit mit ihren internationalen Hochschulen digital vervollständigt und überarbeitet. Die funktionalen, markanten Typografien des Bauhaus-Stils spiegeln das avantgardistische Denken der Kunstschule wider und vereinen eindrucksvoll Kunst und Handwerk.</p>
+          href="https://adobehiddentreasures.com/de/">Adobe Hidden Treasures – Bauhaus Dessau</a>“ in Zusammenarbeit mit internationalen Hochschulen digital vervollständigt und überarbeitet. Die funktionalen, markanten Typografien des Bauhaus-Stils spiegeln das avantgardistische Denken der Kunstschule wider und vereinen eindrucksvoll Kunst und Handwerk.</p>
         <div class="lottie--comp-book-wrapper">
           <div
             v-view="handleCompBookView"

@@ -215,7 +215,7 @@ export default {
         return
       } else if (this.cardsOnBoard[index].classes === "flipped") {
         // click on flipped card
-        console.log("hide flipped")
+        // console.log("hide flipped")
         this.hideCards()
       } else {
         // click on unflipped card
@@ -265,8 +265,12 @@ export default {
       this.secondFlippedCard.value = -1
       this.numberOfStep += 1
       this.numberOfPairsRemains -= 1
+      if (this.numberOfPairsRemains === 0) {
+        this.$nuxt.$emit("memorySolved")
+      }
     },
     resetMemory() {
+      this.$nuxt.$emit("memoryReseted")
       this.numberOfStep = 0
       this.numberOfPairsRemains = 8
       const randomArray = getRandomSubArray(this.optionalCards, 16)

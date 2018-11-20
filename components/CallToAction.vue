@@ -2,6 +2,7 @@
   <div class="row--outer">
     <div class="column--text">
       <a
+        :class="ctaClasses"
         class="call-to-action"
         href="https://adobehiddentreasures.com/de/">
         <LogoAdobe/>
@@ -18,6 +19,23 @@ import LogoAdobe from "@/assets/icons/logo-adobe.svg"
 export default {
   components: {
     LogoAdobe
+  },
+  data() {
+    return {
+      ctaClasses: ""
+    }
+  },
+  created() {
+    this.$nuxt.$on("memorySolved", this.moveCtaUp)
+    this.$nuxt.$on("memoryReseted", this.moveCtaDown)
+  },
+  methods: {
+    moveCtaUp() {
+      this.ctaClasses = "up"
+    },
+    moveCtaDown() {
+      this.ctaClasses = ""
+    }
   }
 }
 </script>

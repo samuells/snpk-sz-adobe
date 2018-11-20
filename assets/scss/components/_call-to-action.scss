@@ -2,12 +2,13 @@
 
 .call-to-action {
   @include clearfix;
-  @include transition(background-color);
+  @include transition(background-color, transform);
 
   display: block;
   padding: 0 rem(20);
   margin-bottom: rh(1);
   background-color: $blue-dodger;
+  transform: translateY(0);
 
   &:hover,
   &:focus,
@@ -40,6 +41,10 @@
 
   @include breakpoint(xlarge) {
     margin-bottom: rh(2);
+
+    &.up {
+      transform: translateY(-180%) scale(1.3);
+    }
   }
 
   @include breakpoint(xxlarge) {

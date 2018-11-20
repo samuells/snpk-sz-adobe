@@ -202,11 +202,13 @@
 
         content: "";
         position: absolute;
-        top: 0%;
-        left: rem(-124);
-        width: rem(120);
-        height: calc(100% - #{rem(4)});
-        background-color: $braun-straw;
+        top: rem(-6);
+        left: rem(-150);
+        width: calc(100% + #{rem(150)});
+        height: 0;
+        border-top: rem(2) dashed $black;
+        // background-color: $braun-straw;
+        background-color: $transparent;
         opacity: 0;
         transform: translate3d(0, 0, 0) scaleX(0);
         transform-origin: right;
@@ -219,8 +221,8 @@
         content: "";
         position: absolute;
         top: 100%;
-        left: rem(-60);
-        width: calc(100% + #{rem(60)});
+        left: rem(-4);
+        width: calc(100% + #{rem(4)});
         height: rem(50);
         background-color: $black;
         opacity: 0;
@@ -234,10 +236,11 @@
 
         position: absolute;
         bottom: 0;
-        right: calc(100% + #{rem(60)});
+        right: calc(100% + #{rem(4)});
         width: 50%;
         height: 90%;
-        background-color: $braun-straw;
+        // background-color: $braun-straw;
+        background-color: $transparent;
         box-shadow: inset rem(0 -50 0 0) $black;
         opacity: 0;
         transform: translate3d(0, 0, 0) scaleX(0);

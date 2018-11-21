@@ -40,12 +40,6 @@
           class="to-top">
           <ButtonLeft/>
         </button>
-        <!-- <a
-
-          href="#"
-          class="\">
-
-        </a> -->
       </div>
     </div>
   </div>

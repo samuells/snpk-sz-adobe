@@ -87,6 +87,18 @@
     }
   }
 
+  .hero-area-destop-wrapper {
+    position: relative;
+  }
+
+  .lottie--scroll-down {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
   @include breakpoint(large) {
     .first-paragraph {
       width: 70%;

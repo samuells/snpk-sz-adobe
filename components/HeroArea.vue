@@ -3,10 +3,21 @@
     <show-at
       :breakpoints="{small: 620, medium: 768, large: 1024}"
       breakpoint="mediumAndAbove">
-      <Lottie
-        :options="heroDesktopOptions"
-        class="lottie--hero"
-        @animCreated="handleHeroDesktop"/>
+      <div class="hero-area-destop-wrapper">
+        <Lottie
+          :options="heroDesktopOptions"
+          class="lottie--hero"
+          @animCreated="handleHeroDesktop"/>
+        <Lottie
+          v-scroll-to="{
+            el: '#to-text',
+            duration: 750,
+            offset: -200
+          }"
+          :options="scrollDownOptions"
+          class="lottie--scroll-down"
+          @animCreated="handleScrollDown"/>
+      </div>
     </show-at>
     <hide-at
       :breakpoints="{small: 620, medium: 768, large: 1024}"
@@ -88,7 +99,9 @@
       </div>
       <div class="row--outer">
         <div class="column--text">
-          <h1 class="visually-hidden">Shrift bewegt</h1>
+          <h1
+            id="to-text"
+            class="visually-hidden">Shrift bewegt</h1>
           <p class="first-paragraph"><span class="starting-letter">D</span>er Brief an den Steuerberater, ein Kündigungsschreiben für das Abo oder schnell ein paar Notizen festhalten: Datei öffnen und los geht’s mit dem Tippen. Natürlich achten wir auf den Inhalt unserer Texte, vielleicht noch auf Rechtschreibung und Satzzeichen – aber wie sieht es mit der Schriftart aus? „Calibri“, oft voreingestellt in Word, ist den meisten regelmäßigen Nutzern ein Begriff, aber hinter „Bodoni“, „Garamond“ oder „Frutiger“ könnten ja auch ein trendiges Fashion-Label oder ein neuer Smoothie stecken? Tatsächlich gibt es über hunderttausende verschiedene Schriften für unser römisches Zwei-Buchstaben-Alphabet, die teilweise vor hunderten von Jahren in akribischer Feinstarbeit entwickelt wurden. Aber warum zerbrechen sich Typografen den Kopf über Serifen, Punzen und Versalhöhen? Braucht es diese Tüftelei wirklich?</p>
         </div>
       </div>
@@ -114,6 +127,7 @@ import Lottie from "@/components/lottie"
 import heroDesktopAnimation from "@/assets/animations/hero-desktop.json"
 import heroMobileAnimation from "@/assets/animations/hero-mobile.json"
 import fontSelectAnimation from "@/assets/animations/font-select.json"
+import scrollDownAnimation from "@/assets/animations/scroll-down.json"
 import LogoAdobe from "@/assets/icons/logo-adobe.svg"
 import { showAt, hideAt } from "vue-breakpoints"
 
@@ -150,10 +164,18 @@ export default {
         loop: false,
         autoplay: true
       },
+      scrollDownOptions: {
+        animationData: scrollDownAnimation,
+        loop: true,
+        autoplay: false
+      },
       height: "auto",
       width: "100%",
       isImageLoaded: true
     }
+  },
+  mounted() {
+    setTimeout(this.startScrollDownAnimation, 6500)
   },
   methods: {
     handleFontSelect: function(anim) {
@@ -166,6 +188,12 @@ export default {
     handleHeroMobile: function(anim) {
       this.mobileDesktopAnim = anim
       this.mobileDesktopAnim.setSpeed(1.2)
+    },
+    handleScrollDown: function(anim) {
+      this.scrollDownAnim = anim
+    },
+    startScrollDownAnimation() {
+      this.scrollDownAnim.play()
     },
     imageLoaded() {
       this.isImageLoaded = true

@@ -77,29 +77,91 @@ import Background02 from "~/assets/icons/vs-background-02.svg"
 import Background03 from "~/assets/icons/vs-background-03.svg"
 import Background04 from "~/assets/icons/vs-background-04.svg"
 import Background05 from "~/assets/icons/vs-background-05.svg"
+import Background06 from "~/assets/icons/vs-background-06.svg"
 import Text01Font01 from "~/assets/icons/vs-text01-font01.svg"
 import Text01Font02 from "~/assets/icons/vs-text01-font02.svg"
 import Text01Font03 from "~/assets/icons/vs-text01-font03.svg"
+import Text01Font04 from "~/assets/icons/vs-text01-font04.svg"
 import Text02Font01 from "~/assets/icons/vs-text02-font01.svg"
 import Text02Font02 from "~/assets/icons/vs-text02-font02.svg"
 import Text02Font03 from "~/assets/icons/vs-text02-font03.svg"
+import Text02Font04 from "~/assets/icons/vs-text02-font04.svg"
+import Text03Font01 from "~/assets/icons/vs-text03-font01.svg"
+import Text03Font02 from "~/assets/icons/vs-text03-font02.svg"
+import Text03Font03 from "~/assets/icons/vs-text03-font03.svg"
+import Text03Font04 from "~/assets/icons/vs-text03-font04.svg"
+import Text04Font01 from "~/assets/icons/vs-text04-font01.svg"
+import Text04Font02 from "~/assets/icons/vs-text04-font02.svg"
+import Text04Font03 from "~/assets/icons/vs-text04-font03.svg"
+import Text04Font04 from "~/assets/icons/vs-text04-font04.svg"
+import Text05Font01 from "~/assets/icons/vs-text05-font01.svg"
+import Text05Font02 from "~/assets/icons/vs-text05-font02.svg"
+import Text05Font03 from "~/assets/icons/vs-text05-font03.svg"
+import Text05Font04 from "~/assets/icons/vs-text05-font04.svg"
+import Text06Font01 from "~/assets/icons/vs-text06-font01.svg"
+import Text06Font02 from "~/assets/icons/vs-text06-font02.svg"
+import Text06Font03 from "~/assets/icons/vs-text06-font03.svg"
+import Text06Font04 from "~/assets/icons/vs-text06-font04.svg"
+import Text07Font01 from "~/assets/icons/vs-text07-font01.svg"
+import Text07Font02 from "~/assets/icons/vs-text07-font02.svg"
+import Text07Font03 from "~/assets/icons/vs-text07-font03.svg"
+import Text07Font04 from "~/assets/icons/vs-text07-font04.svg"
+import Text08Font01 from "~/assets/icons/vs-text08-font01.svg"
+import Text08Font02 from "~/assets/icons/vs-text08-font02.svg"
+import Text08Font03 from "~/assets/icons/vs-text08-font03.svg"
+import Text08Font04 from "~/assets/icons/vs-text08-font04.svg"
+import Text09Font01 from "~/assets/icons/vs-text09-font01.svg"
+import Text09Font02 from "~/assets/icons/vs-text09-font02.svg"
+import Text09Font03 from "~/assets/icons/vs-text09-font03.svg"
+import Text09Font04 from "~/assets/icons/vs-text09-font04.svg"
 
 export default {
   components: {
     ButtonLeft,
     ButtonRight,
     ButtonDownload,
-    Text01Font01,
-    Text01Font02,
-    Text01Font03,
-    Text02Font01,
-    Text02Font02,
-    Text02Font03,
     Background01,
     Background02,
     Background03,
     Background04,
-    Background05
+    Background05,
+    Background06,
+    Text01Font01,
+    Text01Font02,
+    Text01Font03,
+    Text01Font04,
+    Text02Font01,
+    Text02Font02,
+    Text02Font03,
+    Text02Font04,
+    Text03Font01,
+    Text03Font02,
+    Text03Font03,
+    Text03Font04,
+    Text04Font01,
+    Text04Font02,
+    Text04Font03,
+    Text04Font04,
+    Text05Font01,
+    Text05Font02,
+    Text05Font03,
+    Text05Font04,
+    Text06Font01,
+    Text06Font02,
+    Text06Font03,
+    Text06Font04,
+    Text07Font01,
+    Text07Font02,
+    Text07Font03,
+    Text07Font04,
+    Text08Font01,
+    Text08Font02,
+    Text08Font03,
+    Text08Font04,
+    Text09Font01,
+    Text09Font02,
+    Text09Font03,
+    Text09Font04
   },
   data() {
     return {
@@ -139,7 +201,7 @@ export default {
       // })
     },
     nextBgc() {
-      if (this.bgcIndex === 5) {
+      if (this.bgcIndex === 6) {
         this.bgcIndex = 1
         return
       }
@@ -147,13 +209,13 @@ export default {
     },
     previousBgc() {
       if (this.bgcIndex === 1) {
-        this.bgcIndex = 5
+        this.bgcIndex = 6
         return
       }
       this.bgcIndex -= 1
     },
     nextFont() {
-      if (this.fontIndex === 3) {
+      if (this.fontIndex === 4) {
         this.fontIndex = 1
         return
       }
@@ -161,13 +223,13 @@ export default {
     },
     previousFont() {
       if (this.fontIndex === 1) {
-        this.fontIndex = 3
+        this.fontIndex = 4
         return
       }
       this.fontIndex -= 1
     },
     nextText() {
-      if (this.textIndex === 2) {
+      if (this.textIndex === 9) {
         this.textIndex = 1
         return
       }
@@ -175,7 +237,7 @@ export default {
     },
     previousText() {
       if (this.textIndex === 1) {
-        this.textIndex = 2
+        this.textIndex = 9
         return
       }
       this.textIndex -= 1

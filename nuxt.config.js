@@ -70,7 +70,11 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [],
+  modules: ["@nuxtjs/google-analytics"],
+
+  "google-analytics": {
+    id: "GTM-KW7BK8"
+  },
 
   /*
   ** Build configuration

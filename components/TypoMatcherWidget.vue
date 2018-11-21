@@ -125,48 +125,162 @@ export default {
       }
     },
     result() {
-      if (this.bauRange === "2") {
-        if (this.mpRange === "1") {
-          if (this.bsRange === "0") {
-            return 87
-          } else {
-            return 0.75 // 11.5
-          }
-        } else {
-          if (this.bsRange === "0") {
-            return 1 // 10.5
-          } else {
-            return 0.25 // 10
-          }
-        }
-      } else if (this.bauRange === "1") {
-        if (this.mpRange === "1") {
-          if (this.bsRange === "0") {
-            return 2 // 8
-          } else {
-            return 0.5 // 7
-          }
-        } else {
-          if (this.bsRange === "0") {
-            return 1 // 6
-          } else {
-            return 0.1 // 5.8
-          }
-        }
-      } else {
-        if (this.mpRange === "1") {
-          if (this.bsRange === "0") {
-            return 2.1 // 3.7
-          } else {
-            return 0.45 // 2.8
-          }
-        } else {
-          if (this.bsRange === "0") {
-            return 1.4 // 1.4
-          } else {
-            return 0.7 // 0
-          }
-        }
+      if (
+        this.bauRange === "2" &&
+        this.mpRange === "1" &&
+        this.bsRange === "0"
+      ) {
+        return 58.2
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "0" &&
+        this.bsRange === "0"
+      ) {
+        return 1.4
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "0" &&
+        this.bsRange === "0"
+      ) {
+        return 0.1
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "0" &&
+        this.bsRange === "0"
+      ) {
+        return 1
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "1" &&
+        this.bsRange === "0"
+      ) {
+        return 2.1
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "2" &&
+        this.bsRange === "0"
+      ) {
+        return 0.2
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "0" &&
+        this.bsRange === "1"
+      ) {
+        return 0.6
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "0" &&
+        this.bsRange === "2"
+      ) {
+        return 0.7
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "1" &&
+        this.bsRange === "1"
+      ) {
+        return 0.5
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "1" &&
+        this.bsRange === "1"
+      ) {
+        return 3.6
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "1" &&
+        this.bsRange === "1"
+      ) {
+        return 4.1
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "0" &&
+        this.bsRange === "1"
+      ) {
+        return 0.1
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "2" &&
+        this.bsRange === "1"
+      ) {
+        return 0.1
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "1" &&
+        this.bsRange === "0"
+      ) {
+        return 0.2
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "2" &&
+        this.bsRange === "2"
+      ) {
+        return 2.1
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "2" &&
+        this.bsRange === "2"
+      ) {
+        return 0.1
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "2" &&
+        this.bsRange === "2"
+      ) {
+        return 0.8
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "1" &&
+        this.bsRange === "2"
+      ) {
+        return 8.2
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "0" &&
+        this.bsRange === "2"
+      ) {
+        return 2.7
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "2" &&
+        this.bsRange === "1"
+      ) {
+        return 0.3
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "2" &&
+        this.bsRange === "0"
+      ) {
+        return 1
+      } else if (
+        this.bauRange === "2" &&
+        this.mpRange === "0" &&
+        this.bsRange === "1"
+      ) {
+        return 1.6
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "0" &&
+        this.bsRange === "2"
+      ) {
+        return 0.2
+      } else if (
+        this.bauRange === "1" &&
+        this.mpRange === "2" &&
+        this.bsRange === "0"
+      ) {
+        return 0.1
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "1" &&
+        this.bsRange === "2"
+      ) {
+        return 7.3
+      } else if (
+        this.bauRange === "0" &&
+        this.mpRange === "2" &&
+        this.bsRange === "1"
+      ) {
+        return 1.3
       }
       return 0
     }

@@ -193,9 +193,24 @@
     padding: 0 !important;
     background-color: $black;
 
-    &::after {
-      border-top-color: $red-pome;
+    svg path:nth-child(1) {
+      @include transition(fill);
     }
+
+    // stylelint-disable
+    &:hover {
+      background-color: $white;
+
+      svg path:nth-child(1) {
+        fill: $white;
+      }
+    }
+    // stylelint-enable
+
+    &::after {
+      border-top-color: $white;
+    }
+
 
     svg {
       position: absolute;

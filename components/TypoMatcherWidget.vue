@@ -64,7 +64,7 @@
         v-if="isResultShowed"
         class="result-wrapper">
         <p class="result">{{ result }}<span>%</span></p>
-        <p>sahen das auch so</p>
+        <p>waren Ihrer Meinung</p>
       </div>
     </transition>
   </div>

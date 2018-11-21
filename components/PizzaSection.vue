@@ -4,7 +4,7 @@
       <div class="column--text">
         <h3
           :class="pizzaClasses"
-          class="pizza-headline">WO WÜRDEN SIE PIZZA BESTELLEN?</h3>
+          class="pizza-headline">PIZZA IST NICHT GLEICH PIZZA</h3>
         <div
           ref="pizzaWrapper"
           class="lottie--pizza-wrapper">

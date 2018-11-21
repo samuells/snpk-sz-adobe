@@ -35,6 +35,17 @@
             <button @click.prevent="resetMemory">Noch eine Runde?</button>
           </div>
         </transition>
+        <button
+          v-scroll-to="'#main-body'"
+          class="to-top">
+          <ButtonLeft/>
+        </button>
+        <!-- <a
+
+          href="#"
+          class="\">
+
+        </a> -->
       </div>
     </div>
   </div>
@@ -50,6 +61,7 @@ import MemoryCard05 from "@/assets/icons/memory-card-05.svg"
 import MemoryCard06 from "@/assets/icons/memory-card-06.svg"
 import MemoryCard07 from "@/assets/icons/memory-card-07.svg"
 import MemoryCard08 from "@/assets/icons/memory-card-08.svg"
+import ButtonLeft from "@/assets/icons/button-left.svg"
 
 function getRandomSubArray(arr, n) {
   var result = new Array(n),
@@ -83,7 +95,8 @@ export default {
     MemoryCard05,
     MemoryCard06,
     MemoryCard07,
-    MemoryCard08
+    MemoryCard08,
+    ButtonLeft
   },
   data() {
     return {

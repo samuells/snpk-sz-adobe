@@ -184,6 +184,33 @@
     }
   }
 
+  .to-top {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: rem(48);
+    height: rem(48);
+    padding: 0 !important;
+    background-color: $black;
+
+    &::after {
+      border-top-color: $red-pome;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      transform: translateY(-50%) rotate(90deg);
+
+      path:nth-child(2) {
+        fill: $red-pome;
+      }
+    }
+  }
+
   @include breakpoint(large) {
     margin-bottom: rh(4);
 
@@ -224,6 +251,11 @@
       .counter {
         font-size: rem(38);
       }
+    }
+
+    .to-top {
+      left: calc(100% + #{rem(20)});
+      right: auto;
     }
   }
 

@@ -12,6 +12,7 @@ $generate-classes: false !default;
   display: inline-block;
   padding: calc-rem(6 12);
   border-width: 0;
+  border-radius: 0;
   margin-bottom: calc-rem(16);
   color: $button-fc;
   font-weight: 700;

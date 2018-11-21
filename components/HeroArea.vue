@@ -175,7 +175,7 @@ export default {
     }
   },
   mounted() {
-    setTimeout(this.startScrollDownAnimation, 6500)
+    setTimeout(this.startScrollDownAnimation, 7000)
   },
   methods: {
     handleFontSelect: function(anim) {

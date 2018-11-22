@@ -128,7 +128,7 @@ import heroDesktopAnimation from "@/assets/animations/hero-desktop.json"
 import heroMobileAnimation from "@/assets/animations/hero-mobile.json"
 import fontSelectAnimation from "@/assets/animations/font-select.json"
 import scrollDownAnimation from "@/assets/animations/scroll-down.json"
-import LogoAdobe from "@/assets/icons/logo-adobe.svg"
+import LogoAdobe from "@/assets/icons/adobe-standard-logo.svg"
 import { showAt, hideAt } from "vue-breakpoints"
 
 export default {

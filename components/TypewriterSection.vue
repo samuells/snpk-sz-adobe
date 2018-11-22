@@ -16,7 +16,7 @@
         <h2>Mehr Freund als Feind: Technologie macht Kreativität leichter</h2>
         <p>Wir konsumieren also passiv ununterbrochen Typografie. Aber auch einer aktiven Verwendung von Schriftarten steht nichts im Wege. Im Gegenteil: Heute müssen wir keine Grafik-Ausbildung oder ein Design-Studium besitzen, um Wörter und Sätze zu gestalten und zu emotionalisieren. Uns stehen intelligente digitale Tools zur Verfügung, die uns die Kreativität erleichtern. Eine von <a
           target="blank"
-          href="#">Adobe und Pfeiffer Consulting durchgeführte Studie</a> zeigt, dass Technologie ein sinnvolles Hilfsmittel ist, um den Kreativprozess zu befeuern: neue digitale Möglichkeiten, neue Ideen, neue kreative Ergebnisse. Und das für Jeden.</p>
+          href="https://www.pfeifferreport.com/wp-content/uploads/2018/10/Creativity-and-technology-in-the-age-of-AI.pdf">Adobe und Pfeiffer Consulting durchgeführte Studie</a> zeigt, dass Technologie ein sinnvolles Hilfsmittel ist, um den Kreativprozess zu befeuern: neue digitale Möglichkeiten, neue Ideen, neue kreative Ergebnisse. Und das für Jeden.</p>
         <h2>Die alten Meister in unserer digitalen Welt</h2>
         <div class="lottie--vector-wrapper">
           <div
@@ -28,9 +28,9 @@
               @animCreated="handleVector"/>
           </div>
         </div>
-        <p>Als Vorreiter und Impulsgeber für kreative Software sucht Adobe kontinuierlich nach neuen Wegen, um Experten und Laien das kreative Arbeiten so einfach und fortschrittlich wie möglich zu machen. So auch in diesem Jahr: 2018 erweckte Adobe die alten Schriften der Bauhaus-Meister zu neuem, digitalem Leben und erschließt damit eine unschätzbare Quelle der Inspiration für das kreative Arbeiten. Unter der Leitung von Erik Spiekermann, einem der renommiertesten Typografen, wurden die sogenannten „<a
+        <p>Als Vorreiter und Impulsgeber für kreative Software sucht Adobe kontinuierlich nach neuen Wegen, um Experten und Laien das kreative Arbeiten so einfach und fortschrittlich wie möglich zu machen. So auch in diesem Jahr: 2018 erweckte Adobe die alten Schriften der Bauhaus-Meister zu neuem, digitalem Leben und erschließt damit eine unschätzbare Quelle der Inspiration für das kreative Arbeiten. Unter der Leitung von Erik Spiekermann, einem der renommiertesten Typografen, wurden Schriftskizzen und Buchstabenfragmente aus den Archiven des Bauhaus Dessau in Zusammenarbeit mit Studierenden internationaler Hochschulen digital vervollständigt und überarbeitet. Enstanden ist das Projekt „<a
           target="blank"
-          href="https://adobehiddentreasures.com/de/">Adobe Hidden Treasures – Bauhaus Dessau</a>“ in Zusammenarbeit mit internationalen Hochschulen digital vervollständigt und überarbeitet. Die funktionalen, markanten Typografien des Bauhaus-Stils spiegeln das avantgardistische Denken der Kunstschule wider und vereinen eindrucksvoll Kunst und Handwerk.</p>
+          href="https://adobehiddentreasures.com/de/">Adobe Hidden Treasures – Bauhaus Dessau</a>“. Die funktionalen, markanten Typografien des Bauhaus-Stils spiegeln das avantgardistische Denken der Kunstschule wider und vereinen eindrucksvoll Kunst und Handwerk.</p>
         <div class="lottie--comp-book-wrapper">
           <div
             v-view="handleCompBookView"

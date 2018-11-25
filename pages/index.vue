@@ -8,7 +8,7 @@
     <TypoMatcher/>
     <BaseText>
       <h4 class="is-h2">Im Chaos herrscht Ordnung</h4>
-      <p>Um in der Menge den Überblick zu behalten, werden Schriftarten in verschiedene Typen gegliedert. Da gibt es beispielsweise den Typ „Serif“. Schriftarten mit Serifen zeichnen sich durch die feinen, mehr oder weniger dünnen Linien aus, die den Buchstaben verzieren. Wenn der Lesefluss besonders im Vordergrund steht wie in Büchern oder Zeitungen werden Schriftarten mit Serifen eingesetzt. Leser assoziieren mit Serifen-Schriftarten Eleganz, Zuverlässigkeit oder auch Intellektualität. Ein bekannter Vertreter ist die „Times New Roman“.</p>
+      <p>Um in der Menge den Überblick zu behalten, werden Schriftarten in verschiedene Typen gegliedert. Da gibt es beispielsweise den Typ „Serif“. Schriftarten mit Serifen zeichnen sich durch die feinen, mehr oder weniger dünnen Linien aus, die den Buchstaben verzieren. Wenn der Lesefluss besonders im Vordergrund steht, wie in Büchern oder Zeitungen, werden Schriftarten mit Serifen eingesetzt. Leser assoziieren mit Serifen-Schriftarten Eleganz, Zuverlässigkeit oder auch Intellektualität. Ein bekannter Vertreter ist die „Times New Roman“.</p>
       <p>Den Gegensatz zum Typ „Serif“ bilden Schriften ohne Serifen, auch „Sans Serif“ oder „Grotesk“ genannt. Sie sind schlicht und modern und werden gerne für digitale Medien oder zur Navigation verwendet. Eine bekannte serifenlose Schrift ist beispielsweise die „Helvetica“. Neben „Serif“ und „Sans Serif“ kennt die Typografie noch viele andere Schrifttypen, die ein Wort ausschmücken.</p>
     </BaseText>
     <AnimationHead

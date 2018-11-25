@@ -21,7 +21,7 @@
           :style="placeholderStyle"
           class="placeholder--pizza"/>
         <h2>Marken in ihrem Gewand</h2>
-        <p>Natürlich unterliegen auch Schriftarten Trends und kulturellen Veränderungen. Die ersten, die darauf reagieren, sind Marken. Man will ja am Puls Zeit bleiben. So verpassten sich eine Reihe großer Marken ein neues Schriftbild, um auf uns modern und fortschrittlich zu wirken. Ein Beispiel dafür ist das Fashion-Label <a
+        <p>Natürlich unterliegen auch Schriftarten Trends und kulturellen Veränderungen. Die Ersten, die darauf reagieren, sind Marken. Man will ja am Puls der Zeit bleiben. So verpassten sich eine Reihe großer Marken ein neues Schriftbild, um auf uns modern und fortschrittlich zu wirken. Ein Beispiel dafür ist das Fashion-Label <a
           target="blank"
           href="https://www.designtagebuch.de/burberry-geht-in-sachen-branding-mit-der-mode/">Burberry</a>, das sein altes Logo mit hohem Wiedererkennungsfaktor gegen einen schlichten Schriftzug tauschte.</p>
         <div

@@ -4,16 +4,21 @@ const pkg = require("./package")
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase =
-  process.env.DEPLOY_ENV === "GH_PAGES"
+  process.env.DEPLOY_ENV === "SZ_PAGES"
     ? {
         router: {
-          base: "/snpk-sz-adobe/"
+          base: "/adobe/"
         }
       }
     : {}
 
 module.exports = {
   mode: "spa",
+
+  /*
+  ** Router base
+  */
+  ...routerBase,
 
   /*
   ** Headers of the page

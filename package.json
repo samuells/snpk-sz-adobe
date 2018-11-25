@@ -15,6 +15,7 @@
     "precommit": "yarn lint",
     "build:ghp": "DEPLOY_ENV=GH_PAGES nuxt build",
     "generate:ghp": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "generate:sz": "DEPLOY_ENV=SZ_PAGES nuxt generate --spa",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "husky": {

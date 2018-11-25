@@ -4,7 +4,7 @@
   height: rem(40);
 
   @include breakpoint(xlarge) {
-    height: rem(42)
+    height: 0;
   }
 }
 

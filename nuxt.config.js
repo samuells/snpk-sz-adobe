@@ -24,11 +24,15 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: "Schrift bewegt",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: pkg.description },
+      {
+        hid: "description",
+        name: "description",
+        content: "Ein interaktives Erlebnis über Schriftarten und ihre Wirkung."
+      },
       {
         property: "og:title",
         content: "Schrift bewegt: Wie uns Typografie emotional beeinflusst."

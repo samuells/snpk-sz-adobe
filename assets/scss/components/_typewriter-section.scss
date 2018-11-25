@@ -54,7 +54,7 @@
   }
 
   .placeholder--comp-book {
-    height: calc(100vw * 0.3);
+    height: calc(100vw * 0.75);
   }
 
   .lottie--comp-book-wrapper {
@@ -63,19 +63,19 @@
     overflow-x: hidden;
     z-index: -1;
     width: 100%;
-    transform: translate3d(0, -28%, 0);
+    transform: translate3d(0, -23%, 0);
   }
 
   .lottie--comp-book {
     @include transition(opacity, transform);
 
-    width: 150%;
+    width: 300%;
     height: auto;
-    transform: translate3d(-30%, #{rem(50)}, 0);
+    transform: translate3d(-53%, #{rem(50)}, 0);
     opacity: 0;
 
     &.visible {
-      transform: translate3d(-30%, 0, 0);
+      transform: translate3d(-53%, 0, 0);
       opacity: 1;
     }
   }

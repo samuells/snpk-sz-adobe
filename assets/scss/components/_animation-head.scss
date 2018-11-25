@@ -100,7 +100,7 @@
 .animation--head {
   position: absolute;
   overflow-x: hidden;
-  width: 100%;
+  width: 130%;
 
 
   .lottie--head {
@@ -108,13 +108,31 @@
 
     transform: translate3d(-30%, #{rem(30)}, 0);
     opacity: 0;
+
+    svg {
+      @include breakpoint(w1023 down) {
+        g > g {
+          &:nth-child(15),
+          &:nth-child(16) {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.visible {
+    .lottie--head {
+      transform: translate3d(-36%, -15%, 0);
+      opacity: 1;
+    }
   }
 
   .white-triangle {
     @include transition(transform);
 
     position: absolute;
-    top: 22%;
+    top: 7.5%;
     left: 20%;
     width: 80%;
     height: auto;
@@ -144,29 +162,33 @@
   }
 
   .lottie--brain-text {
-    top: 28%;
-    left: 5%;
+    top: 13%;
+    left: -1%;
     width: 30%;
   }
 
   .lottie--view-text {
-    top: 35%;
-    left: 60%;
+    top: 22.5%;
+    left: 40%;
     width: 100%;
   }
 
-  &.visible {
-    .lottie--head {
-      transform: translate3d(-30%, 0, 0);
-      opacity: 1;
-    }
-  }
-
   @include breakpoint(xlarge) {
+    width: 100%;
     margin-top: rh(-10);
 
     .lottie--head {
       transform: translate3d(-30%, #{rem(100)}, 0);
+    }
+
+    &.visible {
+      .lottie--head {
+        transform: translate3d(-30%, 0, 0);
+      }
+    }
+
+    .white-triangle {
+      top: 22%;
     }
 
     .lottie--brain-text {

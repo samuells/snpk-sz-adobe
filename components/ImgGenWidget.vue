@@ -58,6 +58,7 @@
         <p>DOWNLOAD</p>
         <button
           class="download-button"
+          onclick="dataLayer.push({'event': 'download-button'});"
           @click.prevent="takePic">
           <ButtonDownload/>
         </button>

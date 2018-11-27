@@ -56,6 +56,7 @@
                 <network network="facebook">
                   <button
                     alt="social-sharing facebook"
+                    onclick="dataLayer.push({'event': 'social-sharing facebook'});"
                     class="fb"><svg
                       width="30"
                       height="30"
@@ -71,6 +72,7 @@
                 <network network="twitter">
                   <button
                     alt="social-sharing twitter"
+                    onclick="dataLayer.push({'event': 'social-sharing twitter'});"
                     class="tw"><svg
                       width="30"
                       height="26"
@@ -86,6 +88,7 @@
                 <network network="email">
                   <button
                     alt="social-sharing mail"
+                    onclick="dataLayer.push({'event': 'social-sharing mail'});"
                     class="mail"><svg
                       width="31"
                       height="20"

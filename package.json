@@ -36,7 +36,6 @@
     ]
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.0.2",
     "cross-env": "^5.2.0",
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.0",

@@ -1,5 +1,3 @@
-import postcssNormalize from "postcss-normalize"
-
 const pkg = require("./package")
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
@@ -88,7 +86,11 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    postcss: [postcssNormalize()],
+    postcss: {
+      plugins: {
+        "postcss-normalize": {}
+      }
+    },
     extend(config, ctx) {
       config.module.rules
         .filter(r => r.test.toString().includes("svg"))
